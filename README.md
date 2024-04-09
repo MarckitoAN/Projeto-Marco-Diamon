@@ -1,5 +1,5 @@
 
-# Gerenciamento de Documentos de RH
+# SOFTWARE DE GERENCIAMENTO EMPRESARIAL
 
-Um Programa que para o departamento de RH gerencia documentos relacionados a funcionarios,como curriculos,contrato de trabalho e registros de treinamento
+Esse Sistema ira abranger funções como cadastro de funcionários, gestão de documentos e folha de pagamento. Além disso, oferecera recursos para administração de benefícios, registro de férias,Relatórios detalhados permitem análises estratégicas e embasam decisões. Sua implementação varia conforme as necessidades da empresa.
 
