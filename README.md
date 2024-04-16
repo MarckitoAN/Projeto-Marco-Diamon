@@ -21,4 +21,4 @@ Funcionalidades Principais:
 
 ## Integrantes:
 - Joao Vitor Diamon
-- Marco Andrey
+- Marco Andreik
