@@ -22,3 +22,4 @@ Funcionalidades Principais:
 ## Integrantes:
 - Joao Vitor Diamon
 - Marco Andreik
+- Anna Beatryz Ferreira Feitosa dos Anjos (integração com Adm)
