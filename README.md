@@ -1,23 +1,24 @@
 
-# PROJETO 5: Sistema Integrado de Gestão Empresarial
+# PROJETO 5: Sistema Integrado de Gestão de Loja
 
-O Sistema Integrado de Gestão Empresarial (SIGE) é uma solução abrangente projetada para facilitar a administração de recursos humanos em empresas de todos os portes. Desenvolvido para oferecer eficiência e praticidade, o SIGE abrange uma variedade de funcionalidades essenciais para o gerenciamento de pessoal e documentos.
+O Sistema Integrado de Gestão de Loja (SIGL) é uma solução abrangente projetada para facilitar o gerenciamento de uma loja, seja ela física ou online. Desenvolvido para oferecer eficiência e praticidade, o SIGL abrange uma variedade de funcionalidades essenciais para o gerenciamento de recursos e vendas.
 Funcionalidades Principais:
 
 
 
 ## Funcionalidades
 
-- Cadastro de Funcionários: Registre detalhes essenciais dos funcionários, incluindo informações pessoais, dados de contato e histórico de emprego.
+- Cadastro de Produtos: Registre detalhes essenciais dos produtos, incluindo nome, descrição, preço, estoque e fornecedor.
 
-- Gestão de Documentos: Armazene e gerencie de forma segura documentos importantes, como contratos de trabalho, certificados e avaliações de desempenho.
+- Gestão de Estoque: Monitore o estoque de produtos em tempo real, recebendo alertas de reabastecimento quando necessário e gerenciando entradas e saídas de mercadorias.
+  
+- Gestão de Vendas: Registre vendas de forma eficiente, acompanhando detalhes como data, cliente, produtos vendidos e forma de pagamento.
 
-- Folha de Pagamento: Calcule com precisão os salários dos funcionários, levando em consideração horas trabalhadas, horas extras, descontos de benefícios e quaisquer outras deduções necessárias.
+- Gestão de Clientes: Mantenha um registro de clientes, incluindo informações de contato, histórico de compras e preferências, para oferecer um serviço personalizado e fidelizar clientes.
 
-- Férias e Licenças: Simplifique o processo de solicitação e aprovação de férias e licenças, incluindo períodos de maternidade e luto, garantindo conformidade com as regulamentações trabalhistas.
-
-- Relatórios Detalhados: Acesse relatórios personalizados que fornecem insights valiosos sobre o desempenho individual dos funcionários, permitindo análises estratégicas para tomadas de decisão.
-
+- Relatórios de Vendas: Acesse relatórios detalhados que fornecem insights valiosos sobre o desempenho de vendas, incluindo análises de produtos mais vendidos, tendências de vendas e desempenho de vendedores.
+  
+- Gestão Financeira: Registre despesas, receitas e lucros da loja, facilitando o controle financeiro e a tomada de decisões estratégicas.
 
 ## Integrantes:
 - Joao Vitor Diamon
