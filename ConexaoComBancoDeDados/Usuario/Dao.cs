@@ -13,7 +13,6 @@ namespace Usuario
         public MySqlConnection conexaoBancoDeDados;
         private string stringConexao = "server=localhost;port=3306;Database=GerenciamentoDeLojasADM;uid=root;";
         public MySqlCommand comandoSql;
-        private string comandoSqlString;
 
         public void ConectarBancoDeDados()
         {
@@ -26,14 +25,11 @@ namespace Usuario
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex);
-         
             }
         }
 
-        public void DefinirComandoSql(string cmd) {
-
+        public void DefinirComandoSql(string comandoSqlString) {
             comandoSql = new MySqlCommand(comandoSqlString, conexaoBancoDeDados);
-        
         }
 
 
