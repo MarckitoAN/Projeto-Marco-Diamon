@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Usuario
 {
-    public class Dao
+    public static class Dao
     {
-        public MySqlConnection conexaoBancoDeDados;
-        private string stringConexao = "server=localhost;port=3306;Database=GerenciamentoDeLojasADM;uid=root;";
-        public MySqlCommand comandoSql;
+        public static MySqlConnection conexaoBancoDeDados;
+        private static  string stringConexao = "server=localhost;port=3306;Database=GerenciamentoDeLojasADM;uid=root;";
+        public static MySqlCommand comandoSql;
 
-        public void ConectarBancoDeDados()
+        public static void ConectarBancoDeDados()
         {
             try
             {
@@ -28,12 +28,12 @@ namespace Usuario
             }
         }
 
-        public void DefinirComandoSql(string comandoSqlString) {
+        public static void DefinirComandoSql(string comandoSqlString) {
             comandoSql = new MySqlCommand(comandoSqlString, conexaoBancoDeDados);
         }
 
 
-        public void VerificarLinhasAfetadas()
+        public static void VerificarLinhasAfetadas()
         {
             int linhasafetadas = comandoSql.ExecuteNonQuery();
 
@@ -48,7 +48,7 @@ namespace Usuario
         }
 
 
-        public void FecharConexao()
+        public static void FecharConexao()
         {
             conexaoBancoDeDados.Close();
         }

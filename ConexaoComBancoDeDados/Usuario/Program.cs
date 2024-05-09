@@ -13,23 +13,22 @@ namespace Usuario
     {
         static void Main(string[] args)
         {
-            Dao dao = new Dao();
 
             try
             {
-                dao.ConectarBancoDeDados();
+                Dao.ConectarBancoDeDados();
                 {
                     using (Users users = new Users())
                     {
                         users.CadatroUsuario();
 
-                        dao.DefinirComandoSql("insert into User (nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
-                        dao.comandoSql.Parameters.AddWithValue("@nome_loja", users.nomeDaLoja);
-                        dao.comandoSql.Parameters.AddWithValue("@contato", users.contato);
-                        dao.comandoSql.Parameters.AddWithValue("@email", users.email);
-                        dao.comandoSql.Parameters.AddWithValue("@cnpj", users.cnpj);
-                        dao.comandoSql.Parameters.AddWithValue("@senha_hash", users.Senha);
-                        dao.VerificarLinhasAfetadas();
+                        Dao.DefinirComandoSql("insert into User (nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
+                        Dao.comandoSql.Parameters.AddWithValue("@nome_loja", users.nomeDaLoja);
+                        Dao.comandoSql.Parameters.AddWithValue("@contato", users.contato);
+                        Dao.comandoSql.Parameters.AddWithValue("@email", users.email);
+                        Dao.comandoSql.Parameters.AddWithValue("@cnpj", users.cnpj);
+                        Dao.comandoSql.Parameters.AddWithValue("@senha_hash", users.Senha);
+                        Dao.VerificarLinhasAfetadas();
                     }
                 }
             }
@@ -37,7 +36,7 @@ namespace Usuario
             {
                 Console.WriteLine(ex);
             }
-            dao.FecharConexao();
+            Dao.FecharConexao();
             Console.ReadKey();
         }
     }
