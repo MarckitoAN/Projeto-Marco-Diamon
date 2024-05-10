@@ -52,5 +52,17 @@ namespace Usuario
         {
             conexaoBancoDeDados.Close();
         }
+
+        public static void AdicionarDados(string parametro, string valor)
+        {
+            try
+            {
+            comandoSql.Parameters.AddWithValue(parametro, valor);
+            }
+            catch(Exception e)
+            { 
+                Console.WriteLine(e.Message); 
+            }
+        }
     }
 }
