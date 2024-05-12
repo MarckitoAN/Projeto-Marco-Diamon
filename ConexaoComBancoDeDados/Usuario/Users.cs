@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Validacao;
 
@@ -15,10 +16,10 @@ namespace Usuario
         Hash cripHash = new Hash(SHA512.Create());
         public string nomeDaLoja { get; set; }
         public string contato { get; set; }
-        public string email{ get; set; }
+        public string email { get; set; }
         public string cnpj { get; set; }
-        private string senha{ get; set; }
-        public string Senha { get { return cripHash.CriptografarSenha(senha); } set { senha = cripHash.CriptografarSenha(value); } }
+        private string senha { get; set; }
+        public string Senha { get { return "**********"; } set { senha = cripHash.CriptografarSenha(value); } }
 
 
 

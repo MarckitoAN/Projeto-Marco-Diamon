@@ -82,7 +82,9 @@ create table User
     email      varchar(255) not null,
     cnpj       varchar(14)  not null,
     senha_hash varchar(255) not null,
-    primary key (id),
-    CONSTRAINT un_cnpj unique (cnpj),
-    CONSTRAINT un_email unique (email)
+    primary key (id)
 );
+
+select *from User;
+
+drop table User;

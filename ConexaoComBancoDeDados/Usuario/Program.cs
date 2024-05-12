@@ -13,22 +13,31 @@ namespace Usuario
     {
         static void Main(string[] args)
         {
-                Dao.ConectarBancoDeDados();
+            UserDao.ConectarBancoDeDados();
+            using (Users users = new Users())
+            {
+                try
                 {
-                    using (Users users = new Users())
-                    {
-                        users.CadatroUsuario();
-                        Dao.DefinirComandoSql("insert into User (nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
-                        Dao.AdicionarDados("@nome_loja", users.nomeDaLoja);
-                        Dao.AdicionarDados("@contato", users.contato);
-                        Dao.AdicionarDados("@email", users.email);
-                        Dao.AdicionarDados("@cnpj", users.cnpj);
-                        Dao.AdicionarDados("@senha_hash", users.Senha);
-                        Dao.VerificarLinhasAfetadas();
-                    }
+                    users.CadatroUsuario();
+                    UserDao.DefinirComandoSql("insert into User (nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
+                    UserDao.AdicionarDados("@nome_loja", users.nomeDaLoja);
+                    UserDao.AdicionarDados("@contato", users.contato);
+                    UserDao.AdicionarDados("@email", users.email);
+                    UserDao.AdicionarDados("@cnpj", users.cnpj);
+                    UserDao.AdicionarDados("@senha_hash", users.Senha);
+                    UserDao.VerificarLinhasAfetadas();
+                    UserDao.ListarUsuarios();
                 }
-            Dao.FecharConexao();
-            Console.ReadKey();
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    UserDao.FecharConexao();
+                    Console.ReadKey();
+                }
+            }
         }
     }
 }
