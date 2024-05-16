@@ -1,0 +1,13 @@
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\MySql.Data.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\System.Memory.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\System.Buffers.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\MySql.Data.xml
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.csproj.AssemblyReference.cache
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.csproj.CoreCompileInputs.cache
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\obj\Debug\Clientes.1C60CBDD.Up2Date
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\ClientesDLL.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\bin\Debug\ClientesDLL.pdb
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll
+C:\Users\gamer\source\repos\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.pdb
