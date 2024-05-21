@@ -70,26 +70,6 @@ namespace Usuario
         }
 
 
-        public static void ListarDados(string comando)
-        {
-            try
-            {
-                comandoSql = new MySqlCommand(comando, conexaoBancoDeDados);
-                comandoSqlDataReade = comandoSql.ExecuteReader();
-
-                while (comandoSqlDataReade.Read())
-                {
-                    Console.WriteLine($"Nome da Loja:{comandoSqlDataReade["nome_loja"]}\nCNPJ:{comandoSqlDataReade["cnpj"]}");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                comandoSqlDataReade.Close();
-            }
         }
     }
 }

@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{03C48DAC-5FD9-4C92-96BD-5296A00CCF2A}|Usuario\\GerenciadorDeLojas.csproj|c:\\users\\gamer\\onedrive\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\gerenciadordelojas\\usuario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C48DAC-5FD9-4C92-96BD-5296A00CCF2A}|Usuario\\GerenciadorDeLojas.csproj|solutionrelative:usuario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Usuario\\Dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Usuario\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dao.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Dao.cs",
+              "RelativeDocumentMoniker": "Usuario\\Dao.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Dao.cs",
+              "RelativeToolTip": "Usuario\\Dao.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAEcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T01:18:00.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Program.cs",
               "RelativeDocumentMoniker": "Usuario\\Program.cs",
               "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\GerenciadorDeLojas\\Usuario\\Program.cs",
               "RelativeToolTip": "Usuario\\Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwCoAAAANAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwBcAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T23:03:53.639Z",
               "EditorCaption": ""

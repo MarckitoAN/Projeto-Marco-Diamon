@@ -1,0 +1,6 @@
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.pdb
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\obj\Debug\ProdutoDLL.csproj.AssemblyReference.cache
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\obj\Debug\ProdutoDLL.csproj.CoreCompileInputs.cache
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\obj\Debug\ProdutoDLL.dll
+C:\Users\gamer\source\repos\ProdutoDLL\ProdutoDLL\obj\Debug\ProdutoDLL.pdb

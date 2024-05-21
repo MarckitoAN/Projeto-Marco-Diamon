@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Usuario;
 using ClientesDLL;
+using ProdutoDLL;
 
 namespace GerenciadorDeLojas
 {
@@ -42,6 +43,8 @@ namespace GerenciadorDeLojas
 
                 Clientes clientes = new Clientes();
                 clientes.CadastrarCliente();
+
+                Produtos p1 = new Produtos();
             }
         }
     }
