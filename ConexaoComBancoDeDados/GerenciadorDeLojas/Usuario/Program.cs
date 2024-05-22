@@ -41,10 +41,8 @@ namespace GerenciadorDeLojas
                     Console.ReadKey();
                 }
 
-                Clientes clientes = new Clientes();
-                clientes.CadastrarCliente();
 
-                Produtos p1 = new Produtos();
+
             }
         }
     }
