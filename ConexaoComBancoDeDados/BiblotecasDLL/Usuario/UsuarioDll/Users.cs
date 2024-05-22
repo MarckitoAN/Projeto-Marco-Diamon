@@ -20,34 +20,46 @@ namespace Usuario
         public string email { get; set; }
         public string cnpj { get; set; }
         private string senha { get; set; }
-        public string Senha { get { return "**********"; } set { senha = cripHash.CriptografarSenha(value); } }
+        private string Senha { get { return "*******"; } set { cripHash.CriptografarSenha(value); } }
 
 
 
-        public void CadatroUsuario()
+        public void GetDados()
         {
             Console.WriteLine("Digite o Nome da Sua Loja");
-            nomeDaLoja = Console.ReadLine();
+            this.nomeDaLoja = Console.ReadLine();
             Console.WriteLine("Digite seu Telefone:");
-            contato = Console.ReadLine();
+            this.contato = Console.ReadLine();
             Console.WriteLine("Digite seu Email:");
-            email = Console.ReadLine();
+            this.email = Console.ReadLine();
             Console.WriteLine("Digite seu CNPJ");
-            cnpj = Console.ReadLine();
+            this.cnpj = Console.ReadLine();
             while (!ValidaCNPJ.IsCnpj(cnpj))
             {
                 Console.WriteLine("CNPJ invalido digite novamente:");
-                cnpj = Console.ReadLine();
+                this.cnpj = Console.ReadLine();
 
             }
 
             Console.WriteLine("Digite sua Senha:");
-            Senha = Console.ReadLine();
+            this.Senha = Console.ReadLine();
         }
 
         public void Dispose()
         {
             Console.WriteLine("Excluindo Objeto...");
+        }
+
+
+        public void CadastrarUsuario()
+        {
+            Dao.ConectarBancoDeDados();
+            Dao.DefinirComandoSql("insert into Users(nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
+            Dao.AdicionarDados("@nome_empresa", this.nomeDaLoja);
+            Dao.AdicionarDados("@contato", this.contato);
+            Dao.AdicionarDados("@email", this.email);
+            Dao.AdicionarDados("@cnpj", this.cnpj);
+            Dao.AdicionarDados("@senha_hash", this.Senha);
         }
     }
 }

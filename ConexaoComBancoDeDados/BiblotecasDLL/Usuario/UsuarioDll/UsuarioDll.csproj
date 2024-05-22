@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dao">
+      <HintPath>..\..\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>E:\Aplicativos\Conector MySQl\v4.8\MySql.Data.dll</HintPath>
     </Reference>

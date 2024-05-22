@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using MySql.Data;
 using MySql.Data.MySqlClient;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Remoting.Messaging;
 
 namespace Usuario
 {
@@ -70,6 +64,5 @@ namespace Usuario
         }
 
 
-        }
     }
 }

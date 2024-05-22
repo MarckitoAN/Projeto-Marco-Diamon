@@ -36,6 +36,9 @@
     <Reference Include="ClientesDLL">
       <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
     </Reference>
+    <Reference Include="Dao">
+      <HintPath>..\..\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>E:\Aplicativos\Conector MySQl\v4.8\MySql.Data.dll</HintPath>
     </Reference>
@@ -56,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
