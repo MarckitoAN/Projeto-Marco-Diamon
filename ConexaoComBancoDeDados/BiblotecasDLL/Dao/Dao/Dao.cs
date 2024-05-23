@@ -16,10 +16,12 @@ namespace Usuario
             {
                 conexaoBancoDeDados = new MySqlConnection(stringConexao);
                 conexaoBancoDeDados.Open();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Conexão estabelecida com sucesso!");
             }
             catch (MySqlException ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex);
             }
 
@@ -29,7 +31,6 @@ namespace Usuario
         {
             comandoSql = new MySqlCommand(comandoSqlString, conexaoBancoDeDados);
         }
-
 
         public static void VerificarLinhasAfetadas()
         {
@@ -44,7 +45,6 @@ namespace Usuario
                 Console.WriteLine("Linhas afetadas:{0}", linhasafetadas);
             }
         }
-
 
         public static void FecharConexao()
         {

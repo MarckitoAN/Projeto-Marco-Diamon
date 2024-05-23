@@ -25,3 +25,17 @@ C:\Users\Tecnico\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasD
 C:\Users\Tecnico\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.csproj.Up2Date
 C:\Users\Tecnico\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.dll
 C:\Users\Tecnico\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\MySql.Data.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\System.Memory.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\System.Buffers.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.csproj.AssemblyReference.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.csproj.CoreCompileInputs.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.csproj.Up2Date
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.pdb

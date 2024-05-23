@@ -13,35 +13,17 @@ namespace GerenciadorDeLoja
 
         public static string MenuCadastro()
         {
-            string op = "0";
-            bool login = false;
-            while (op != "3") {
+            {
+                string op = "s";
                 Console.Clear();
-            Console.WriteLine("1-Faca seu Cadastro no Nosso Gerenciador de Loja.");
-            Console.WriteLine("2-Fazer Login.");
-            Console.WriteLine("3-Sair do Software.");
-
-                switch (op)
-                {
-                    case "1":
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        System.Threading.Thread.Sleep(500);
-                        Console.WriteLine("Insira seus Dados:\n");
-                        Users usuario = new Users();
-                        usuario.CadatroUsuario();
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                }
-
-            op = Console.In.ReadLine();
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("\t\t\t\t\tBEM VINDO AO NOSSO GERENCIADOR DE LOJA");
+                Console.WriteLine("1-Faca seu Cadastro");
+                Console.WriteLine("2-Fazer Login.");
+                Console.WriteLine("3-Sair do Software.");
+                op = Console.ReadLine();
+                return op;
             }
-            return op;
         }
     }
 }

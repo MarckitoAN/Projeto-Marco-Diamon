@@ -36,15 +36,6 @@
     <Reference Include="ClientesDLL">
       <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
     </Reference>
-    <Reference Include="Dao">
-      <HintPath>..\..\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>E:\Aplicativos\Conector MySQl\v4.8\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="ProdutoDLL">
-      <HintPath>..\..\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,7 +46,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UsuarioDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\UsuarioDll\UsuarioDll\obj\Debug\UsuarioDll.dll</HintPath>
+      <HintPath>..\..\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

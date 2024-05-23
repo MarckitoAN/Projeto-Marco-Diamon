@@ -20,7 +20,7 @@ namespace Usuario
         public string email { get; set; }
         public string cnpj { get; set; }
         private string senha { get; set; }
-        private string Senha { get { return "*******"; } set { cripHash.CriptografarSenha(value); } }
+        public string Senha { get { return cripHash.CriptografarSenha(senha); } set { senha = cripHash.CriptografarSenha(value); } }
 
 
 
@@ -42,7 +42,7 @@ namespace Usuario
             }
 
             Console.WriteLine("Digite sua Senha:");
-            this.Senha = Console.ReadLine();
+            Senha = Console.ReadLine();
         }
 
         public void Dispose()
@@ -54,12 +54,24 @@ namespace Usuario
         public void CadastrarUsuario()
         {
             Dao.ConectarBancoDeDados();
-            Dao.DefinirComandoSql("insert into Users(nome_loja,contato,email,cnpj,senha_hash) values (@nome_loja,@contato,@email,@cnpj,@senha_hash)");
-            Dao.AdicionarDados("@nome_empresa", this.nomeDaLoja);
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Inserindo no Banco de Dados:");
+            try
+            {
+
+            Dao.DefinirComandoSql("insert into User(nome_loja, contato, email, cnpj, senha_hash) values(@nome_loja, @contato, @email, @cnpj, @senha_hash)");
+            Dao.AdicionarDados("@nome_loja", this.nomeDaLoja);
             Dao.AdicionarDados("@contato", this.contato);
             Dao.AdicionarDados("@email", this.email);
             Dao.AdicionarDados("@cnpj", this.cnpj);
             Dao.AdicionarDados("@senha_hash", this.Senha);
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Dao.VerificarLinhasAfetadas();
+            Console.ReadKey();
+            Dao.FecharConexao();
         }
     }
 }
