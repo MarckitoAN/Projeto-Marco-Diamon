@@ -1,0 +1,15 @@
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\obj\Debug\Estoque.csproj.AssemblyReference.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\obj\Debug\Estoque.csproj.CoreCompileInputs.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\obj\Debug\Estoque.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\obj\Debug\Estoque.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\MySql.Data.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\System.Memory.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\System.Buffers.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\MySql.Data.xml
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\obj\Debug\Estoque.csproj.Up2Date

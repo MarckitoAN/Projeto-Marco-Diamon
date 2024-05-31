@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Usuario;
+using ProdutoDLL;
 using ClientesDLL;
 using GerenciadorDeLoja;
+using Estoque;
 
 namespace GerenciadorDeLojas
 {
@@ -14,23 +16,36 @@ namespace GerenciadorDeLojas
     {
         static void Main(string[] args)
         {
+            Produto produtos = new Produto();
+            Users users = new Users();
+            Estoques estoques = new Estoques();
+            //string op = Menu.MenuCadastro();
+            string op = Menu.MenuLogado();
 
-            string op = Menu.MenuCadastro();
 
             while (op.ToLower() != "q") {
             
                 switch (op)
                 {
                     case "1":
-                        Users users = new Users();
+                        /*
                         users.GetDados();
                         users.CadastrarUsuario();
-                        Menu.MenuCadastro();
+                        op = Menu.MenuCadastro();
+                         */
+                        produtos.CadastroDeProdutos();
+                        produtos.AdicionarProdutos();
+                        op = Menu.MenuLogado();
                         break;
 
 
                         case "2":
+                        produtos.ExibirProdutos();
+                        op = Menu.MenuLogado();
+                        break;
 
+                        case "3":
+                        estoques.ExibirEstoque();
                         break;
                 }
             

@@ -36,6 +36,14 @@
     <Reference Include="ClientesDLL">
       <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
     </Reference>
+    <Reference Include="Estoque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
+    </Reference>
+    <Reference Include="ProdutoDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

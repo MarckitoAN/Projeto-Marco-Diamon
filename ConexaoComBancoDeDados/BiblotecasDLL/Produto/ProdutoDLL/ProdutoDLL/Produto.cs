@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Usuario;
+using Estoque;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace ProdutoDLL
 {
@@ -15,32 +19,21 @@ namespace ProdutoDLL
         public string Tipo { get; set; }
         public TamanhoCamiseta tamanho { get; set; }
         public string cor { get; set; }
+        public Estoques estoque { get; set; }
+        public int quantidadeEmEstoque { get; set; }
 
         public enum TamanhoCamiseta
         {
-            Pequeno,
+            Pequeno ,
             Medio,
             Grande,
-            ExtraGrande,
-
+            MuitoGrande,
+            G2,
+            G3,
+            G4,
+            G5,
         }
-        public enum TamanhoSapato
-        {
-            Size34 = 34,
-            Size35 = 35,
-            Size36 = 36,
-            Size37 = 37,
-            Size38 = 38,
-            Size39 = 39,
-            Size40 = 40,
-            Size41 = 41,
-            Size42 = 42,
-            Size43 = 43,
-            Size44 = 44,
-            Size45 = 45,
-            Size46 = 46,
 
-        }
 
         public void SetPreco(double novoPreco)
         {
@@ -75,9 +68,117 @@ namespace ProdutoDLL
             SetPreco(novoPreco);
             Console.WriteLine("Tipo do Produto:");
             this.Tipo = Console.ReadLine();
-            Console.WriteLine("Qual o Tamanho do P");
+            Console.WriteLine("Qual o Tamanho da Camiseta");
+            Console.WriteLine("Pequena (P)- 0");
+            Console.WriteLine("Media (M)- 1");
+            Console.WriteLine("Grande (G)- 2");
+            Console.WriteLine("ExtraGrande (GG) - 3");
+            Console.WriteLine("G2 - 4");
+            Console.WriteLine("G3 - 5");
+            Console.WriteLine("G4 - 6");
+            Console.WriteLine("G5 - 7");
+            int tipos = int.Parse(Console.ReadLine());
+
+            switch (tipos)
+            {
+                case 0: this.tamanho = TamanhoCamiseta.Pequeno; break;
+                case 1: this.tamanho = TamanhoCamiseta.Medio; break;
+                case 2: this.tamanho = TamanhoCamiseta.Grande; break;
+                case 3: this.tamanho = TamanhoCamiseta.MuitoGrande; break;
+                case 4: this.tamanho = TamanhoCamiseta.G2; break;
+                case 5: this.tamanho = TamanhoCamiseta.G3; break;
+                case 6: this.tamanho = TamanhoCamiseta.G4; break;
+                case 7: this.tamanho = TamanhoCamiseta.G5; break;
+            }
+
+            Console.WriteLine("Cor do Produto:");
+            this.cor = Console.ReadLine();
+
+            Console.WriteLine("Qual a Quantidade em Estoque:");
+            quantidadeEmEstoque = int.Parse(Console.ReadLine());
+            estoque = new Estoques
+            {
+                quantidade = quantidadeEmEstoque,
+                dataDeEntrada = DateTime.Today,
+                dataDeSaida = DateTime.Today
+            };
+
         }
 
+
+
+
+        public void AdicionarProdutos()
+        {
+            try
+            {
+
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql("insert into Produto (nome,descricao,marca,preco,tipo,tamanho,cor) values (@nome,@descricao,@marca,@preco,@tipo,@tamanho,@cor)");
+                Dao.AdicionarDados("@nome", this.Nome);
+                Dao.AdicionarDados("@descricao", this.Descricao);
+                Dao.AdicionarDados("@marca", this.Marca);
+                Dao.AdicionarDados("@preco", this.Preco);
+                Dao.AdicionarDados("@tipo", this.Tipo);
+                Dao.AdicionarDados("@tamanho", this.tamanho.ToString());
+                Dao.AdicionarDados("@cor", this.cor);
+                Dao.VerificarLinhasAfetadas();
+
+                int idObtido = Dao.PegarUltimoID();
+                string opps = "";
+                Dao.DefinirComandoSql("INSERT INTO Estoque (id_produto, quantidade, data_entrada, data_saida, motivo_saida) VALUES (@id_produto, @quantidade, @data_entrada, @data_saida, @motivo_saida)");
+                Dao.AdicionarDados("@id_produto", idObtido);
+                Dao.AdicionarDados("@quantidade", estoque.quantidade);
+                Dao.AdicionarDados("@data_entrada", estoque.dataDeEntrada);
+                Dao.AdicionarDados("@data_saida", estoque.dataDeSaida);
+                Dao.AdicionarDados("@motivo_saida", opps);
+                Dao.VerificarLinhasAfetadas();
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+        }
+
+        public void ExibirProdutos()
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.LeitorDeDados("Select *from Produto", ProcessarDadosProdutos);
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ProcessarDadosProdutos(MySqlDataReader reader)
+        {
+            if (reader.HasRows)
+            {
+
+                Console.WriteLine($"\nID Do Produto:{reader["id"]}");
+                Console.WriteLine($"Nome Do Produto:{reader["nome"]}");
+                Console.WriteLine($"Descricao Do Produto:{reader["descricao"]}");
+                Console.WriteLine($"Marca Do Produto:{reader["marca"]}");
+                Console.WriteLine($"Preco Do Produto:R${reader["preco"]}");
+                Console.WriteLine($"Tipo Do Produto:{reader["tipo"]}");
+                Console.WriteLine($"Tamanho Do Produto:{reader["tamanho"]}");
+                Console.WriteLine($"Cor Do Produto:{reader["cor"]}");
+            }
+            else
+            {
+                Console.WriteLine("Nao existem colunas.");
+            }
+        }
     }
 
 }

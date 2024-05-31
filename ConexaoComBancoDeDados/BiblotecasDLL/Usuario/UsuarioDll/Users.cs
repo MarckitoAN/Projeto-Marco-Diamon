@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Security.Cryptography;
-using System.Security.Policy;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Validacao;
 
 namespace Usuario
 {
-
     public class Users : IDisposable
     {
         Hash cripHash = new Hash(SHA512.Create());
@@ -20,9 +13,11 @@ namespace Usuario
         public string email { get; set; }
         public string cnpj { get; set; }
         private string senha { get; set; }
-        public string Senha { get { return cripHash.CriptografarSenha(senha); } set { senha = cripHash.CriptografarSenha(value); } }
-
-
+        public string Senha
+        {
+            get { return cripHash.CriptografarSenha(senha); }
+            set { senha = value; }
+        }
 
         public void GetDados()
         {
@@ -34,15 +29,15 @@ namespace Usuario
             this.email = Console.ReadLine();
             Console.WriteLine("Digite seu CNPJ");
             this.cnpj = Console.ReadLine();
+
             while (!ValidaCNPJ.IsCnpj(cnpj))
             {
-                Console.WriteLine("CNPJ invalido digite novamente:");
+                Console.WriteLine("CNPJ invalido, digite novamente:");
                 this.cnpj = Console.ReadLine();
-
             }
 
             Console.WriteLine("Digite sua Senha:");
-            Senha = Console.ReadLine();
+            senha = Console.ReadLine(); // Armazene a senha sem hashear aqui
         }
 
         public void Dispose()
@@ -50,28 +45,82 @@ namespace Usuario
             Console.WriteLine("Excluindo Objeto...");
         }
 
-
         public void CadastrarUsuario()
         {
             Dao.ConectarBancoDeDados();
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Inserindo no Banco de Dados:");
+
             try
             {
-
-            Dao.DefinirComandoSql("insert into User(nome_loja, contato, email, cnpj, senha_hash) values(@nome_loja, @contato, @email, @cnpj, @senha_hash)");
-            Dao.AdicionarDados("@nome_loja", this.nomeDaLoja);
-            Dao.AdicionarDados("@contato", this.contato);
-            Dao.AdicionarDados("@email", this.email);
-            Dao.AdicionarDados("@cnpj", this.cnpj);
-            Dao.AdicionarDados("@senha_hash", this.Senha);
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                Dao.DefinirComandoSql("INSERT INTO User(nome_loja, contato, email, cnpj, senha_hash) VALUES(@nome_loja, @contato, @email, @cnpj, @senha_hash)");
+                Dao.AdicionarDados("@nome_loja", this.nomeDaLoja);
+                Dao.AdicionarDados("@contato", this.contato);
+                Dao.AdicionarDados("@email", this.email);
+                Dao.AdicionarDados("@cnpj", this.cnpj);
+                Dao.AdicionarDados("@senha_hash", this.Senha);
+                Dao.VerificarLinhasAfetadas();
             }
-            Dao.VerificarLinhasAfetadas();
-            Console.ReadKey();
-            Dao.FecharConexao();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao inserir no banco de dados: " + ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
         }
+
+        /*
+        public void Login()
+        {
+            Dao.ConectarBancoDeDados();
+
+            Console.WriteLine("Digite seu Email:");
+            string email = Console.ReadLine();
+
+            Console.WriteLine("Digite sua Senha:");
+            string senha1 = Console.ReadLine();
+            string senha_hash = cripHash.CriptografarSenha(senha1);
+
+            try
+            {
+                string comando = "SELECT * FROM User WHERE email = '@Email' AND senha_hash = '@Senha'";
+                Dao.DefinirComandoSql(comando);
+                Dao.AdicionarDados("@Email", email);
+                Dao.AdicionarDados("@Senha", senha_hash);
+                Dao.LeitorDeDados(comando, ProcessarDadosUser);
+                Console.ReadKey();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao executar o comando de login: " + ex.Message);
+            }
+
+        }
+
+        public void ProcessarDadosUser(MySqlDataReader reader)
+        {
+            if (reader.HasRows)
+            {
+            
+                    Console.WriteLine($"Email: {reader["email"]}, Senha:{reader["senha"]}");
+                    Console.WriteLine("Login Feito com Sucesso");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Login Incorreto. Tente Novamente.");
+                Console.ReadKey();
+            }
+        }
+          
+         */
+     
+        
+
     }
 }

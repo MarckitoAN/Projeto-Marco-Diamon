@@ -39,3 +39,4 @@ C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\Bibl
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.csproj.Up2Date
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.dll
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\obj\Debug\UsuarioDll.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\MySql.Data.xml
