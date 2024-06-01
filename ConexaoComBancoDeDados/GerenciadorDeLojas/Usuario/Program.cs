@@ -19,6 +19,8 @@ namespace GerenciadorDeLojas
             Produto produtos = new Produto();
             Users users = new Users();
             Estoques estoques = new Estoques();
+            Clientes clientes = new Clientes();
+
             //string op = Menu.MenuCadastro();
             string op = Menu.MenuLogado();
 
@@ -46,6 +48,15 @@ namespace GerenciadorDeLojas
 
                         case "3":
                         estoques.ExibirEstoque();
+                        break;
+
+                    case "4":
+                        clientes.CadastrarCliente();
+                        clientes.AdicionarCliente();
+                        break;
+
+                    case "5":
+                        clientes.ExibirCliente();
                         break;
                 }
             

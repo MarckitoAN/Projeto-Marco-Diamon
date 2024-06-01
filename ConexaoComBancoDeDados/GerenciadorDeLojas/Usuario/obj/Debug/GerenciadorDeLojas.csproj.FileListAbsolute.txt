@@ -54,3 +54,6 @@ C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\Gere
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\ProdutoDLL.pdb
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\Estoque.dll
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\Estoque.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\ClientesDLL.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\ClientesDLL.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\GerenciadorDeLojas\Usuario\bin\Debug\MySql.Data.xml

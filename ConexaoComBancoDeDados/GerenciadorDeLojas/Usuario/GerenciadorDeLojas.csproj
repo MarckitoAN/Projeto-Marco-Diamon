@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClientesDLL">
-      <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
+    <Reference Include="ClientesDLL, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BiblotecasDLL\Cliente\ClentesDLL\bin\Debug\ClientesDLL.dll</HintPath>
     </Reference>
     <Reference Include="Estoque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

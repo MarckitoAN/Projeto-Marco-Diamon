@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Cliente\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6FA3B2A-CAF6-46DD-B030-7631EF9A8CDD}|ClentesDLL\\ClientesDLL.csproj|c:\\users\\gamer\\onedrive\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\cliente\\clentesdll\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6FA3B2A-CAF6-46DD-B030-7631EF9A8CDD}|ClentesDLL\\ClientesDLL.csproj|solutionrelative:clentesdll\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Cliente\\ClentesDLL\\Clientes.cs",
+              "RelativeDocumentMoniker": "ClentesDLL\\Clientes.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Cliente\\ClentesDLL\\Clientes.cs",
+              "RelativeToolTip": "ClentesDLL\\Clientes.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAUwHEAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:18:01.383Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
