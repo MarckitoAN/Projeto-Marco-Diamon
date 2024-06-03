@@ -71,7 +71,7 @@ namespace Usuario
             }
         }
 
-        /*
+        
         public void Login()
         {
             Dao.ConectarBancoDeDados();
@@ -85,11 +85,7 @@ namespace Usuario
 
             try
             {
-                string comando = "SELECT * FROM User WHERE email = '@Email' AND senha_hash = '@Senha'";
-                Dao.DefinirComandoSql(comando);
-                Dao.AdicionarDados("@Email", email);
-                Dao.AdicionarDados("@Senha", senha_hash);
-                Dao.LeitorDeDados(comando, ProcessarDadosUser);
+                Dao.LeitorDeDados($"SELECT * FROM User WHERE email = '{email}' AND senha_hash = '{senha_hash}'", ProcessarDadosUser);
                 Console.ReadKey();
 
 
@@ -106,10 +102,9 @@ namespace Usuario
         {
             if (reader.HasRows)
             {
-            
-                    Console.WriteLine($"Email: {reader["email"]}, Senha:{reader["senha"]}");
                     Console.WriteLine("Login Feito com Sucesso");
                 Console.ReadKey();
+                 
             }
             else
             {
@@ -118,7 +113,7 @@ namespace Usuario
             }
         }
           
-         */
+         
      
         
 

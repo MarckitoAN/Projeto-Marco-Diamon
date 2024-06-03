@@ -30,20 +30,24 @@ namespace GerenciadorDeLojas
                 switch (op)
                 {
                     case "1":
-                        /*
                         users.GetDados();
                         users.CadastrarUsuario();
                         op = Menu.MenuCadastro();
-                         */
-                        produtos.CadastroDeProdutos();
+                         
+                        /*  produtos.CadastroDeProdutos();
                         produtos.AdicionarProdutos();
                         op = Menu.MenuLogado();
+                        */
                         break;
 
 
                         case "2":
+                        users.Login();
+                        /*
                         produtos.ExibirProdutos();
                         op = Menu.MenuLogado();
+                        
+                        */
                         break;
 
                         case "3":
