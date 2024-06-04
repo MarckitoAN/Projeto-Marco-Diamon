@@ -36,5 +36,19 @@ namespace Estoque
             }
         }
 
+
+        public void AdicionarAoEstoque()
+        {
+            int idObtido = Dao.PegarUltimoID();
+            string opps = "";
+            Dao.DefinirComandoSql("INSERT INTO Estoque (id_produto, quantidade, data_entrada, data_saida, motivo_saida) VALUES (@id_produto, @quantidade, @data_entrada, @data_saida, @motivo_saida)");
+            Dao.AdicionarDados("@id_produto", idObtido);
+            Dao.AdicionarDados("@quantidade", quantidade);
+            Dao.AdicionarDados("@data_entrada",dataDeEntrada);
+            Dao.AdicionarDados("@data_saida", dataDeSaida);
+            Dao.AdicionarDados("@motivo_saida", opps);
+            Dao.VerificarLinhasAfetadas();
+        }
+
     }
 }

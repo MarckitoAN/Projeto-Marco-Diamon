@@ -33,21 +33,14 @@ namespace GerenciadorDeLojas
                         users.GetDados();
                         users.CadastrarUsuario();
                         op = Menu.MenuCadastro();
-                         
-                        /*  produtos.CadastroDeProdutos();
-                        produtos.AdicionarProdutos();
-                        op = Menu.MenuLogado();
+                     
                         */
                         break;
 
 
                         case "2":
-                        users.Login();
-                        /*
-                        produtos.ExibirProdutos();
-                        op = Menu.MenuLogado();
-                        
-                        */
+                        produtos.CadastroDeProdutos();
+                        produtos.AdicionarProdutos();
                         break;
 
                         case "3":
@@ -60,7 +53,11 @@ namespace GerenciadorDeLojas
                         break;
 
                     case "5":
-                        clientes.ExibirCliente();
+                        produtos.RemoverPedido();
+                        break;
+
+                    case "6":
+                        produtos.AtualizarProduto();
                         break;
                 }
             

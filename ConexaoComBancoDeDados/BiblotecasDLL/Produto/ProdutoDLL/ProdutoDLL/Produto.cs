@@ -24,7 +24,7 @@ namespace ProdutoDLL
 
         public enum TamanhoCamiseta
         {
-            Pequeno ,
+            Pequeno,
             Medio,
             Grande,
             MuitoGrande,
@@ -123,16 +123,7 @@ namespace ProdutoDLL
                 Dao.AdicionarDados("@tamanho", this.tamanho.ToString());
                 Dao.AdicionarDados("@cor", this.cor);
                 Dao.VerificarLinhasAfetadas();
-
-                int idObtido = Dao.PegarUltimoID();
-                string opps = "";
-                Dao.DefinirComandoSql("INSERT INTO Estoque (id_produto, quantidade, data_entrada, data_saida, motivo_saida) VALUES (@id_produto, @quantidade, @data_entrada, @data_saida, @motivo_saida)");
-                Dao.AdicionarDados("@id_produto", idObtido);
-                Dao.AdicionarDados("@quantidade", estoque.quantidade);
-                Dao.AdicionarDados("@data_entrada", estoque.dataDeEntrada);
-                Dao.AdicionarDados("@data_saida", estoque.dataDeSaida);
-                Dao.AdicionarDados("@motivo_saida", opps);
-                Dao.VerificarLinhasAfetadas();
+                estoque.AdicionarAoEstoque();
 
 
             }
@@ -179,6 +170,63 @@ namespace ProdutoDLL
                 Console.WriteLine("Nao existem colunas.");
             }
         }
+
+
+        public void RemoverPedido()
+        {
+            try
+            {
+
+                Dao.ConectarBancoDeDados();
+                ExibirProdutos();
+                Console.WriteLine("\nInsira o Id do Produto que deseja Remover:");
+                int idProduto = int.Parse(Console.ReadLine());
+
+                Dao.DefinirComandoSql($"delete FROM Estoque WHERE id_produto = {idProduto}");
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"delete FROM Produto WHERE id = {idProduto}");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+        }
+       /* public void AtualizarProduto()
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                ExibirProdutos();
+                Console.WriteLine("\nInsira o Id do Produto que deseja Remover:");
+                int idProduto = int.Parse(Console.ReadLine());
+
+                Dao.DefinirComandoSql("UPDATE Produto SET nome = @nome, descricao = @descricao, marca = @marca, preco = @preco, tipo = @tipo, tamanho = @tamanho, cor = @cor WHERE id = @id");
+                Dao.AdicionarDados("@id", idProduto);
+                Dao.AdicionarDados("@nome", this.Nome);
+                Dao.AdicionarDados("@descricao", this.Descricao);
+                Dao.AdicionarDados("@marca", this.Marca);
+                Dao.AdicionarDados("@preco", this.Preco);
+                Dao.AdicionarDados("@tipo", this.Tipo);
+                Dao.AdicionarDados("@tamanho", this.tamanho.ToString());
+                Dao.AdicionarDados("@cor", this.cor);
+                Dao.VerificarLinhasAfetadas();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+       }
+       */
+        
     }
 
 }
