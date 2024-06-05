@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|c:\\users\\gamer\\source\\repos\\projetojeffersonadm\\projetojeffersonadm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|solutionrelative:projetojeffersonadm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|c:\\users\\gamer\\source\\repos\\projetojeffersonadm\\projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|solutionrelative:projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|c:\\users\\gamer\\source\\repos\\projetojeffersonadm\\projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\ProjetoJeffersonADM.csproj|solutionrelative:projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Registro.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "ToolTip": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAwwJYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:59:27.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Registro.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\Registro\\Registro.cs",
+              "ToolTip": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\Registro\\Registro.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:59:24.173Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Program.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\Program.cs",
+              "ToolTip": "C:\\Users\\gamer\\source\\repos\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Program.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:28:30.684Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
