@@ -45,17 +45,20 @@
     <Reference Include="ClientesDLL">
       <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
     </Reference>
-    <Reference Include="Dao">
-      <HintPath>..\..\..\..\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+    <Reference Include="Dao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
     </Reference>
-    <Reference Include="Estoque">
-      <HintPath>..\..\..\..\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
+    <Reference Include="Estoque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>E:\Aplicativos\Conector MySQl\v4.8\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="ProdutoDLL">
-      <HintPath>..\..\..\..\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
+    <Reference Include="ProdutoDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,11 +72,67 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UsuarioDll">
-      <HintPath>..\..\..\..\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll</HintPath>
+    <Reference Include="UsuarioDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginID.cs" />
+    <Compile Include="PaginaInicial\Clientes\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Clientes\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Clientes\EditarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Clientes\EditarClientes.Designer.cs">
+      <DependentUpon>EditarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Estoque\EditarEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Estoque\EditarEstoque.Designer.cs">
+      <DependentUpon>EditarEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Estoque\Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Estoque\Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\AdicionarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\AdicionarProdutos.Designer.cs">
+      <DependentUpon>AdicionarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\EditarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\EditarProdutos.Designer.cs">
+      <DependentUpon>EditarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Produtos\Produtos.Designer.cs">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +141,39 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro\sucess.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro\sucess.Designer.cs">
-      <DependentUpon>sucess.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Login\Login.aa.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.ff-Adlm-GW.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Clientes\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Clientes\EditarClientes.resx">
+      <DependentUpon>EditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Estoque\EditarEstoque.resx">
+      <DependentUpon>EditarEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Estoque\Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Produtos\AdicionarProdutos.resx">
+      <DependentUpon>AdicionarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Produtos\EditarProdutos.resx">
+      <DependentUpon>EditarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Produtos\Produtos.resx">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,9 +188,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro\sucess.resx">
-      <DependentUpon>sucess.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +204,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-house1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clientes-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cliente-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prancheta-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-carrinho-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,9 +12,6 @@ namespace ProjetoJeffersonADM
         [STAThread]
         static void Main()
         {
-            string connectionString = "server=localhost;port=3306;Database=GerenciamentoDeLojasADM;uid=root;pwd='';";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-        
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Registro());

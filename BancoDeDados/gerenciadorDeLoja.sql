@@ -1,11 +1,11 @@
-create database GerenciamentoDeLojasADM;
+create database GerenciadorLojasPraADM;
 
-use GerenciamentoDeLojasADM;
-
+use GerenciadorLojasPraADM;
 
 CREATE TABLE Cliente
 (
     id       INT AUTO_INCREMENT,
+    id_user  integer,
     nome     VARCHAR(100) NOT NULL,
     rg       VARCHAR(20),
     cpf      VARCHAR(20),
@@ -17,33 +17,39 @@ CREATE TABLE Cliente
     email    VARCHAR(100) NOT NULL,
     senha    VARCHAR(100) NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT unique_email UNIQUE (email)
+    CONSTRAINT unique_email UNIQUE (email),
+    constraint id_userFK2 foreign key (id_user) references User (id)
+
 );
 
 create table Produto
 (
     id        integer auto_increment,
+    id_user   integer,
     nome      varchar(45)    not null,
     descricao varchar(255),
     marca     varchar(45)    not null,
     preco     decimal(10, 2) not null,
     tipo      varchar(45)    not null,
-    tamanho   varchar(5)     not null,
+    tamanho   varchar(50)    not null,
     cor       varchar(25)    not null,
-    primary key (id)
+    primary key (id),
+    constraint id_userFK foreign key (id_user) references User (id)
 );
 
-show tables;
 
 CREATE TABLE Pedido_Produto
 (
     id_pedido_produto INTEGER UNSIGNED AUTO_INCREMENT,
     id_pedido         INTEGER,
+    id_user           integer,
     id_produto        INTEGER,
     quantidade        int,
     PRIMARY KEY (id_pedido_produto),
     CONSTRAINT id_produto_fk FOREIGN KEY (id_produto) REFERENCES Produto (id),
-    constraint id_pedido_fk foreign key (id_pedido) references Pedido (id)
+    constraint id_pedido_fk foreign key (id_pedido) references Pedido (id),
+    constraint id_userFK3 foreign key (id_user) references User (id)
+
 );
 
 
@@ -51,13 +57,16 @@ CREATE TABLE Pedido_Produto
 CREATE TABLE Estoque
 (
     id           INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    id_user      integer,
     id_produto   INTEGER,
     Quantidade   INTEGER UNSIGNED,
-    Data_Entrada DATE,
-    Data_Saida   DATE,
+    Data_Entrada DATETIME,
+    Data_Saida   DATETIME,
     Motivo_Saida VARCHAR(45),
     PRIMARY KEY (id),
-    constraint fk_pk_estoque foreign key (id_produto) references Produto (id)
+    constraint fk_pk_estoque foreign key (id_produto) references Produto (id),
+    constraint id_userFK4 foreign key (id_user) references User (id)
+
 );
 
 
@@ -65,13 +74,16 @@ CREATE TABLE Pedido
 (
     id              INTEGER AUTO_INCREMENT,
     data            DATE,
+    id_user         integer,
     id_cliente      integer,
     forma_pagamento varchar(200),
     parcelas        int,
     valor_total     DECIMAL(10, 2),
     PRIMARY KEY (id),
     CONSTRAINT fk_id_clientePedido FOREIGN KEY (id_cliente) REFERENCES Cliente (id),
-    CONSTRAINT valor_check check (valor_total >= 0)
+    CONSTRAINT valor_check check (valor_total >= 0),
+    constraint id_userFK5 foreign key (id_user) references User (id)
+
 );
 
 create table User
@@ -85,6 +97,4 @@ create table User
     primary key (id)
 );
 
-select *from User;
 
-drop table User;

@@ -13,10 +13,16 @@ namespace Usuario
         public string email { get; set; }
         public string cnpj { get; set; }
         private string senha { get; set; }
-        public string Senha
+
+        public string Senha {set { senha = value; } }
+
+        public Users(string nomeDaLoja, string contato, string email, string cnpj, string senha)
         {
-            get { return cripHash.CriptografarSenha(senha); }
-            set { senha = value; }
+            this.nomeDaLoja = nomeDaLoja;
+            this.contato = contato;
+            this.email = email;
+            this.cnpj = cnpj;
+            this.Senha = senha;
         }
 
         public void GetDados()
@@ -37,7 +43,7 @@ namespace Usuario
             }
 
             Console.WriteLine("Digite sua Senha:");
-            senha = Console.ReadLine(); // Armazene a senha sem hashear aqui
+            senha = Console.ReadLine();
         }
 
         public void Dispose()
@@ -58,7 +64,7 @@ namespace Usuario
                 Dao.AdicionarDados("@contato", this.contato);
                 Dao.AdicionarDados("@email", this.email);
                 Dao.AdicionarDados("@cnpj", this.cnpj);
-                Dao.AdicionarDados("@senha_hash", this.Senha);
+                Dao.AdicionarDados("@senha_hash", this.senha);
                 Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)

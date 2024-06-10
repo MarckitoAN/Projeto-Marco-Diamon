@@ -12,6 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
 using Validacao;
 using System.Threading;
+using ProjetoJeffersonADM.Logins;
+using Mysqlx;
+using Bunifu.UI.WinForms;
 
 namespace ProjetoJeffersonADM
 {
@@ -20,6 +23,7 @@ namespace ProjetoJeffersonADM
         private PictureBox pictureBox1;
         public Registro()
         {
+            
             InitializeComponent();
         }
 
@@ -68,72 +72,70 @@ namespace ProjetoJeffersonADM
 
         }
 
-        private void cnpj_field_TextChanged_1(object sender, EventArgs e)
+       
+        public void cnpj_field_TextChanged_1(object sender, EventArgs e)
         {
 
-            string text = cnpj_field.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-
-            if (text.Length > 2)
-                text = text.Insert(2, ".");
-            if (text.Length > 6)
-                text = text.Insert(6, ".");
-            if (text.Length > 10)
-                text = text.Insert(10, "/");
-
-            if (text.Length > 15)
-                text = text.Insert(15, "-");
-
-            cnpj_field.Text = text;
-            cnpj_field.SelectionStart = cnpj_field.Text.Length;
+            FormatarCNPJ();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
         }
-
+        
         private void contato_field_TextChanged(object sender, EventArgs e)
         {
-            string text = contato_field.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-
-            if (text.Length > 2)
-                text = text.Insert(2, "-");
-            if (text.Length > 8)
-                text = text.Insert(8, "-");
-
-
-            contato_field.Text = text;
-            contato_field.SelectionStart = contato_field.Text.Length;
+            FormatarTelefone();
         }
 
         private void register_button_Click(object sender, EventArgs e)
         {
-            Hash hash = new Hash(SHA512.Create());
-            Users users = new Users();
 
             try
             {
-                if (password_field.Text.Length < 8)
+                if (String.IsNullOrEmpty(nomeLoja_field.Text))
                 {
-                    MessageBox.Show("A senha deve conter pelo menos 8 caracteres.", "Erro de senha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bunifuSnackbar3.Show(this, "O Nome da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
 
-                if (!ValidaCNPJ.IsCnpj(cnpj_field.Text))
+
+
+                if (password_field.Text.Length < 8 || String.IsNullOrEmpty(password_field.Text))
                 {
-                    MessageBox.Show("Insira um CNPJ Valido.", "CNPJ Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bunifuSnackbar1.Show(this, "A senha deve conter pelo menos 8 caracteres.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+
+
+                if (String.IsNullOrEmpty(contato_field.Text))
+                {
+                    bunifuSnackbar5.Show(this, "Contato da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+
+                }
+
+                if (String.IsNullOrEmpty(email_field.Text))
+                {
+                    bunifuSnackbar4.Show(this, "Email da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+
+                }
+
+                if (!ValidaCNPJ.IsCnpj(cnpj_field.Text) || String.IsNullOrEmpty(cnpj_field.Text))
+                {
+                    bunifuSnackbar2.Show(this, "Insira um CNPJ Valido..", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+
                     return;
                 }
 
                 Dao.ConectarBancoDeDados();
-                users.nomeDaLoja = nomeLoja_field.Text;
-                users.cnpj = cnpj_field.Text;
-                users.contato = contato_field.Text;
-                users.email = email_field.Text;
-                users.Senha = hash.CriptografarSenha(password_field.Text);
+                Users users = new Users(nomeLoja_field.Text, contato_field.Text, email_field.Text,cnpj_field.Text,password_field.Text);
                 users.CadastrarUsuario();
-                Thread.Sleep(2000);
-                sucess sucesso = new sucess();
-                sucesso.ShowDialog();
+                bunifuSnackbar6.Show(this, "Login Feito com Sucesso..", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
+                Thread.Sleep(1000);
+                Login login = new Login();
+                this.Hide();
+                login.ShowDialog();
 
             }
             catch (Exception ex)
@@ -150,5 +152,46 @@ namespace ProjetoJeffersonADM
         {
 
         }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+        }
+
+
+
+public void FormatarCNPJ()
+{
+            string text = cnpj_field.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+            if (text.Length > 2)
+                text = text.Insert(2, ".");
+            if (text.Length > 6)
+                text = text.Insert(6, ".");
+            if (text.Length > 10)
+                text = text.Insert(10, "/");
+            if (text.Length > 15)
+                text = text.Insert(15, "-");
+            cnpj_field.Text = text;
+            cnpj_field.SelectionStart = cnpj_field.Text.Length;
+        }
+
+
+        public void FormatarTelefone()
+        {
+            string text = contato_field.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+
+            if (text.Length > 2)
+                text = text.Insert(2, "-");
+            if (text.Length > 8)
+                text = text.Insert(8, "-");
+
+
+            contato_field.Text = text;
+            contato_field.SelectionStart = contato_field.Text.Length;
+        }
+
+
     }
 }
