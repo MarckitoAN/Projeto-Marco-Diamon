@@ -11,14 +11,13 @@ namespace Estoque
         public DateTime dataDeEntrada { get; set; }
         public DateTime dataDeSaida { get; set; }
 
-        public void AdicionarAoEstoque(int idUser,int id)
+        public void AdicionarAoEstoque(int id)
         {
             try
             {
                 Dao.ConectarBancoDeDados();
                 string valor = "Entrada";
-                Dao.DefinirComandoSql("INSERT INTO Estoque (id_user,id_produto, quantidade, data_entrada, data_saida, motivo_saida) VALUES (@id_user,@id_produto, @quantidade, @data_entrada, @data_saida, @motivo_saida)");
-                Dao.AdicionarDados("@id_user", idUser);
+                Dao.DefinirComandoSql("INSERT INTO Estoque (id_produto, quantidade, data_entrada, data_saida, motivo_saida) VALUES (@id_produto, @quantidade, @data_entrada, @data_saida, @motivo_saida)");
                 Dao.AdicionarDados("@id_produto", id);
                 Dao.AdicionarDados("@quantidade", quantidade);
                 Dao.AdicionarDados("@data_entrada", dataDeEntrada);

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\",
+  "WorkspaceRootPath": "C:\\Users\\Tecnico\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30ED4919-1CC9-4D1C-A78D-7BDE2F6F694F}|ProdutoDLL\\ProdutoDLL.csproj|c:\\users\\gamer\\onedrive\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\produto\\produtodll\\produtodll\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30ED4919-1CC9-4D1C-A78D-7BDE2F6F694F}|ProdutoDLL\\ProdutoDLL.csproj|c:\\users\\tecnico\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\produto\\produtodll\\produtodll\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30ED4919-1CC9-4D1C-A78D-7BDE2F6F694F}|ProdutoDLL\\ProdutoDLL.csproj|solutionrelative:produtodll\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,21 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Produto.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\ProdutoDLL\\Produto.cs",
+              "DocumentMoniker": "C:\\Users\\Tecnico\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\ProdutoDLL\\Produto.cs",
               "RelativeDocumentMoniker": "ProdutoDLL\\Produto.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\ProdutoDLL\\Produto.cs",
+              "ToolTip": "C:\\Users\\Tecnico\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Produto\\ProdutoDLL\\ProdutoDLL\\Produto.cs",
               "RelativeToolTip": "ProdutoDLL\\Produto.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAkwEoAAAAgAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAwwDkAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T01:00:32.399Z",
               "EditorCaption": ""

@@ -84,7 +84,7 @@ namespace ProjetoJeffersonADM
             double preco = double.Parse(precoProd_txt.Text);
             int estoque = int.Parse(estoque_txt.Text);
             Produto produtos = new Produto(nomeProd_txt.Text,descriProd_txt.Text,marcaProd_txt.Text,preco,tipoProd_txt.Text,tamanhoProd_txt.Text,corProd_txt.Text,estoque);
-            produtos.AdicionarProdutos(2);
+            produtos.AdicionarProdutos();
             this.Hide();
             }catch(Exception ex)
             {

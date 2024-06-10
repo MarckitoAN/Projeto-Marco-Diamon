@@ -8,6 +8,6 @@ namespace ProjetoJeffersonADM
 {
     public static class LoginID
     {
-        public static Int32 IdUser;
+        public static int IdUser = 1;
     }
 }

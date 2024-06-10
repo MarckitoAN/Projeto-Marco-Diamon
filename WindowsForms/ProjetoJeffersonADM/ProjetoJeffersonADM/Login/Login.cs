@@ -94,11 +94,7 @@ namespace ProjetoJeffersonADM.Logins
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            TelaProdutos opa = new TelaProdutos();
-            opa.Show();
-            Estoque estoque = new Estoque();
-            estoque.Show();
-            /*
+            
              if(String.IsNullOrEmpty(loginEmail_txt.Text) )
             {
                 bunifuSnackbar2.Show(this, "Campo de Email vazio!", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
@@ -118,6 +114,8 @@ namespace ProjetoJeffersonADM.Logins
                 
                 bunifuTransition1.HideSync(this);
                 main.Show();
+                Estoque estoque = new Estoque();
+                estoque.Show();
                 Console.WriteLine(LoginID.IdUser);
             }
             else
@@ -127,7 +125,7 @@ namespace ProjetoJeffersonADM.Logins
             }
             
             Dao.FecharConexao();
-             */
+             
 
         }
 

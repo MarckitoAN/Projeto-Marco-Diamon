@@ -53,13 +53,12 @@ namespace ProdutoDLL
             Preco = novoPreco;
         }
 
-        public void AdicionarProdutos(int idUser)
+        public void AdicionarProdutos()
         {
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, cor) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho, @cor)");
-                Dao.AdicionarDados("@id_user", idUser);
+                Dao.DefinirComandoSql("INSERT INTO Produto (nome, descricao, marca, preco, tipo, tamanho, cor) VALUES (@nome, @descricao, @marca, @preco, @tipo, @tamanho, @cor)");
                 Dao.AdicionarDados("@nome", Nome);
                 Dao.AdicionarDados("@descricao", Descricao);
                 Dao.AdicionarDados("@marca", Marca);
@@ -69,7 +68,7 @@ namespace ProdutoDLL
                 Dao.AdicionarDados("@cor", cor);
                 Dao.VerificarLinhasAfetadas();
                 int idProduto = Dao.ProdutoID(Nome);
-                estoque.AdicionarAoEstoque(idUser,idProduto);
+                estoque.AdicionarAoEstoque(idProduto);
                 Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
