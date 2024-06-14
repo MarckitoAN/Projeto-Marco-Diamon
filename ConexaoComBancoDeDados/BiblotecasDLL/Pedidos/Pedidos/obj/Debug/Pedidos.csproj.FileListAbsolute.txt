@@ -1,0 +1,15 @@
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.AssemblyReference.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.CoreCompileInputs.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Pedidos.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Pedidos.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\MySql.Data.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\System.Memory.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\System.Buffers.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\MySql.Data.xml
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.Up2Date
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\obj\Debug\Pedidos.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\obj\Debug\Pedidos.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Estoque;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace ProjetoJeffersonADM
 {
     public partial class EditarEstoque : Form
     {
+        Estoques estoques;
         public EditarEstoque(string id, string idProduto, string nome,string marca,string tipo,string entrada,string saida,string quantidade)
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace ProjetoJeffersonADM
             int quantidade = int.Parse(quantidade_txt.Text);
             DateTime entradaEHora = DateTime.Parse(entrada_txt.Text);
             DateTime saidaEHora = DateTime.Parse(saida_txt.Text);
-            Dao.AtualizarEstoque(idProduto, nomeProd_txt.Text, quantidade, tipoProd_txt.Text, entradaEHora, saidaEHora, marcaProd_txt.Text);
+            estoques.AtualizarEstoque(idProduto, nomeProd_txt.Text, quantidade, tipoProd_txt.Text, entradaEHora, saidaEHora, marcaProd_txt.Text);
             this.Hide();
 
         }

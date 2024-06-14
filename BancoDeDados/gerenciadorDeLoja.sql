@@ -38,6 +38,11 @@ create table Produto
 );
 
 
+
+INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, cor)
+VALUES (3, 'Smartphone', 'Smartphone Android', 'Samsung', 499.99, 'Eletrônico', 'NULL', 'Azul');
+
+
 CREATE TABLE Pedido_Produto
 (
     id_pedido_produto INTEGER UNSIGNED AUTO_INCREMENT,

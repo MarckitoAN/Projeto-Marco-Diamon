@@ -24,40 +24,21 @@ namespace ClientesDLL
         public string email { get; set; }
         private string senha;
 
-        public string Senha
+        public Clientes(string nome, string rg, string cpf, string telefone, string rua, string bairro, string cidade, string estado, string email, string senha)
         {
-            get { return hash.CriptografarSenha(senha); }
-            set { senha = hash.CriptografarSenha(value); }
+            this.nome = nome;
+            this.rg = rg;
+            this.cpf = cpf;
+            this.telefone = telefone;
+            this.rua = rua;
+            this.bairro = bairro;
+            this.cidade = cidade;
+            this.estado = estado;
+            this.email = email;
+            this.senha = senha;
         }
 
-        private String Rg { set { this.rg = value; } }
-        private String Cpf { set { this.cpf = value; } }
 
-
-
-        public void CadastrarCliente()
-        {
-            Console.WriteLine("Digite o Nome do Cliente:");
-            this.nome = Console.ReadLine();
-            Console.WriteLine("RG do Cliente:");
-            Rg = Console.ReadLine();
-            Console.WriteLine("CPF do Cliente:");
-            Cpf = Console.ReadLine();
-            Console.WriteLine("Telfone do Cliente:");
-            this.telefone = Console.ReadLine();
-            Console.WriteLine("Rua do Cliente:");
-            this.rua = Console.ReadLine();
-            Console.WriteLine("Bairro do Cliente:");
-            this.bairro = Console.ReadLine();
-            Console.WriteLine("Cidade do Cliente:");
-            this.cidade = Console.ReadLine();
-            Console.WriteLine("Estado do Cliente:");
-            this.estado = Console.ReadLine();
-            Console.WriteLine("Email do Cliente:");
-            this.email = Console.ReadLine();
-            Console.WriteLine("Senha do Cliente:");
-            this.Senha = Console.ReadLine();
-        }
 
 
         public void AdicionarCliente()
@@ -78,17 +59,37 @@ namespace ClientesDLL
             Dao.FecharConexao();
         }
 
-        public void ExibirCliente()
+
+        public  void RemoverClientes(int id)
         {
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.LeitorDeDados("select *from Cliente", ProcessarDadosCliente);
-                Console.ReadKey();
+                Dao.DefinirComandoSql($"delete from Cliente where id = {id}");
+                Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+
+            }
+        }
+
+        public  void AtualizarCliente(int id, string nome, string rg, string cpf, string telefone, string rua, string bairro, string cidade, string estado, string email)
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"UPDATE Cliente SET nome = '{nome}', rg = '{rg}', cpf = '{cpf}', telefone = '{telefone}', rua = '{rua}',bairro = '{bairro}', cidade = '{cidade}', estado = '{estado}', email = '{email}' where id = {id}");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -96,28 +97,5 @@ namespace ClientesDLL
             }
         }
 
-
-        public void ProcessarDadosCliente(MySqlDataReader reader)
-        {
-            if (reader.HasRows)
-            {
-                Console.WriteLine($"\nId do Cliente:{reader["id"]}\n" +
-                    $"Nome do Cliente:{reader["nome"]}\n" +
-                    $"RG do Cliente:{reader["rg"]} \n" +
-                    $"CPF do Cliente:{reader["cpf"]} \n" +
-                    $"Telefone do Cliente{reader["telefone"]} \n" +
-                    $"Endereco do Cliente:\n" +
-                    $"\nRua do Cliente:{reader["rua"]}  \n" +
-                    $"Bairro do Cliente:{reader["bairro"]}  \n" +
-                    $"Cidade do Cliente:{reader["cidade"]}  \n" +
-                    $"Estado do Cliente:{reader["estado"]}  \n" +
-                    $"Email do Cliente:{reader["email"]}  \n");
-
-            }
-            else
-            {
-                Console.WriteLine("Nao ha colunas a exibir");
-            }
-        }
     }
 }

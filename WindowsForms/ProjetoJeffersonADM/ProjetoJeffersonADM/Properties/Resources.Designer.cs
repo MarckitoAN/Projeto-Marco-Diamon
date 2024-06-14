@@ -63,6 +63,36 @@ namespace ProjetoJeffersonADM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _360_F_562360948_lhJcQwyk81IpPlwdmCzJIeGGvb4YtPJE {
+            get {
+                object obj = ResourceManager.GetObject("360_F_562360948_lhJcQwyk81IpPlwdmCzJIeGGvb4YtPJE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9129514 {
+            get {
+                object obj = ResourceManager.GetObject("9129514", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_carrinho_90 {
             get {
                 object obj = ResourceManager.GetObject("icons8-carrinho-90", resourceCulture);
@@ -103,6 +133,16 @@ namespace ProjetoJeffersonADM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_home_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-64", resourceCulture);
@@ -116,6 +156,16 @@ namespace ProjetoJeffersonADM.Properties {
         internal static System.Drawing.Bitmap icons8_prancheta_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-prancheta-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

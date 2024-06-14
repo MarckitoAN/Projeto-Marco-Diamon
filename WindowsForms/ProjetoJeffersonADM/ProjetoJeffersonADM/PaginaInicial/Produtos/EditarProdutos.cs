@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ProdutoDLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,8 +15,20 @@ namespace ProjetoJeffersonADM
 {
     public partial class EditarProdutos : Form
     {
-        public EditarProdutos(string id,string nome,string descricao,string marca,string preco,string tipo,string tamanho,string cor)
+        Main main = new Main();
+        Produto produto;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+      int nLeftRect,
+      int nTopRect,
+      int nRightRect,
+      int nBottomRect,
+      int nWidthEllipse,
+      int nHeightEllipse
+      );
+        public EditarProdutos(string id,string nome,string descricao,string marca,string preco,string tipo,string tamanho)
         {
+            
             InitializeComponent();
             idProd_txt.Text = id;
             nomeProd_txt.Text = nome;
@@ -23,7 +37,8 @@ namespace ProjetoJeffersonADM
             precoProd_txt.Text = preco;
             tipoProd_txt.Text = tipo;
             tamanhoProd_txt.Text = tamanho;
-            corProd_txt.Text = cor;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
 
         }
 
@@ -77,19 +92,33 @@ namespace ProjetoJeffersonADM
 
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+
+        private void EditarProdutos_Load_1(object sender, EventArgs e)
         {
-            decimal valorConvertido = decimal.Parse(precoProd_txt.Text);
+        }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+            double valorConvertido = double.Parse(precoProd_txt.Text);
+            decimal valorConvertidoDecmal = decimal.Parse(precoProd_txt.Text);
             int idConvertido = int.Parse(idProd_txt.Text);
 
             try
             {
-            Dao.AtualizarProdutos(idConvertido, nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, valorConvertido, tipoProd_txt.Text, tamanhoProd_txt.Text, corProd_txt.Text);
+                produto = new Produto(nomeProd_txt.Text,descriProd_txt.Text, marcaProd_txt.Text, valorConvertido, tipoProd_txt.Text, tamanhoProd_txt.Text,0);
+                produto.AtualizarProdutos(idConvertido, nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, valorConvertidoDecmal, tipoProd_txt.Text, tamanhoProd_txt.Text);
                 this.Hide();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main.Show();
         }
     }
 }

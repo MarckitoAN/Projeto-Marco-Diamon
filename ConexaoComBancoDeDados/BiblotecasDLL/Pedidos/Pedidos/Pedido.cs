@@ -9,38 +9,67 @@ namespace Pedidos
 {
     public class Pedido
     {
-        public int id { get; set; }
         public DateTime dataPedido;
         public int idCliente { get; set; }
+        public int idProduto { get; set; }
+        public int idUser { get; set; }
         public int numerosDeParcelas { get; set; }
+        public int quantidade { get; set; }
         public double valorTotal { get; set; }
 
-        public Pagamentos metodoDePagamento;
+        public string metodoDePagamento;
 
 
-        public Pedido()
+        public Pedido(DateTime dataPedido, int idCliente, int idProduto, int idUser, int numerosDeParcelas, int quantidade, double valorTotal, string metodoDePagamento)
         {
-            dataPedido = DateTime.Now;
+            this.dataPedido = dataPedido;
+            this.idCliente = idCliente;
+            this.idProduto = idProduto;
+            this.idUser = idUser;
+            this.numerosDeParcelas = numerosDeParcelas;
+            this.quantidade = quantidade;
+            this.valorTotal = valorTotal;
+            this.metodoDePagamento = metodoDePagamento;
+
         }
 
-        public enum Pagamentos
+        public void CriarPedido(int User)
         {
-            CartaoDeCredito,
-            CartaoDeDebito,
-            Pix,
-            Boleto,
-        }
-
-
-        public void CriarPedido()
-        {
-            Dao.DefinirComandoSql("INSERT INTO Pedidos(data_pedido, id_cliente, numeros_de_parcelas, valor_total, metodo_de_pagamento) VALUES(@data_pedido, @id_cliente, @numeros_de_parcelas, @valor_total, @metodo_de_pagamento)");
-            Dao.AdicionarDados("@data_pedido", this.dataPedido);
+            try
+            {
+                Dao.ConectarBancoDeDados();
+            string data = dataPedido.ToString("yyyy-MM-dd HH:mm:ss");
+            Dao.DefinirComandoSql("INSERT INTO Pedido(data, id_cliente,id_user,id_produto, parcelas, valor_total, forma_pagamento) VALUES(@data, @id_cliente,@id_user,@id_produto,@parcelas,@valor_total, @forma_pagamento)");
+            Dao.AdicionarDados("@data", data);
             Dao.AdicionarDados("@id_cliente", this.idCliente);
-            Dao.AdicionarDados("@numeros_de_parcelas", this.numerosDeParcelas);
+            Dao.AdicionarDados("@id_produto", this.idProduto);
+            Dao.AdicionarDados("@id_user", User);
+            Dao.AdicionarDados("@parcelas", this.numerosDeParcelas);
+            Dao.AdicionarDados("@quantidade", this.quantidade);
             Dao.AdicionarDados("@valor_total", this.valorTotal);
-            Dao.AdicionarDados("@metodo_de_pagamento", this.metodoDePagamento.ToString());
+            Dao.AdicionarDados("@forma_pagamento", this.metodoDePagamento);
             Dao.VerificarLinhasAfetadas();
+            int idPedido = Dao.PegarUltimoID();
+            Dao.DefinirComandoSql("INSERT INTO Pedido_Produto(id_pedido, id_user, id_produto, quantidade) VALUES (@id_pedido, @id_user, @id_produto, @quantidade)");
+            Dao.AdicionarDados("@id_pedido", idPedido);
+            Dao.AdicionarDados("@id_user", User);
+            Dao.AdicionarDados("@id_produto", idProduto);
+            Dao.AdicionarDados("@quantidade", quantidade);
+            Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+
         }
+
+
+
     }
-}
+    }
+

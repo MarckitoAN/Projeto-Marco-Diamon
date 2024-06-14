@@ -44,3 +44,10 @@ C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffers
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.EditarProdutos.resources
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.Estoque.resources
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.EditarEstoque.resources
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.Pedidos.resources
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.AdicionarPedido.resources
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\Pedidos.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\Pedidos.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.PaginaInicial.Clientes.AdicionarCliente.resources
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\ClientesDLL.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\ClientesDLL.pdb

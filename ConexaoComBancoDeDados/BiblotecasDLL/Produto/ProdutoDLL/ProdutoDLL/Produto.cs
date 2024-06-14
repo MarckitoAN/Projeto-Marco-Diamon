@@ -14,10 +14,9 @@ namespace ProdutoDLL
         public double Preco { get; private set; }
         public string Tipo { get; set; }
         public string tamanho { get; set; }
-        public string cor { get; set; }
         public int quantidadeEmEstoque { get; set; }
 
-        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, string cor, int quantidade)
+        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, int quantidade)
         {
             Nome = nome;
             Descricao = descricao;
@@ -25,7 +24,6 @@ namespace ProdutoDLL
             this.Preco = Preco;
             Tipo = tipo;
             this.tamanho = tamanho;
-            this.cor = cor;
             quantidadeEmEstoque = quantidade;
             estoque = new Estoques
             {
@@ -58,7 +56,7 @@ namespace ProdutoDLL
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, cor) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho, @cor)");
+                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho)");
                 Dao.AdicionarDados("@id_user", idUser);
                 Dao.AdicionarDados("@nome", Nome);
                 Dao.AdicionarDados("@descricao", Descricao);
@@ -66,7 +64,6 @@ namespace ProdutoDLL
                 Dao.AdicionarDados("@preco", Preco);
                 Dao.AdicionarDados("@tipo", Tipo);
                 Dao.AdicionarDados("@tamanho", tamanho);
-                Dao.AdicionarDados("@cor", cor);
                 Dao.VerificarLinhasAfetadas();
                 int idProduto = Dao.ProdutoID(Nome);
                 estoque.AdicionarAoEstoque(idUser,idProduto);
@@ -81,5 +78,47 @@ namespace ProdutoDLL
                 Dao.FecharConexao();
             }
         }
+
+        public  void AtualizarProdutos(int id, string nome, string descricao, string marca, decimal preco, string tipo, string tamanho)
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"UPDATE Produto SET nome = '{nome}', descricao ='{descricao}', marca = '{marca}',  preco = '{preco}', tipo = '{tipo}', tamanho = '{tamanho}' WHERE id = '{id}'");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+
+        }
+
+        public  void RemoverProdutos(int id)
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"delete from estoque where id_produto = {id}");
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"delete from Produto where id = {id}");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+
+            }
+        }
+
+
     }
 }

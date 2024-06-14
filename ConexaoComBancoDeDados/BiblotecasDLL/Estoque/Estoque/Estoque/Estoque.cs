@@ -31,5 +31,46 @@ namespace Estoque
             }
          
         }
+
+        public  void RemoverEstoque(int id)
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"delete from estoque where id_produto = {id}");
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"delete from produto where id = {id}");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+
+            }
+        }
+
+        public  void AtualizarEstoque(int idProduto, string nome, int quantidade, string tipo, DateTime data, DateTime saida, string marca)
+        {
+            try
+            {
+                string dataFormatada = data.ToString("yyyy-MM-dd HH:mm:ss");
+                string saidaFormatada = saida.ToString("yyyy-MM-dd HH:mm:ss");
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"UPDATE Estoque JOIN Produto ON Produto.id = Estoque.id_produto SET Estoque.data_entrada = '{dataFormatada}', Estoque.data_saida = '{saidaFormatada}',Estoque.quantidade = {quantidade}, Produto.nome = '{nome}', Produto.tipo = '{tipo}', Produto.Marca = '{marca}' WHERE Estoque.id_produto ='{idProduto}' ;");
+                Dao.VerificarLinhasAfetadas();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+        }
     }
 }

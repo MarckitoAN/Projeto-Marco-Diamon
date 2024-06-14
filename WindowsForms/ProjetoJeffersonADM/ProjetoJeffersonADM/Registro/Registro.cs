@@ -15,41 +15,55 @@ using System.Threading;
 using ProjetoJeffersonADM.Logins;
 using Mysqlx;
 using Bunifu.UI.WinForms;
+using System.Runtime.InteropServices;
 
 namespace ProjetoJeffersonADM
 {
     public partial class Registro : Form
     {
-        private PictureBox pictureBox1;
-        public Registro()
-        {
-            
-            InitializeComponent();
-        }
+
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+            );
+
 
         Point DragCursor;
         Point DragForm;
         bool Dragging;
+        public Registro()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
+        }
 
 
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        private void Registro_MouseUp(object sender, MouseEventArgs e)
         {
             Dragging = false;
         }
 
-        private void Form1_Click(object sender, EventArgs e)
+        private void Registro_Click(object sender, EventArgs e)
         {
         }
 
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        private void Registro_MouseDown(object sender, MouseEventArgs e)
         {
             Dragging = true;
             DragCursor = Cursor.Position;
             DragForm = this.Location;
         }
 
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        private void Registro_MouseMove(object sender, MouseEventArgs e)
         {
             if (Dragging == true)
             {
@@ -96,7 +110,7 @@ namespace ProjetoJeffersonADM
             {
                 if (String.IsNullOrEmpty(nomeLoja_field.Text))
                 {
-                    bunifuSnackbar3.Show(this, "O Nome da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    bunifuSnackbar1.Show(this, "O campo do nome da loja esta vazio.", BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
 
@@ -104,26 +118,30 @@ namespace ProjetoJeffersonADM
 
                 if (password_field.Text.Length < 8 || String.IsNullOrEmpty(password_field.Text))
                 {
-                    bunifuSnackbar1.Show(this, "A senha deve conter pelo menos 8 caracteres.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    bunifuSnackbar2.Show(this, "Sua senha deve conter 8 caracteres.", BunifuSnackbar.MessageTypes.Error);
+
                     return;
                 }
 
 
-                if (String.IsNullOrEmpty(contato_field.Text))
+                if (String.IsNullOrEmpty(contato_field.Text) || contato_field.Text.Length > 13)
                 {
-                    bunifuSnackbar5.Show(this, "Contato da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    bunifuSnackbar3.Show(this, "Insira um telefone valido.", BunifuSnackbar.MessageTypes.Error);
+                    return;
 
                 }
 
                 if (String.IsNullOrEmpty(email_field.Text))
                 {
-                    bunifuSnackbar4.Show(this, "Email da Loja vazio.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    bunifuSnackbar4.Show(this, "Insira um email valido.", BunifuSnackbar.MessageTypes.Error);
+                    return;
 
                 }
 
                 if (!ValidaCNPJ.IsCnpj(cnpj_field.Text) || String.IsNullOrEmpty(cnpj_field.Text))
                 {
-                    bunifuSnackbar2.Show(this, "Insira um CNPJ Valido..", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    bunifuSnackbar5.Show(this, "Insira um cnpj valido.", BunifuSnackbar.MessageTypes.Error);
+                   
 
                     return;
                 }
@@ -131,7 +149,6 @@ namespace ProjetoJeffersonADM
                 Dao.ConectarBancoDeDados();
                 Users users = new Users(nomeLoja_field.Text, contato_field.Text, email_field.Text,cnpj_field.Text,password_field.Text);
                 users.CadastrarUsuario();
-                bunifuSnackbar6.Show(this, "Login Feito com Sucesso..", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success);
                 Thread.Sleep(1000);
                 Login login = new Login();
                 this.Hide();
@@ -192,6 +209,9 @@ public void FormatarCNPJ()
             contato_field.SelectionStart = contato_field.Text.Length;
         }
 
-
+        private void Registro_Load(object sender, EventArgs e)
+        {
+            password_field.PasswordChar = '*';
+        }
     }
 }

@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -20,11 +22,23 @@ namespace ProjetoJeffersonADM.Logins
     public partial class Login : Form
     {
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeftRect,
+           int nTopRect,
+           int nRightRect,
+           int nBottomRect,
+           int nWidthEllipse,
+           int nHeightEllipse
+           );
+
 
         Main main = new Main();
         public Login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         Point DragCursor;
         Point DragForm;
@@ -70,35 +84,20 @@ namespace ProjetoJeffersonADM.Logins
             }
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void bunifuSeparator1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void register_btn_Click(object sender, EventArgs e)
-        {
-            Registro registro = new Registro();
-            this.Hide();
-            registro.Show();
-        }
 
         private void login_button_Click(object sender, EventArgs e)
         {
+           Pedidos pedidos = new Pedidos();
+            pedidos.Show();
+            Clientes clientes = new Clientes();
+            clientes.Show();
             TelaProdutos opa = new TelaProdutos();
             opa.Show();
+
+            /*
             Estoque estoque = new Estoque();
             estoque.Show();
-            /*
              if(String.IsNullOrEmpty(loginEmail_txt.Text) )
             {
                 bunifuSnackbar2.Show(this, "Campo de Email vazio!", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
@@ -131,6 +130,21 @@ namespace ProjetoJeffersonADM.Logins
 
         }
 
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registro registro = new Registro();
+            this.Hide();
+            registro.Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            loginEmail_txt.PasswordChar = '*';
+        }
     }
 }

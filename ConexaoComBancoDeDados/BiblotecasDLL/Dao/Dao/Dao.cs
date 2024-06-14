@@ -132,9 +132,9 @@ namespace Usuario
 
             try
             {
-                Dao.ConectarBancoDeDados();
+                ConectarBancoDeDados();
 
-                Dao.DefinirComandoSql($"select id from produto where nome = '{nomeProduto}' ");
+                DefinirComandoSql($"select id from produto where nome = '{nomeProduto}'");
                 object resultado = comandoSql.ExecuteScalar();
                 if (resultado != null)
                 {
@@ -153,9 +153,6 @@ namespace Usuario
             return idProduto;
         }
 
-        /*
-         Funcoes Relacionadas a Tabela Produto
-         */
         public static DataTable ObterProdutos()
         {
             DataTable tabelaProdutos = new DataTable();
@@ -163,7 +160,7 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-                string comandoSql = "SELECT ID,Nome, Descricao, Marca, Preco, Tipo, Tamanho, Cor FROM Produto";
+                string comandoSql = "SELECT ID,Nome, Descricao, Marca, Preco, Tipo, Tamanho FROM Produto";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
                     adaptador.Fill(tabelaProdutos);
                 
@@ -180,48 +177,6 @@ namespace Usuario
             return tabelaProdutos;
         }
 
-        public static void RemoverProdutos(int id)
-        {
-            try
-            {
-                ConectarBancoDeDados();
-                DefinirComandoSql($"delete from estoque where id_produto = {id}");
-                VerificarLinhasAfetadas();
-                DefinirComandoSql($"delete from Produto where id = {id}");
-                VerificarLinhasAfetadas();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                FecharConexao();
-
-            }
-        }
-
-        public static void AtualizarProdutos(int id, string nome, string descricao, string marca, decimal preco, string tipo, string tamanho, string cor)
-        {
-            try
-            {
-            ConectarBancoDeDados();
-            DefinirComandoSql($"UPDATE Produto SET nome = '{nome}', descricao ='{descricao}', marca = '{marca}',  preco = '{preco}', tipo = '{tipo}', tamanho = '{tamanho}', cor = '{cor}' WHERE id = '{id}'");
-            VerificarLinhasAfetadas();
-            }catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                FecharConexao();
-            }
-
-        }
-
-        /*
-         Funcoes Relacionadas a Tabela Cliente
-         */
         public static DataTable ObterClientes()
         {
             DataTable tabelaClientes = new DataTable();
@@ -243,43 +198,6 @@ namespace Usuario
                 FecharConexao();
             }
             return tabelaClientes;
-        }
-
-        public static void RemoverClientes(int id)
-        {
-            try
-            {
-                ConectarBancoDeDados();
-                DefinirComandoSql($"delete from Cliente where id = {id}");
-                VerificarLinhasAfetadas();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                FecharConexao();
-
-            }
-        }
-
-        public static void AtualizarCliente(int id, string nome, string rg, string cpf, string telefone, string rua, string bairro, string cidade,string estado,string email)
-        {
-            try
-            {
-                ConectarBancoDeDados();
-                DefinirComandoSql($"UPDATE Cliente SET nome = '{nome}', rg = '{rg}', cpf = '{cpf}', telefone = '{telefone}', rua = '{rua}',bairro = '{bairro}', cidade = '{cidade}', estado = '{estado}', email = '{email}' where id = {id}");
-                VerificarLinhasAfetadas();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                FecharConexao();
-            }
         }
 
 
@@ -306,45 +224,76 @@ namespace Usuario
             return tabelaEstoque;
         }
 
-        public static void RemoverEstoque(int id)
+       
+        public static int PegarUltimoID()
         {
             try
             {
-                ConectarBancoDeDados();
-                DefinirComandoSql($"delete from estoque where id_produto = {id}");
-                VerificarLinhasAfetadas();
-                DefinirComandoSql($"delete from produto where id = {id}");
-                VerificarLinhasAfetadas();
+                comandoSql = new MySqlCommand("SELECT LAST_INSERT_ID()", conexaoBancoDeDados); ;
+                object resultadosDoID = comandoSql.ExecuteScalar();
+
+                int IdObtido = Convert.ToInt32(resultadosDoID);
+
+                return IdObtido;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Erro ao obter o último ID inserido: " + ex.ToString());
+                return -1;
+            }
+        }
+
+        public static DataTable ObterPedidos()
+        {
+            DataTable tabelaPedidos = new DataTable();
+
+            try
+            {
+                ConectarBancoDeDados();
+                string comandoSql = "select Pedido.ID as ID,Cliente.ID as ClienteID,Cliente.nome as Cliente,Produto.Id as ProdutoID,Produto.nome as Produto,Produto.preco as PrecoUnitario,Pedido.forma_pagamento,Pedido.parcelas as Parcelas,Pedido_Produto.quantidade as Quantidade,Pedido.valor_total as ValorTotal from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id join Cliente on Cliente.id = Pedido.id_cliente join Produto on Pedido_Produto.id_produto = Produto.id;";
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
+                adaptador.Fill(tabelaPedidos);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler os estoques: " + ex.Message);
             }
             finally
             {
                 FecharConexao();
-
             }
+            return tabelaPedidos;
         }
 
-        public static void AtualizarEstoque(int idProduto ,string nome, int quantidade, string tipo, DateTime data, DateTime saida, string marca)
+
+        public static double  AcharPrecoUnitario(int idProduto)
         {
+            double PrecoUnitario = 0;
+
             try
             {
-                string dataFormatada = data.ToString("yyyy-MM-dd HH:mm:ss");
-                string saidaFormatada = saida.ToString("yyyy-MM-dd HH:mm:ss");
                 ConectarBancoDeDados();
-                DefinirComandoSql($"UPDATE Estoque JOIN Produto ON Produto.id = Estoque.id_produto SET Estoque.data_entrada = '{dataFormatada}', Estoque.data_saida = '{saidaFormatada}',Estoque.quantidade = {quantidade}, Produto.nome = '{nome}', Produto.tipo = '{tipo}', Produto.Marca = '{marca}' WHERE Estoque.id_produto ='{idProduto}' ;");
-                VerificarLinhasAfetadas();
+
+                DefinirComandoSql($"select preco from produto where id = '{idProduto}' ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    PrecoUnitario = Convert.ToDouble(resultado);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
             }
             finally
             {
                 FecharConexao();
             }
+
+            return PrecoUnitario;
         }
+
+
     }
 }

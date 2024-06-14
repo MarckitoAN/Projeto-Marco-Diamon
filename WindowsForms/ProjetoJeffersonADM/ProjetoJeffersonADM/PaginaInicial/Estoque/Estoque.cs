@@ -1,4 +1,5 @@
-﻿using ProdutoDLL;
+﻿using Estoque;
+using ProdutoDLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace ProjetoJeffersonADM
 {
     public partial class Estoque : Form
     {
+        Estoques estoques;
         DataTable estoque;
         Main main = new Main();
         
@@ -49,11 +51,11 @@ namespace ProjetoJeffersonADM
             btnDeletar.Name = "btnDeletar";
             btnDeletar.Text = "Deletar";
             btnDeletar.UseColumnTextForButtonValue = true;
-            btnDeletar.DefaultCellStyle.Font = new Font("Raleway", 9, FontStyle.Bold, GraphicsUnit.Point);
             bunifuDataGridView1.Columns.Add(btnDeletar);
 
 
-            bunifuDataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+
         }
 
         private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -74,6 +76,7 @@ namespace ProjetoJeffersonADM
                     string quantidadeString  = bunifuDataGridView1.Rows[e.RowIndex].Cells["Quantidade"].Value.ToString();
                     string entrada  =bunifuDataGridView1.Rows[e.RowIndex].Cells["Entrada"].Value.ToString();
                     string saida  = bunifuDataGridView1.Rows[e.RowIndex].Cells["Saida"].Value.ToString();
+
                     if (nomeDaColuna == "btnEditar")
                     {
 
@@ -99,7 +102,7 @@ namespace ProjetoJeffersonADM
                         {
                             try
                             {
-                                Dao.RemoverEstoque(idProduto);
+                                estoques.RemoverEstoque(idProduto);
                                 MessageBox.Show($"{bunifuDataGridView1.Rows[e.RowIndex].Cells["nome"].Value} deletado com sucesso!");
 
                                 estoque = Dao.ObterEstoque();
@@ -114,14 +117,23 @@ namespace ProjetoJeffersonADM
 
                     }
 
-                }
+                } 
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             estoque = Dao.ObterEstoque();
             bunifuDataGridView1.DataSource = estoque;
+
+        }
+
+        private void bunifuDatavizBasic1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuDataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

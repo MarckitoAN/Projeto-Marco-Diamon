@@ -42,8 +42,9 @@
     <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.6.3.0\lib\net452\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="ClientesDLL">
-      <HintPath>..\..\ClentesDLL\ClentesDLL\obj\Debug\ClientesDLL.dll</HintPath>
+    <Reference Include="ClientesDLL, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Cliente\ClentesDLL\bin\Debug\ClientesDLL.dll</HintPath>
     </Reference>
     <Reference Include="Dao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -55,6 +56,9 @@
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>E:\Aplicativos\Conector MySQl\v4.8\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Pedidos">
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Pedidos.dll</HintPath>
     </Reference>
     <Reference Include="ProdutoDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +89,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\LoginID.cs" />
+    <Compile Include="PaginaInicial\Clientes\AdicionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Clientes\AdicionarCliente.Designer.cs">
+      <DependentUpon>AdicionarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +124,18 @@
     </Compile>
     <Compile Include="PaginaInicial\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Pedidos\AdicionarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Pedidos\AdicionarPedido.Designer.cs">
+      <DependentUpon>AdicionarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Pedidos\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Pedidos\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaInicial\Produtos\AdicionarProdutos.cs">
       <SubType>Form</SubType>
@@ -150,6 +172,9 @@
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Clientes\AdicionarCliente.resx">
+      <DependentUpon>AdicionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Pedidos\AdicionarPedido.resx">
+      <DependentUpon>AdicionarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Pedidos\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Produtos\AdicionarProdutos.resx">
       <DependentUpon>AdicionarProdutos.cs</DependentUpon>
@@ -231,6 +262,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_562360948_lhJcQwyk81IpPlwdmCzJIeGGvb4YtPJE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9129514.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

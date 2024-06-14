@@ -11,14 +11,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Estoque;
 using Usuario;
+using System.Runtime.InteropServices;
 
 namespace ProjetoJeffersonADM
 {
     public partial class AdicionarProdutos : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+        );
+
         public AdicionarProdutos()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
         }
 
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
@@ -76,21 +90,29 @@ namespace ProjetoJeffersonADM
 
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_button_Click(object sender, EventArgs e)
         {
             try
             {
 
-            double preco = double.Parse(precoProd_txt.Text);
-            int estoque = int.Parse(estoque_txt.Text);
-            Produto produtos = new Produto(nomeProd_txt.Text,descriProd_txt.Text,marcaProd_txt.Text,preco,tipoProd_txt.Text,tamanhoProd_txt.Text,corProd_txt.Text,estoque);
-            produtos.AdicionarProdutos(2);
-            this.Hide();
-            }catch(Exception ex)
+                double preco = double.Parse(precoProd_txt.Text);
+                int estoque = int.Parse(estoque_txt.Text);
+                Produto produtos = new Produto(nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, preco, tipoProd_txt.Text, tamanhoProd_txt.Text, estoque);
+                produtos.AdicionarProdutos(2);
+                this.Hide();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
-            }
-    }
+        }
+    
 }
