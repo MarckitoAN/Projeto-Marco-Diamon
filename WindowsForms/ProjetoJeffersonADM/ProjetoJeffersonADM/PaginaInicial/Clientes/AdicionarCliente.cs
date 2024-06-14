@@ -4,17 +4,30 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoJeffersonADM.PaginaInicial.Clientes
 {
+
     public partial class AdicionarCliente : Form
     {
+    [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+    private static extern IntPtr CreateRoundRectRgn(
+         int nLeftRect,
+         int nTopRect,
+         int nRightRect,
+         int nBottomRect,
+         int nWidthEllipse,
+         int nHeightEllipse
+         );
         public AdicionarCliente()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -34,6 +47,16 @@ namespace ProjetoJeffersonADM.PaginaInicial.Clientes
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void bunifuButton21_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void AdicionarCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

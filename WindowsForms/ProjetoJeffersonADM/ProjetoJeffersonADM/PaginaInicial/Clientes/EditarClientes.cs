@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,15 @@ namespace ProjetoJeffersonADM
     public partial class EditarClientes : Form
     {
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+   int nLeftRect,
+   int nTopRect,
+   int nRightRect,
+   int nBottomRect,
+   int nWidthEllipse,
+   int nHeightEllipse
+   );
         ClientesDLL.Clientes cli;
         public EditarClientes(string id, string nome, string rg, string cpf, string telefone, string rua, string bairro, string cidade, string estado, string email)
         {
@@ -31,6 +41,8 @@ namespace ProjetoJeffersonADM
             cidadeCli_txt.Text = cidade;
             estadoCli_txt.Text = estado;
             emailCli_txt.Text = email;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
             cli = new ClientesDLL.Clientes(nome, rg, cpf, telefone, rua, bairro, cidade, estado, email, "0");
 
         }
@@ -65,6 +77,11 @@ namespace ProjetoJeffersonADM
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

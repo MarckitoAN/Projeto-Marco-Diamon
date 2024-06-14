@@ -5,13 +5,8 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Bunifu.UI.WinForms.Helpers.Transitions;
-using MySql.Data.MySqlClient;
 using ProdutoDLL;
-using ProjetoJeffersonADM;
-using TheArtOfDev.HtmlRenderer.Adapters.Entities;
 using Usuario;
-using static Mysqlx.Datatypes.Scalar.Types;
 
 namespace ProjetoJeffersonADM
 {
@@ -19,8 +14,8 @@ namespace ProjetoJeffersonADM
     {
         Produto produto;
         DataTable produtos;
-        EditarProdutos editarProdutos;
-        Main main = new Main();
+        readonly EditarProdutos editarProdutos;
+        readonly Main main = new Main();
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

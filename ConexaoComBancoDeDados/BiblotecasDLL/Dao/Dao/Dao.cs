@@ -294,6 +294,112 @@ namespace Usuario
             return PrecoUnitario;
         }
 
+        public static string AcharCPF(int idCliente)
+        {
+            string cpf = "";
 
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select cpf from cliente where id = {idCliente} ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                   cpf  = Convert.ToString(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return cpf;
+        }
+
+        public static string AcharEndereco(int idCliente)
+        {
+            string rua = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select rua from cliente where id = {idCliente} ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    rua = Convert.ToString(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return rua;
+        }
+
+        public static string AcharCidade(int idCliente)
+        {
+            string cidade = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select rua from cliente where id = {idCliente} ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    cidade = Convert.ToString(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return cidade;
+        }
+
+        public static string AcharTelefone(int idCliente)
+        {
+            string tel = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select telefone from cliente where id = {idCliente} ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    tel = Convert.ToString(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return tel;
+        }
     }
 }

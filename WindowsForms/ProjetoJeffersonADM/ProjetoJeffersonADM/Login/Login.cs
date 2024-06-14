@@ -33,7 +33,7 @@ namespace ProjetoJeffersonADM.Logins
            );
 
 
-        Main main = new Main();
+        readonly Main maizn = new Main();
         public Login()
         {
             InitializeComponent();

@@ -56,6 +56,8 @@ namespace Pedidos
             Dao.AdicionarDados("@id_produto", idProduto);
             Dao.AdicionarDados("@quantidade", quantidade);
             Dao.VerificarLinhasAfetadas();
+            Dao.DefinirComandoSql($"update Estoque set Quantidade = Quantidade - {quantidade} where id_pedido = {this.idProduto};");
+            Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
             {
@@ -67,6 +69,31 @@ namespace Pedidos
             }
 
         }
+
+        public void RemoverPedidos(int id, int quantidadePedida, int idProduto)
+        {
+            try
+            {
+                Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"delete from Pedido_Produto where id_pedido = {id}");
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"delete from pedido where id = {id}");
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"update Estoque set Quantidade = Quantidade + {quantidadePedida} where id_produto = {idProduto};");
+                Dao.VerificarLinhasAfetadas();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Dao.FecharConexao();
+
+            }
+        }
+
 
 
 

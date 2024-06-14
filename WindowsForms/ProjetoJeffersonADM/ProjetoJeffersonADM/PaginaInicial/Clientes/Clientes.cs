@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,9 +21,19 @@ namespace ProjetoJeffersonADM
         ClientesDLL.Clientes cli;
         DataTable clientes;
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeftRect,
+           int nTopRect,
+           int nRightRect,
+           int nBottomRect,
+           int nWidthEllipse,
+           int nHeightEllipse
+           );
         public Clientes()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
         }
 
@@ -35,10 +46,8 @@ namespace ProjetoJeffersonADM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dao.ConectarBancoDeDados();
             clientes = Dao.ObterClientes();
             bunifuDataGridView1.DataSource = clientes;
-            Dao.FecharConexao();
         }
 
         private void pesquisa_txt_TextChanged(object sender, EventArgs e)
@@ -101,9 +110,7 @@ namespace ProjetoJeffersonADM
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
                 int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
-                int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
 
-                string columnName = bunifuDataGridView1.Columns[columnIndex].Name;
                 int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Id"].Value);
                 string nome = bunifuDataGridView1.Rows[rowIndex].Cells["Nome"].Value.ToString();
                 string rg = bunifuDataGridView1.Rows[rowIndex].Cells["Rg"].Value.ToString();
