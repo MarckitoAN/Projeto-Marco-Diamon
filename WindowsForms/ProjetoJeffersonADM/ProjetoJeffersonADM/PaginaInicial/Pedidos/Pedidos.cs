@@ -1,6 +1,11 @@
 ﻿using Estoque;
 using Pedidos;
 using ProdutoDLL;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Fluent;
+using QuestPDF.Drawing;
+using QuestPDF.Elements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +22,10 @@ using Usuario;
 
 namespace ProjetoJeffersonADM
 {
-
     public partial class Pedidos : Form
     {
-        readonly Pedido pedidos = new Pedido(DateTime.Now, 0, 0, 0, 0, 0, 0, "");
+        readonly NotaFiscal nota = new NotaFiscal();
+        readonly Pedido pedidos = new Pedido(DateTime.Now, 0, 0, 0, 0, 0, 0, "",0);
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
           int nLeftRect,
@@ -55,24 +60,20 @@ namespace ProjetoJeffersonADM
 
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
-        {
-            AdicionarPedido addPedido = new AdicionarPedido();
-            addPedido.Show();
-        }
-
         private void apagar_btn_Click(object sender, EventArgs e)
         {
 
-            if (bunifuDataGridView1.SelectedCells.Count > 0) {
+            if (bunifuDataGridView1.SelectedCells.Count > 0)
+            {
 
                 int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
 
                 int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ID"].Value);
                 int quantidade = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Quantidade"].Value);
                 int idProduto = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ProdutoID"].Value);
+                int idFabricante = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["IDFabricante"].Value);
 
-                pedidos.RemoverPedidos(id, quantidade, idProduto);
+                pedidos.RemoverPedidos(id, quantidade, idProduto, idFabricante);
 
             }
 
@@ -94,46 +95,45 @@ namespace ProjetoJeffersonADM
 
         private void bunifuButton22_Click(object sender, EventArgs e)
         {
-            // Caminho para salvar o PDF
 
-
-            // Obtenção dos dados da DataGridView
-            int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
-
-            string nomeCli = bunifuDataGridView1.Rows[rowIndex].Cells["Cliente"].Value.ToString();
-            string formaPagamento = bunifuDataGridView1.Rows[rowIndex].Cells["forma_pagamento"].Value.ToString();
-            int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ID"].Value);
-            int idCliente = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ClienteID"].Value);
-            int idProduto = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ProdutoID"].Value);
-            int quantidade = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Quantidade"].Value);
-            double precoUnitario = Dao.AcharPrecoUnitario(idProduto);
-            double ValorTotal = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["ValorTotal"].Value);
-            int parcelas = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Parcelas"].Value);
-            string cpf = Dao.AcharCPF(idCliente);
-            string rua = Dao.AcharEndereco(idProduto);
-            string cidade = Dao.AcharCidade(idProduto);
-            string telefone = Dao.AcharTelefone(idProduto);
-            string nomeSemEspacos = nomeCli.Replace(" ", "");
-
-            string pastaNotaFiscal = @"C:\Users\gamer\OneDrive\Documentos";
-
-            // Verificar e criar o diretório, se necessário
-            if (!Directory.Exists(pastaNotaFiscal))
+            if (bunifuDataGridView1.SelectedCells.Count > 0)
             {
-                Directory.CreateDirectory(pastaNotaFiscal);
+                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
+
+                string nomeCli = bunifuDataGridView1.Rows[rowIndex].Cells["Cliente"].Value.ToString();
+                int idCliente = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ClienteID"].Value);
+                string formaPagamento = bunifuDataGridView1.Rows[rowIndex].Cells["forma_pagamento"].Value.ToString();
+                int idProduto = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ProdutoID"].Value);
+                string nomeProduto = bunifuDataGridView1.Rows[rowIndex].Cells["Produto"].Value.ToString();
+                int quantidade = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Quantidade"].Value);
+                double precoUnitario = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["PrecoUnitario"].Value);
+                double valorTotal = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["ValorTotal"].Value);
+                int parcelas = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Parcelas"].Value);
+                string cpf = Dao.AcharCPF(idCliente);
+                string rua = Dao.AcharEndereco(idCliente);
+                string cidade = Dao.AcharCidade(idCliente);
+                string telefone = Dao.AcharTelefone(idCliente);
+                string fabricante = bunifuDataGridView1.Rows[rowIndex].Cells["Fabricante"].Value.ToString();
+                string nomeSemEspacos = nomeCli.Replace(" ", "");
+
+                nota.EmitirNotaFiscal(nomeSemEspacos,nomeCli,cpf,rua,cidade,telefone,idProduto,nomeProduto,quantidade,precoUnitario,valorTotal,formaPagamento);
+          
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma célula selecionada na DataGridView.");
             }
 
-            // Construir o caminho do arquivo
-            string caminhoFiscal = Path.Combine(pastaNotaFiscal, $"{nomeSemEspacos}.pdf");
+        }
 
-            DateTime data = DateTime.Today;
+        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            // Adicionar logs para depuração
-            Console.WriteLine($"Iniciando criação do PDF em: {caminhoFiscal}");
-
-        }      
+        }
     }
 }
 
 
-    
+
+
+

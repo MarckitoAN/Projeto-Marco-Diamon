@@ -1,0 +1,14 @@
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Fabricante.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Fabricante.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\MySql.Data.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\System.Memory.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\System.Buffers.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\obj\Debug\Fabricante.csproj.AssemblyReference.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\obj\Debug\Fabricante.csproj.CoreCompileInputs.cache
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\obj\Debug\Fabricante.csproj.Up2Date
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\obj\Debug\Fabricante.dll
+C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\obj\Debug\Fabricante.pdb

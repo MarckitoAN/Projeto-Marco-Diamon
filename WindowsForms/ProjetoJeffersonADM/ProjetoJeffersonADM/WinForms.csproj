@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
     </Reference>
+    <Reference Include="Fabricante">
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Fabricante.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -69,6 +74,9 @@
     <Reference Include="ProdutoDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="QuestPDF, Version=2024.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuestPDF.2024.6.0\lib\netstandard2.0\QuestPDF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -115,6 +123,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\LoginID.cs" />
+    <Compile Include="NotaFiscal\NotaFiscal.cs" />
     <Compile Include="PaginaInicial\Clientes\AdicionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,16 +154,34 @@
     <Compile Include="PaginaInicial\Estoque\Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\AdicionarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\AdicionarFornecedor.Designer.cs">
+      <DependentUpon>AdicionarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\EditarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\EditarFornecedor.Designer.cs">
+      <DependentUpon>EditarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\Fornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Fornecedor\Fornecedor.Designer.cs">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PaginaInicial\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaginaInicial\Pedidos\AdicionarPedido.cs">
+    <Compile Include="PaginaInicial\Produtos\AdicionarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaginaInicial\Pedidos\AdicionarPedido.Designer.cs">
+    <Compile Include="PaginaInicial\Produtos\AdicionarPedido.Designer.cs">
       <DependentUpon>AdicionarPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaInicial\Pedidos\Pedidos.cs">
@@ -213,10 +240,19 @@
     <EmbeddedResource Include="PaginaInicial\Estoque\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Fornecedor\AdicionarFornecedor.resx">
+      <DependentUpon>AdicionarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Fornecedor\EditarFornecedor.resx">
+      <DependentUpon>EditarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Fornecedor\Fornecedor.resx">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaginaInicial\Pedidos\AdicionarPedido.resx">
+    <EmbeddedResource Include="PaginaInicial\Produtos\AdicionarPedido.resx">
       <DependentUpon>AdicionarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Pedidos\Pedidos.resx">
@@ -308,4 +344,11 @@
     <Folder Include="NotaFiscal\Pdfs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\QuestPDF.2024.6.0\build\net4\QuestPDF.targets" Condition="Exists('..\packages\QuestPDF.2024.6.0\build\net4\QuestPDF.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\QuestPDF.2024.6.0\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\QuestPDF.2024.6.0\build\net4\QuestPDF.targets'))" />
+  </Target>
 </Project>

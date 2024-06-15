@@ -151,14 +151,16 @@ namespace ProjetoJeffersonADM
                 int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
 
                 string idString = bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value.ToString();
+                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
                 string nome = bunifuDataGridView1.Rows[rowIndex].Cells["nome"].Value.ToString();
                 string descricao = bunifuDataGridView1.Rows[rowIndex].Cells["descricao"].Value.ToString();
                 string marca = bunifuDataGridView1.Rows[rowIndex].Cells["marca"].Value.ToString();
-                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["preco"].Value.ToString();
-                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["preco"].Value);
+                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value.ToString();
+                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value);
                 string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["tipo"].Value.ToString();
                 string tamanho = bunifuDataGridView1.Rows[rowIndex].Cells["tamanho"].Value.ToString();
-                EditarProdutos editarProdutos = new EditarProdutos(idString, nome, descricao, marca, preco, tipo, tamanho);
+                string precoDeCusto = bunifuDataGridView1.Rows[rowIndex].Cells["precoDeCusto"].Value.ToString();
+                EditarProdutos editarProdutos = new EditarProdutos(idString,idFornecedor, nome, descricao, marca, preco, tipo, tamanho,precoDeCusto);
                 editarProdutos.ShowDialog();
             }
         }
@@ -170,23 +172,37 @@ namespace ProjetoJeffersonADM
                 int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
                 int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
 
-                string columnName = bunifuDataGridView1.Columns[columnIndex].Name;
+
                 int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value);
-                string idString = bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value.ToString();
+                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
                 string nome = bunifuDataGridView1.Rows[rowIndex].Cells["nome"].Value.ToString();
                 string descricao = bunifuDataGridView1.Rows[rowIndex].Cells["descricao"].Value.ToString();
                 string marca = bunifuDataGridView1.Rows[rowIndex].Cells["marca"].Value.ToString();
-                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["preco"].Value.ToString();
-                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["preco"].Value);
+                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value.ToString();
+                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value);
                 string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["tipo"].Value.ToString();
                 string tamanho = bunifuDataGridView1.Rows[rowIndex].Cells["tamanho"].Value.ToString();
+                string precoDeCusto = bunifuDataGridView1.Rows[rowIndex].Cells["precoDeCusto"].Value.ToString();
 
-                produto = new Produto(nome,descricao,marca,0, tipo, tamanho, 0 );
+                produto = new Produto(nome,descricao,marca,0, tipo, tamanho, 0,0,0);
 
                 produto.RemoverProdutos(id);
                 produtos = Dao.ObterProdutos();
                 bunifuDataGridView1.DataSource = produtos;
             }
     }
+
+        private void pedido_btn_Click(object sender, EventArgs e)
+        {
+            if (bunifuDataGridView1.SelectedCells.Count >= 0)
+            {
+                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                string id = bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value.ToString();
+                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
+
+                AdicionarPedido adicionarPedido = new AdicionarPedido(id, idFornecedor);
+                adicionarPedido.ShowDialog();
+            }
+        }
     }
 }

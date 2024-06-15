@@ -1,4 +1,5 @@
-﻿using ProdutoDLL;
+﻿using Fabricante;
+using ProdutoDLL;
 using ProjetoJeffersonADM;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,8 @@ namespace ProjetoJeffersonADM.Logins
 
         private void login_button_Click(object sender, EventArgs e)
         {
+            Fornecedor fabricante = new Fornecedor();
+            fabricante.Show();
            Pedidos pedidos = new Pedidos();
             pedidos.Show();
             Clientes clientes = new Clientes();

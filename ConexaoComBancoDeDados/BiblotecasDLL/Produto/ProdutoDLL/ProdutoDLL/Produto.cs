@@ -15,8 +15,10 @@ namespace ProdutoDLL
         public string Tipo { get; set; }
         public string tamanho { get; set; }
         public int quantidadeEmEstoque { get; set; }
+        public double precoDeCusto { get; set; }
+        public int IdFornecedor { get; set; }
 
-        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, int quantidade)
+        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, int quantidade, int idfornecedor, double precoDeCusto)
         {
             Nome = nome;
             Descricao = descricao;
@@ -31,6 +33,8 @@ namespace ProdutoDLL
                 dataDeEntrada = DateTime.Now,
                 dataDeSaida = DateTime.Now
             };
+            this.IdFornecedor = idfornecedor;
+            this.precoDeCusto = precoDeCusto;
         }
 
         public void SetPreco(double novoPreco)
@@ -56,7 +60,7 @@ namespace ProdutoDLL
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho)");
+                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, precoDeCusto) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho, @precoDeCusto)");
                 Dao.AdicionarDados("@id_user", idUser);
                 Dao.AdicionarDados("@nome", Nome);
                 Dao.AdicionarDados("@descricao", Descricao);
@@ -64,9 +68,14 @@ namespace ProdutoDLL
                 Dao.AdicionarDados("@preco", Preco);
                 Dao.AdicionarDados("@tipo", Tipo);
                 Dao.AdicionarDados("@tamanho", tamanho);
+                Dao.AdicionarDados("@precoDeCusto", precoDeCusto);
                 Dao.VerificarLinhasAfetadas();
                 int idProduto = Dao.ProdutoID(Nome);
-                estoque.AdicionarAoEstoque(idUser,idProduto);
+                estoque.AdicionarAoEstoque(idUser, idProduto);
+                Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql("INSERT INTO Produto_Fornecedor (id_produto, id_fornecedor) VALUES (@id_produto, @id_fornecedor)");
+                Dao.AdicionarDados("@id_produto", idProduto);
+                Dao.AdicionarDados("@id_fornecedor", IdFornecedor);
                 Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
@@ -79,12 +88,21 @@ namespace ProdutoDLL
             }
         }
 
-        public  void AtualizarProdutos(int id, string nome, string descricao, string marca, decimal preco, string tipo, string tamanho)
+        public void AtualizarProdutos(int id, int idFornecedor, string nome, string descricao, string marca, decimal preco, string tipo, string tamanho, double precoDeCusto)
         {
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql($"UPDATE Produto SET nome = '{nome}', descricao ='{descricao}', marca = '{marca}',  preco = '{preco}', tipo = '{tipo}', tamanho = '{tamanho}' WHERE id = '{id}'");
+                Dao.DefinirComandoSql($"UPDATE Produto JOIN Produto_Fornecedor ON Produto.id = Produto_Fornecedor.id_produto SET nome = @nome, descricao = @descricao, marca = @marca, preco = @preco, tipo = @tipo, tamanho = @tamanho, precoDeCusto = @precoDeCusto WHERE Produto.id = @id AND id_fornecedor = @idFornecedor;");
+                Dao.AdicionarDados("@id", id);
+                Dao.AdicionarDados("@idFornecedor", idFornecedor);
+                Dao.AdicionarDados("@nome", nome);
+                Dao.AdicionarDados("@descricao", descricao);
+                Dao.AdicionarDados("@marca", marca);
+                Dao.AdicionarDados("@preco", preco);
+                Dao.AdicionarDados("@tipo", tipo);
+                Dao.AdicionarDados("@tamanho", tamanho);
+                Dao.AdicionarDados("@precoDeCusto", precoDeCusto);
                 Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
@@ -95,17 +113,23 @@ namespace ProdutoDLL
             {
                 Dao.FecharConexao();
             }
-
         }
 
-        public  void RemoverProdutos(int id)
+        public void RemoverProdutos(int id)
         {
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql($"delete from estoque where id_produto = {id}");
+                Dao.DefinirComandoSql($"DELETE FROM Produto_Fornecedor WHERE id_produto = @id");
+                Dao.AdicionarDados("@id", id);
                 Dao.VerificarLinhasAfetadas();
-                Dao.DefinirComandoSql($"delete from Produto where id = {id}");
+
+                Dao.DefinirComandoSql($"DELETE FROM Estoque WHERE id_produto = @id");
+                Dao.AdicionarDados("@id", id);
+                Dao.VerificarLinhasAfetadas();
+
+                Dao.DefinirComandoSql($"DELETE FROM Produto WHERE id = @id");
+                Dao.AdicionarDados("@id", id);
                 Dao.VerificarLinhasAfetadas();
             }
             catch (Exception ex)
@@ -115,10 +139,9 @@ namespace ProdutoDLL
             finally
             {
                 Dao.FecharConexao();
-
             }
         }
 
-
+   
     }
 }

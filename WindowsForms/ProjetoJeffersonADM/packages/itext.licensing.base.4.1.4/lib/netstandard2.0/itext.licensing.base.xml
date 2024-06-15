@@ -1,0 +1,2482 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>itext.licensing.base</name>
+    </assembly>
+    <members>
+        <member name="T:iText.Licensing.Base.Actions.LicenseFileExpirationChecker">
+            <summary>This class is used to check license file expiration date.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseFileExpirationChecker.#ctor(System.String,System.Nullable{iText.Licensing.Base.Licensefile.OnExpirationStrategy},System.String,System.String)">
+            <summary>Instantiates a new LicenseFileExpirationChecker instance based on expiration strategy.</summary>
+            <param name="productName">the name of product for which expiration date will be check</param>
+            <param name="expireDate">the expire date of license file</param>
+            <param name="onExpirationStrategy">the expiration strategy</param>
+            <param name="gracePeriod">the grace period</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseFileExpirationChecker.IsLicenseFileExpired">
+            <summary>Check if license file is expired.</summary>
+            <remarks>
+            Check if license file is expired.
+            <para />
+            Buffer day is added to expire date and method checks that result date is in a past.
+            </remarks>
+            <returns>
+            
+            <see langword="true"/>
+            if license file is expired, otherwise
+            <see langword="false"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseFileExpirationChecker.CheckExpiration">
+            <summary>Checks expiration of license file.</summary>
+            <remarks>
+            Checks expiration of license file.
+            <para />
+            Buffer day is added to expire date and checks that result date is in a past. If is
+            in past, call
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnFailure"/>
+            , otherwise
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess"/>.
+            <para />
+            Additionally, checks that license is within 30 days gap before expiration and log message if this is true.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor">
+            <summary>Class is responsible to check license for events.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor.#ctor(iText.Licensing.Base.Licensefile.LicenseFile,iText.Licensing.Base.Reporting.IReportingHandler)">
+            <summary>
+            Creates a new instance of license processor based on a provided
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile">license file</see>
+            and
+            <see cref="T:iText.Licensing.Base.Reporting.IReportingHandler"/>.
+            </summary>
+            <param name="licenseFile">is a license file to configure a processor</param>
+            <param name="reportingHandler">is a reporting handler which is used to report events to server</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor.OnEvent(iText.Commons.Actions.AbstractProductProcessITextEvent)">
+            <summary>Checks reported event according to its setup and reports it.</summary>
+            <param name="event">to handle</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor.GetLicenseFile">
+            <summary>
+            Returns a
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile">license file</see>
+            which defines current processor.
+            </summary>
+            <returns>a license file representation</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor.TryToUpdateCurrentLicense">
+            <summary>Tries to update the current license file.</summary>
+            <remarks>
+            Tries to update the current license file.
+            <para />
+            If license file to be successfully updated,
+            <see cref="T:iText.Commons.Exceptions.ProductEventHandlerRepeatException"/>
+            exception will be thrown.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor.CheckLicensingBaseVersion(System.String)">
+            <summary>Compares compatible version of licensing base module for product with current licensing base module version.
+                </summary>
+            <remarks>
+            Compares compatible version of licensing base module for product with current licensing base module version.
+            Throws
+            <see cref="T:iText.Licensing.Base.Exceptions.LicenseKeyException"/>
+            if licensing base module does not correspond to compatible version.
+            </remarks>
+            <param name="versionStr">minimal compatible version to compare.</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Actions.LoadLicenseEvent">
+            <summary>Class represents license loading attempt.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LoadLicenseEvent.#ctor(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Creates an event that tries to load a passed license file.</summary>
+            <param name="licenseFile">is a license file to load</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LoadLicenseEvent.DoSynchronizedAction">
+            <summary>Tries to load a license file.</summary>
+            <remarks>
+            Tries to load a license file. Checks if a new license is not older then an existing license
+            for the same product. Also verifies compatibility with licenses for other products.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LoadLicenseEvent.ValidateProcessorReplacement(iText.Licensing.Base.Licensefile.LicenseFile,iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>
+            Checks that newer license file was created later then the previous one and that they are
+            compatible.
+            </summary>
+            <param name="newerLicense">is a newer loaded license</param>
+            <param name="licenseToReplace">is a license which is going to be replaced</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LoadLicenseEvent.ValidateProcessorAdding(iText.Licensing.Base.Licensefile.LicenseFile,System.Collections.Generic.IDictionary{System.String,iText.Licensing.Base.Actions.LicenseITextProductEventProcessor})">
+            <summary>
+            Checks that license file for a product which has not been licensed yet is compatible with the
+            rest of licenses.
+            </summary>
+            <param name="license">is a loaded license</param>
+            <param name="licenseProcessors">is a map of loaded license processors</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.LoadLicenseEvent.AreValidLicensesCompatible(iText.Licensing.Base.Licensefile.LicenseFile,iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Methods checks if two license files are compatible.</summary>
+            <remarks>
+            Methods checks if two license files are compatible. It is expected that they are both valid
+            according to the specification: required fields are not null.
+            </remarks>
+            <param name="file1">is the first file to check for compatibility</param>
+            <param name="file2">is the second file to check for compatibility</param>
+            <returns>
+            
+            <see langword="true"/>
+            if field expected to be equal in compatible licenses are equal in fact
+            and
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Actions.StatisticsHandlerUpdateEvent">
+            <summary>Class represents statistics loading/unloading.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.StatisticsHandlerUpdateEvent.#ctor(System.Boolean)">
+            <summary>Creates an event that loads or unloads statistics handler.</summary>
+            <param name="value">true to load, false to unload</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.StatisticsHandlerUpdateEvent.DoSynchronizedAction">
+            <summary>Registers statistics handler on first product license load or unregisters statistics if no products left.
+                </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Actions.UnloadAllLicensesEvent">
+            <summary>Class represents license unloading for all products.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.UnloadAllLicensesEvent.#ctor">
+            <summary>Creates an event that unloads all licenses.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.UnloadAllLicensesEvent.DoSynchronizedAction">
+            <summary>Unloads all licenses.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Actions.UnloadLicenseEvent">
+            <summary>Class represents license unloading for a particular product.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.UnloadLicenseEvent.#ctor(System.String)">
+            <summary>Creates an event that unloads specific license.</summary>
+            <param name="productName">is a name of the product for which license is going to be unloaded</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Actions.UnloadLicenseEvent.DoSynchronizedAction">
+            <summary>Unloads the license for a particular product.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Exceptions.LicenseFileExpiredException">
+            <summary>
+            Exception can be thrown in situation when original license file has been expired and other
+            license file has been extracted from remote storage but that license file has also expired.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Exceptions.LicenseFileExpiredException.#ctor(iText.Licensing.Base.Exceptions.LicenseKeyException)">
+            <summary>
+            Creates a new instance of
+            <see cref="T:iText.Licensing.Base.Exceptions.LicenseFileExpiredException"/>
+            exception based on original exception.
+            </summary>
+            <param name="originalException">the original exception which triggers license file reloading</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Exceptions.LicenseFileExpiredException.GetOriginalException">
+            <summary>Gets the original exception which triggers license file reloading.</summary>
+            <returns>the original exception</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Exceptions.LicenseKeyException">
+            <summary>Exception class for exceptions in licensekey module.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Exceptions.LicenseKeyException.#ctor(System.String)">
+            <summary>Creates a new instance of LicenseKeyException exception.</summary>
+            <param name="message">the detail message.</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Exceptions.LicenseKeyException.#ctor(System.String,System.Exception)">
+            <summary>Creates a new instance of LicenseKeyException message with cause.</summary>
+            <param name="message">the detail message.</param>
+            <param name="cause">the original exception</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Exceptions.LicenseKeyExceptionMessageConstant">
+            <summary>Class containing all the messages used in licensing module.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Exceptions.LicenseKeyExceptionMessageConstant.ATTEMPT_TO_LOAD_AN_OLDER_LICENSE">
+            <summary>Message notifies that license cannot be overloaded with the older one.</summary>
+            <remarks>
+            Message notifies that license cannot be overloaded with the older one. List of params:
+            <list type="bullet">
+            <item><description>0th is a name of the product;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Exceptions.LicenseKeyExceptionMessageConstant.LICENSE_IS_INCOMPATIBLE">
+            <summary>Message notifies that license was not loaded as it is incompatible with the rest licenses.</summary>
+            <remarks>
+            Message notifies that license was not loaded as it is incompatible with the rest licenses.
+            List of params:
+            <list type="bullet">
+            <item><description>0th is a name of the product;
+            </description></item>
+            <item><description>1th is a name of the product which license is not compatible with the current one;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Exceptions.LicenseKeyExceptionMessageConstant.NEW_LICENSE_IS_INCOMPATIBLE_WITH_EXISTING">
+            <summary>
+            Message notifies that new license was not loaded for the product as it is incompatible with
+            the previous one.
+            </summary>
+            <remarks>
+            Message notifies that new license was not loaded for the product as it is incompatible with
+            the previous one. List of params:
+            <list type="bullet">
+            <item><description>0th is a name of the product which license is not compatible with the current one;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Exceptions.LicenseKeyExceptionMessageConstant.WRONG_LICENSE_FILE_VERSION">
+            <summary>Message notifies that the version of license file is not compatible with the license-key library.
+                </summary>
+            <remarks>
+            Message notifies that the version of license file is not compatible with the license-key library.
+            List of params:
+            <list type="bullet">
+            <item><description>0th is a version of the license file;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Info.EventsLimitInfo">
+            <summary>
+            Class contains
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            for each types of event limits and default limit.
+            </summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Info.EventsLimitInfo.eventLimits">
+            <summary>Map where the key is eventType and the value is EventLimitInfo.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.EventsLimitInfo.#ctor(iText.Licensing.Base.Info.LimitInfo,System.Collections.Generic.IDictionary{System.String,iText.Licensing.Base.Info.LimitInfo})">
+            <summary>Only for internal usage.</summary>
+            <remarks>Only for internal usage. Limits info constructor.</remarks>
+            <param name="defaultLimit">event limit info for default limit</param>
+            <param name="eventLimits">
+            map where the key is event type and the value is
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.EventsLimitInfo.GetDefaultLimit">
+            <summary>
+            Returns default
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>.
+            </summary>
+            <returns>
+            
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            for default event
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.EventsLimitInfo.GetEventsLimitInfo">
+            <summary>
+            Returns map with
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            for all event types.
+            </summary>
+            <returns>map where the key is event type and values is event limit info</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.EventsLimitInfo.GetEventLimit(System.String)">
+            <summary>
+            Returns
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            for provided event type.
+            </summary>
+            <param name="eventType">type of event</param>
+            <returns>
+            
+            <see cref="T:iText.Licensing.Base.Info.LimitInfo"/>
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Info.LicenceTypeInfo">
+            <summary>Represents license type values.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Info.LicenseInfo">
+            <summary>Class represents license information for a particular product.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LicenseInfo.#ctor(System.String,System.DateTime,iText.Licensing.Base.Info.LicenceTypeInfo,iText.Licensing.Base.Info.EventsLimitInfo)">
+            <summary>Only for internal usage.</summary>
+            <remarks>Only for internal usage. LicenseInfo constructor.</remarks>
+            <param name="product">name of the product</param>
+            <param name="expire">license expire date</param>
+            <param name="licenseType">license type</param>
+            <param name="eventsLimitInfo">
+            
+            <see cref="T:iText.Licensing.Base.Info.EventsLimitInfo"/>
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LicenseInfo.GetLimitsInfo">
+            <summary>Returns license limit info.</summary>
+            <returns>
+            
+            <see cref="T:iText.Licensing.Base.Info.EventsLimitInfo"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LicenseInfo.GetProduct">
+            <summary>Returns license product name.</summary>
+            <returns>license product name</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LicenseInfo.GetExpire">
+            <summary>Returns license expire date.</summary>
+            <returns>license expire date</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LicenseInfo.GetLicenseType">
+            <summary>Returns license type.</summary>
+            <returns>license type</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Info.LimitInfo">
+            <summary>Represents a limit info.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LimitInfo.#ctor(iText.Licensing.Base.Info.LimitInfoType,System.Int64,System.Int64)">
+            <summary>Only for internal usage.</summary>
+            <remarks>
+            Only for internal usage. Creates a LimitInfo with the specified type, total volume and remaining volume.
+            Default total and remaining volume for FORBIDDEN type should be 0.
+            Default total and remaining volume for UNLIMITED type should be -1.
+            </remarks>
+            <param name="limitInfoType">type of event limit info</param>
+            <param name="totalVolume">total limit volume</param>
+            <param name="remainingVolume">remaining limit volume</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LimitInfo.GetLimitType">
+            <summary>Returns limit info type.</summary>
+            <returns>limit info type</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LimitInfo.GetTotalVolume">
+            <summary>
+            Returns total limit for VOLUME type,
+            0 for FORBIDDEN type,
+            -1 for UNLIMITED type.
+            </summary>
+            <returns>total volume number</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Info.LimitInfo.GetRemainingVolume">
+            <summary>
+            Returns remaining limit for VOLUME type,
+            0 for FORBIDDEN type,
+            -1 for UNLIMITED type.
+            </summary>
+            <returns>remaining volume number</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Info.LimitInfoType">
+            <summary>Represents limit info type values.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.LicenseFileService">
+            <summary>Utility class only for internal usage which is used to work with license files.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseFileService.GetLicenseFileForProduct(System.String)">
+            <summary>Gets the loaded license file by product name.</summary>
+            <remarks>
+            Gets the loaded license file by product name.
+            <para />
+            Only for internal usage.
+            </remarks>
+            <param name="productName">the product name</param>
+            <returns>
+            the license file which corresponds to the passed product name, or
+            <see langword="null"/>
+            if there is no license
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseFileService.GetLicenseFiles">
+            <summary>Gets the loaded license files.</summary>
+            <remarks>
+            Gets the loaded license files.
+            <para />
+            Only for internal usage.
+            </remarks>
+            <returns>list with license files, or empty list if there is no licenses</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseFileService.GetSomeLoadedLicenseFileWithTryPreserveKey">
+            <summary>Gets the loaded license file with trying preserving the same license key between calls.</summary>
+            <remarks>
+            Gets the loaded license file with trying preserving the same license key between calls.
+            <para />
+            Only for internal usage.
+            </remarks>
+            <returns>the loaded license file.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseFileService.TryToLoadUpToDateLicenseFile(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>
+            Tries to load up-to-date license file from remote storage if it
+            isn't equal to actual passed license file, otherwise do nothing.
+            </summary>
+            <remarks>
+            Tries to load up-to-date license file from remote storage if it
+            isn't equal to actual passed license file, otherwise do nothing.
+            <para />
+            Up-to-date license file is retrieved by the
+            <see cref="M:iText.Licensing.Base.Storage.LicenseFilesCache.RetrieveUpToDateLicenseFile(iText.Licensing.Base.Licensefile.LicenseFile)"/>
+            method from remote storage.
+            </remarks>
+            <param name="actualLicenseFile">the actual loaded license file</param>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseFileService.DoAction">
+            <summary>
+            Throws
+            <see cref="T:System.InvalidOperationException"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.DeploymentType">
+            <summary>Represents allowed values of the <c>deploymentType</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.EventReporting">
+            <summary>Class represents event reporting configuration.</summary>
+            <remarks>
+            Class represents event reporting configuration. According to the implementation each object
+            of the class is immutable.
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.EventReporting.reportingType">
+            <summary>Defines allowed types of volume reporting for the license.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.ExceededStrategy">
+            <summary>Represents allowed values of the <c>unavailabilityStrategy</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.Licensee">
+            <summary>Class represents licensee info.</summary>
+            <remarks>
+            Class represents licensee info. According to the implementation each object of the class
+            is immutable.
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Licensee.company">
+            <summary>Describes company that have requested the license.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Licensee.name">
+            <summary>Company contact name.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Licensee.email">
+            <summary>Company contact email.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.LicenseFile">
+            <summary>Class represents license file description for a particular product.</summary>
+            <remarks>
+            Class represents license file description for a particular product. According to the
+            implementation each object of the class is immutable.
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.product">
+            <summary>Name of the product.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.licensee">
+            <summary>Describes licensee information.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.key">
+            <summary>A key to identify the license.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.creationDate">
+            <summary>Date in format yyyy-MM-dd that indicates date of license creation.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.expirationDate">
+            <summary>Date in format yyyy-MM-dd that indicates date of license expiration.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.onExpiration">
+            <summary>Defines what application should do if license is expired.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.gracePeriod">
+            <summary>Defines grace period for work after license expiration.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.platform">
+            <summary>Indicates type of platform for which the license if generated.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.licenseType">
+            <summary>Indicates type of the license.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.deploymentType">
+            <summary>Indicates deploymentType of the license.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.productVersion">
+            <summary>Version of iText product for which license is generated.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.limits">
+            <summary>Defines limits for each type of events generated by the product.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.eventReporting">
+            <summary>Sets up details of reporting process.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.producerLine">
+            <summary>Custom producer line that will be written in PDF instead of default one.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.comment">
+            <summary>Comment for license file.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.licenseVersion">
+            <summary>License schema version.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.configuration">
+            <summary>Allows to provide an additional configuration for the license file.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.sendStatistics">
+            <summary>
+            <see cref="!:SendStatistics?"/>
+            value that determines whether statistics will be sent.
+            </summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseFile.signature">
+            <summary>Digital signature to check validity of the license.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Licensefile.LicenseFile.Copy">
+            <summary>Returns a copy of the license file.</summary>
+            <remarks>Returns a copy of the license file. Included license-related objects will be copied too.</remarks>
+            <returns>the unsigned copy</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Licensefile.LicenseFile.UnsignedCopy">
+            <summary>Returns a copy of the license file without signature.</summary>
+            <remarks>
+            Returns a copy of the license file without signature. Included license-related  objects
+            will be copied too.
+            </remarks>
+            <returns>the unsigned copy</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.LicenseType">
+            <summary>Represents allowed values of the <c>licenseType</c> property.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseVersion.major">
+            <summary>Major version of iText product for which license is generated.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.LicenseVersion.minor">
+            <summary>Minor version of iText product for which license is generated.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.Limit">
+            <summary>Class represents limit description for a particular product.</summary>
+            <remarks>
+            Class represents limit description for a particular product. According to the implementation
+            each object of the class is immutable.
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.DEFAULT_EVENT_TYPE_KEY">
+            <summary>Constant DEFAULT_EVENT_TYPE_KEY.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.limitType">
+            <summary>Indicates type of the limitation for the particular event type.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.initialLimit">
+            <summary>Defines limits of operations for the particular event type with volume license.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.sendEvents">
+            <summary>Defines if events should be sent to the server.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.unavailabilityStrategy">
+            <summary>Defines the behaviour if AWS service is not available.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.gracePeriod">
+            <summary>Defines grace period for work without access to AWS.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.checkLimits">
+            <summary>Flag defines if limits should be checked by sending requests to the server.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.Limit.exceededStrategy">
+            <summary>Defines the behaviour of the application if limits were exceeded.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.LimitType">
+            <summary>Represents allowed values of the <c>limitType</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.OnExpirationStrategy">
+            <summary>Represents allowed values of the <c>onExpiration</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.Platform">
+            <summary>Represents allowed values of the <c>platform</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.ProductVersion">
+            <summary>Class represents version limitation for a particular licensed product.</summary>
+            <remarks>
+            Class represents version limitation for a particular licensed product. According to the
+            implementation each object of the class is immutable.
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.ProductVersion.major">
+            <summary>Major version of iText product for which license is generated.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Licensefile.ProductVersion.minor">
+            <summary>Minor version of iText product for which license is generated.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.ReportingType">
+            <summary>Represents allowed values of the array stored as <c>reportingType</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Licensefile.UnavailabilityStrategy">
+            <summary>Represents allowed values of the <c>unavailabilityStrategy</c> property.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.LicenseInfoCreator">
+            <summary>Only for internal usage.</summary>
+            <remarks>Only for internal usage. LicenseInfo creator class.</remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseInfoCreator.CreateLicenseInfo(iText.Licensing.Base.Licensefile.LicenseFile,System.Collections.Generic.IDictionary{System.String,System.Nullable{System.Int64}})">
+            <summary>Only for internal usage.</summary>
+            <remarks>Only for internal usage. Creates license info class.</remarks>
+            <param name="licenseFile">license file</param>
+            <param name="leftLimits">map where the key is event type and value us remaining volume limit</param>
+            <returns>
+            
+            <see cref="T:iText.Licensing.Base.Info.LicenseInfo"/>
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.LicenseKey">
+            <summary>An entry point for license files management.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.UnloadLicenses">
+            <summary>Unload all licenses for all products.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.UnloadLicenseForProduct(System.String)">
+            <summary>Unloads license for specific product.</summary>
+            <param name="productName">the name of the product for which license will be unloaded</param>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.LoadLicenseFile(System.IO.FileInfo)">
+            <summary>
+            Loads a license file or array of licenses from a
+            <see cref="T:System.IO.FileInfo"/>.
+            </summary>
+            <remarks>
+            Loads a license file or array of licenses from a
+            <see cref="T:System.IO.FileInfo"/>.
+            It is expected that file contains license as json object or json array of such licenses.
+            The certificate is read from the jar.
+            <para />
+            Note that method does not perform any additional checks and does not consider license files
+            loading as a transaction. If any error occurs, on loading array of licenses method execution will be stopped
+            but already loaded licenses will not be unloaded.
+            </remarks>
+            <param name="licenseFile">the file to load license</param>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.LoadLicenseFile(System.IO.Stream)">
+            <summary>
+            Loads a license file or array of licenses using an
+            <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <remarks>
+            Loads a license file or array of licenses using an
+            <see cref="T:System.IO.Stream"/>.
+            It is expected that input stream contains license as json object or json array of such licenses.
+            The certificate is read from the jar.
+            <para />
+            Note that method does not perform any additional checks and does not consider license files
+            loading as a transaction. If any error occurs, on loading array of licenses method execution will be stopped
+            but already loaded licenses will not be unloaded.
+            </remarks>
+            <param name="licenseIs">the input stream for load license</param>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.GetLoadedLicensesInfo">
+            <summary>Gets info about loaded licenses.</summary>
+            <returns>list with loaded license info, or empty list if there is no licenses</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.GetLoadedLicenseInfo(System.String,System.Boolean)">
+            <summary>Gets info about loaded license for provided product name.</summary>
+            <param name="productName">the product name</param>
+            <param name="checkingForUpdates">flag that specifies if updates need to be checked</param>
+            <returns>
+            the loaded license info which corresponds to the passed product name,
+            or
+            <see langword="null"/>
+            if there is no license
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.GetLoadedLicenseInfo(System.String)">
+            <summary>Gets info about loaded license for provided product name, trying to update the license.</summary>
+            <param name="productName">the product name</param>
+            <returns>
+            the loaded license info which corresponds to the passed product name,
+            or
+            <see langword="null"/>
+            if there is no license
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKey.LoadListOfLicenses(System.Collections.Generic.IList{iText.Licensing.Base.Licensefile.LicenseFile})">
+            <summary>Loads a list of licenses.</summary>
+            <remarks>
+            Loads a list of licenses. The certificate is read from the jar.
+            <para />
+            Note that method does not perform any additional checks and does not consider license files
+            loading as a transaction. If any error occurs, method execution will be stopped but already
+            loaded licenses will not be unloaded.
+            </remarks>
+            <param name="licenseFiles">list of license files</param>
+        </member>
+        <member name="T:iText.Licensing.Base.LicenseKeyProductData">
+            <summary>
+            Stores an instance of
+            <see cref="T:iText.Commons.Actions.Data.ProductData"/>
+            related to license key module.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.LicenseKeyProductData.GetInstance">
+            <summary>
+            Getter for an instance of
+            <see cref="T:iText.Commons.Actions.Data.ProductData"/>
+            related to license key module.
+            </summary>
+            <returns>license key product description</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Logs.LicenseKeyLogMessageConstant">
+            <summary>The class with logger messages.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Logs.LicenseKeyLogMessageConstant.LICENSE_WAS_LOADED">
+            <summary>Message notifies that license was successfully loaded.</summary>
+            <remarks>
+            Message notifies that license was successfully loaded. List of params:
+            <list type="bullet">
+            <item><description>0th is a name of the product;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Logs.LicenseKeyLogMessageConstant.LICENSE_WAS_NOT_SET_FOR_A_PRODUCT">
+            <summary>
+            Message notifies that request to unload the license was ignored as license was not presented
+            for the product.
+            </summary>
+            <remarks>
+            Message notifies that request to unload the license was ignored as license was not presented
+            for the product. List of params:
+            <list type="bullet">
+            <item><description>0th is a name of the product;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Logs.LicenseKeyLogMessageConstant.UNABLE_TO_DESERIALIZE_STRING">
+            <summary>
+            Message notifies that string deserialization to object can't performed,
+            because while deserialization exception was thrown.
+            </summary>
+            <remarks>
+            Message notifies that string deserialization to object can't performed,
+            because while deserialization exception was thrown. List of params:
+            <list type="bullet">
+            <item><description>0th is a class name of thrown exception;
+            </description></item>
+            <item><description>1st is a message of thrown exception;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:iText.Licensing.Base.Logs.LicenseKeyLogMessageConstant.UNABLE_TO_SERIALIZE_OBJECT">
+            <summary>
+            Message notifies that object serialization to JSON string can't performed,
+            because while serialization exception was thrown.
+            </summary>
+            <remarks>
+            Message notifies that object serialization to JSON string can't performed,
+            because while serialization exception was thrown. List of params:
+            <list type="bullet">
+            <item><description>0th is a class name of thrown exception;
+            </description></item>
+            <item><description>1st is a message of thrown exception;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.RegisterInternalNamespaceEvent">
+            <summary>Event to register internal namespaces.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.RegisterInternalNamespaceEvent.#ctor(System.String)">
+            <summary>Create an instance of registration event with for specified namespace.</summary>
+            <param name="namespace">the namespace to register</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent">
+            <summary>Common abstract class for license loading events.</summary>
+            <remarks>
+            Common abstract class for license loading events. Designed to share some common stuff including
+            locking mechanism and common product name.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent.DoAction">
+            <summary>
+            Locks the mutex and invokes
+            <see cref="M:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent.DoSynchronizedAction"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent.DoSynchronizedAction">
+            <summary>Performs event processing while common license-related mutex is locked.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent.GetReportingHandler">
+            <summary>Get the current reporting handler.</summary>
+            <returns>
+            the current
+            <see cref="T:iText.Licensing.Base.Reporting.ReportingHandler"/>.
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLicenseConfigurationEvent.GetLicenseProcessors">
+            <summary>
+            Retrieves unmodifiable copy of map containing all registered instances of
+            <see cref="T:iText.Licensing.Base.Actions.LicenseITextProductEventProcessor"/>
+            associated with product names.
+            </summary>
+            <returns>map containing products associated with license processors</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1">
+            <summary>Class for writing data to local file.</summary>
+            <typeparam name="T">type of data to be written</typeparam>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.#ctor">
+            <summary>
+            Constructor which initializes
+            <see cref="T:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.CalculateHash(System.String)">
+            <summary>Calculates MD5 hash of provided data.</summary>
+            <param name="data">string from which hash will be calculated</param>
+            <returns>hashed string.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.WriteData(System.Collections.Generic.IList{`0})">
+            <summary>Writes data list to the configured files sequence.</summary>
+            <param name="dataList">list of data to be written.</param>
+            <returns><c>true</c> if writing successful, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.GetDisclaimer">
+            <summary>Gets disclaimer string which will be written to file.</summary>
+            <returns>disclaimer string</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.GetReportFilePrefix">
+            <summary>Gets report file prefix which will be used as prefix in file name.</summary>
+            <returns>report file prefix</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.GetReportFileExtension">
+            <summary>Gets report file extension.</summary>
+            <returns>report file extension.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.CalculateSequenceData">
+            <summary>Calculates sequence data.</summary>
+            <remarks>
+            Calculates sequence data.
+            <para />
+            Sequence data contains additional information about previous sequences of reports for future sequence reports.
+            </remarks>
+            <returns>the sequence data map</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.UpdateConfig">
+            <summary>Updates config for local file reporting.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.ProcessMetadata(iText.Licensing.Base.Reporting.ReportMetadata)">
+            <summary>
+            Processes the passed
+            <see cref="T:iText.Licensing.Base.Reporting.ReportMetadata"/>
+            instance of last report file.
+            </summary>
+            <param name="metadata">the metadata instance</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.ProcessLine(System.String)">
+            <summary>Processes the passed JSON string as report data line from last report file.</summary>
+            <remarks>
+            Processes the passed JSON string as report data line from last report file.
+            <para />
+            Lines starting from second from the files are passes to the method.
+            First line is parsed to
+            <see cref="T:iText.Licensing.Base.Reporting.ReportMetadata"/>
+            . For processing
+            <see cref="T:iText.Licensing.Base.Reporting.ReportMetadata"/>
+            use
+            <see cref="M:iText.Licensing.Base.Reporting.AbstractLocalFileServer`1.ProcessMetadata(iText.Licensing.Base.Reporting.ReportMetadata)"/>
+            method.
+            </remarks>
+            <param name="json">the JSON string which represent report data line</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.AwsResourcesCreator">
+            <summary>
+            Class-holder of the
+            <see cref="T:iText.Licensing.Remote.Auth.AwsSdkCredentialsProvider"/>
+            object.
+            </summary>
+            <remarks>
+            Class-holder of the
+            <see cref="T:iText.Licensing.Remote.Auth.AwsSdkCredentialsProvider"/>
+            object.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AwsResourcesCreator.CreateKinesisDataSender(System.Int32,System.String)">
+            <summary>Creates Kinesis writer with specified stream name.</summary>
+            <param name="recordMaxSize">the maximum record size</param>
+            <param name="streamName">the Kinesis stream name to send data</param>
+            <returns>the Kinesis writer</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AwsResourcesCreator.CreateApiGatewayClientWithAuth(System.String,System.String)">
+            <summary>Creates api gateway client with specified host and path with default authentication.</summary>
+            <param name="host">the host for further requests</param>
+            <param name="path">the resource path for further requests</param>
+            <returns>the api gateway client with default authentication</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AwsResourcesCreator.CreateApiGatewayClientWithoutAuth(System.String,System.String)">
+            <summary>Creates api gateway client with specified host and path without authentication.</summary>
+            <param name="host">the host for further requests</param>
+            <param name="path">the resource path for further requests</param>
+            <returns>the api gateway client without authentication</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.AwsResourcesCreator.BuildAwsSdkCredentials">
+            <summary>
+            Creates, if not created, and return an object of
+            <see cref="T:iText.Licensing.Remote.Auth.AwsSdkCredentialsProvider"/>.
+            </summary>
+            <returns>
+            an object of
+            <see cref="T:iText.Licensing.Remote.Auth.AwsSdkCredentialsProvider"/>.
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.DataWithHash`1">
+            <summary>Class represents product usages with hash.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Reporting.DataWithHash`1.data">
+            <summary>List of product usages.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Reporting.DataWithHash`1.hash">
+            <summary>Hash related to product usages.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.DefaultLocalFileServerHelper">
+            <summary>
+            The class represents default implementation of
+            <see cref="T:iText.Licensing.Base.Reporting.ILocalFileServerHelper"/>
+            interface.
+            </summary>
+            <remarks>
+            The class represents default implementation of
+            <see cref="T:iText.Licensing.Base.Reporting.ILocalFileServerHelper"/>
+            interface.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.DefaultReportingHandlerHelper">
+            <summary>
+            The class represents default implementation of
+            <see cref="T:iText.Licensing.Base.Reporting.IReportingHandlerHelper"/>
+            interface.
+            </summary>
+            <remarks>
+            The class represents default implementation of
+            <see cref="T:iText.Licensing.Base.Reporting.IReportingHandlerHelper"/>
+            interface.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ILicenseServer">
+            <summary>This class is used to send and retrieve events or event usages from the server.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILicenseServer.Write(System.Collections.Generic.IList{iText.Licensing.Base.Reporting.Volume.ProductUsage})">
+            <summary>Writes the products usages list to the server.</summary>
+            <param name="usageList">the products usages list to write</param>
+            <returns>
+            
+            <see langword="true"/>
+            if the write operation finished successfully.
+            <see langword="false"/>
+            in other case
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILicenseServer.GetRemainingEvents(System.Collections.Generic.IList{iText.Licensing.Base.Reporting.ProductLimitsRequest})">
+            <summary>
+            Gets the remaining events as a list of
+            <see cref="T:iText.Licensing.Base.Reporting.ProductLimitsResponse"/>.
+            </summary>
+            <param name="requestList">the remaining events request to the server</param>
+            <returns>the response from the server</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILicenseServer.HealthCheck">
+            <summary>Makes health check of license server.</summary>
+            <returns>the license server health status</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ILicenseServerFactory">
+            <summary>
+            Class represents a factory for
+            <see cref="T:iText.Licensing.Base.Reporting.ILicenseServer"/>
+            objects.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILicenseServerFactory.ObtainConfiguredLicenseServer">
+            <summary>Gets configured license server.</summary>
+            <returns>the license server instance</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ILocalFileServerHelper">
+            <summary>The class contains additional methods for local file servers.</summary>
+            <remarks>
+            The class contains additional methods for local file servers.
+            <para />
+            This interface only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILocalFileServerHelper.GetLicenseKeyVersion">
+            <summary>Gets a licensekey version.</summary>
+            <returns>licensekey version</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ILocalFileServerHelper.GetCurrentTime">
+            <summary>Gets a current time.</summary>
+            <returns>current time</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.IReportingHandler">
+            <summary>This class is used for reporting and checking events.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandler.UpdateReportingForProduct(System.String)">
+            <summary>Update reporting configuration for the particular product.</summary>
+            <param name="productName">the product name</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandler.UpdateReportingConfig">
+            <summary>Updates reporting related configuration.</summary>
+            <remarks>
+            Updates reporting related configuration.
+            <para />If something goes wrong with the update, then tries to preserve the previous configuration.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandler.ReportEvent(iText.Commons.Actions.Confirmations.ConfirmEvent)">
+            <summary>Reports the event if it is reportable by license configuration.</summary>
+            <param name="event">
+            the
+            <see cref="T:iText.Commons.Actions.Confirmations.ConfirmEvent"/>
+            to be reported if needed
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandler.CheckEvent(iText.Licensing.Base.Actions.LicenseITextProductEventProcessor,System.String)">
+            <summary>Checks if the particular type of events can be reported.</summary>
+            <param name="currentProcessor">the current product event processor</param>
+            <param name="eventType">the event type</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandler.GetRemainingEvents(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>
+            Get the remaining events for specified
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile"/>.
+            </summary>
+            <param name="licenseFile">the license file</param>
+            <returns>the remaining events for specified license file</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.IReportingHandlerHelper">
+            <summary>The interface provide helper methods for reporting handler.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandlerHelper.GetInitialLeftLimitsObtainingWaitTime">
+            <summary>Gets an initial left limits obtaining wait time.</summary>
+            <returns>initial left limits obtaining wait time.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandlerHelper.GetMaxLeftLimitsObtainingWaitTime">
+            <summary>Gets a max left limits obtaining wait time.</summary>
+            <returns>max left limits obtaining wait time.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandlerHelper.GetInitialWaitTimeForReporting">
+            <summary>Gets an initial reporting wait time.</summary>
+            <returns>initial reporting wait time.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.IReportingHandlerHelper.GetMaxWaitTimeForReporting">
+            <summary>Gets a max reporting wait time.</summary>
+            <returns>max reporting wait time.</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseKeyReportingConfigurer.UseRemoteReporting">
+            <summary>Select remote reporting type in which events are sent over the web to a remote server.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseKeyReportingConfigurer.UseLocalReporting(System.String)">
+            <summary>Select local reporting type with specified root directory for generated reports.</summary>
+            <param name="directoryToWritePath">
+            the path to local directory for writing reports. If it is null,
+            then System property, or System environment variable will be used.
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseKeyReportingConfigurer.ResetApiConfiguration">
+            <summary>Reset API configuration.</summary>
+            <remarks>Reset API configuration. Can be used to use environment variables or default logic after API use.
+                </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseKeyReportingConfigurer.IsStatisticsEnabledForProduct(System.String)">
+            <summary>Checks if statistics are enabled for such productName.</summary>
+            <param name="productName">name of the product for which to check if statistics are enabled</param>
+            <returns><c>true</c> if statistics are enabled, <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseKeyReportingConfigurer.OverrideStatisticsSendingForProduct(System.String,System.Boolean)">
+            <summary>Enables or disables statistics for provided product.</summary>
+            <remarks>Enables or disables statistics for provided product. By default the value from license file will be taken.
+                </remarks>
+            <param name="productName">name of the product for which enable or disable statistics</param>
+            <param name="sendStatistics"><c>true</c> to enable statistics, <c>false</c> otherwise</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.LicenseServerFactory">
+            <summary>
+            Factory class to construct
+            <see cref="T:iText.Licensing.Base.Reporting.ILicenseServer"/>
+            instance.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseServerFactory.ObtainConfiguredLicenseServer">
+            <summary>Gets current license server.</summary>
+            <returns>
+            current
+            <see cref="T:iText.Licensing.Base.Reporting.ILicenseServer"/>
+            instance
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.LicenseServerFactoryKeeper">
+            <summary>Helper class which allow to change used license server factory instance.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseServerFactoryKeeper.SetLicenseServerFactory(iText.Licensing.Base.Reporting.ILicenseServerFactory)">
+            <summary>Sets license server factory instance.</summary>
+            <param name="licenseServerFactory">the instance to be set</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseServerFactoryKeeper.RestoreDefaultLicenseServerFactory">
+            <summary>Restores default factory.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LicenseServerFactoryKeeper.GetLicenseServerFactory">
+            <summary>Gets reporting license server factory instance.</summary>
+            <returns>the license server factory instance</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.LimitManager">
+            <summary>Class handles remaining events requests for any purpose.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.LimitsService">
+            <summary>Utility class only for internal usage which is used to get remaining limits.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.LimitsService.GetRemainingEventsLimit(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Only for internal usage.</summary>
+            <remarks>Only for internal usage. Get remaining limit events for provided license file.</remarks>
+            <param name="licenseFile">license file</param>
+            <returns>map where the key is event type and value us remaining volume limit</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ProductLimitsRequest">
+            <summary>Class represents a request left limits for particular product.</summary>
+            <remarks>
+            Class represents a request left limits for particular product.
+            According to the implementation each object of the class is immutable.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsRequest.#ctor(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Nullable{System.Int64}})">
+            <summary>
+            Creates instance of
+            <see cref="T:iText.Licensing.Base.Reporting.ProductLimitsRequest"/>
+            based on info about product and limits.
+            </summary>
+            <param name="licenseKey">the license file key</param>
+            <param name="productName">the product name</param>
+            <param name="limits">the limits map, where key is event name and value is limit</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsRequest.GetLicenseKey">
+            <summary>Gets license file key.</summary>
+            <returns>the license file key</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsRequest.GetProductName">
+            <summary>Gets product name.</summary>
+            <returns>the product name</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsRequest.GetLimits">
+            <summary>Gets unmodifiable limits map</summary>
+            <returns>the unmodifiable limits map</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ProductLimitsResponse">
+            <summary>Class represents a response which store left limits for particular product.</summary>
+            <remarks>
+            Class represents a response which store left limits for particular product.
+            According to the implementation each object of the class is immutable.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsResponse.#ctor(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Nullable{System.Int64}})">
+            <summary>
+            Creates instance of
+            <see cref="T:iText.Licensing.Base.Reporting.ProductLimitsResponse"/>
+            based on info about product and left limits.
+            </summary>
+            <param name="licenseKey">the license file key</param>
+            <param name="productName">the product name</param>
+            <param name="leftLimits">the left limits map, where key is event name and value is left limits</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsResponse.GetLicenseKey">
+            <summary>Gets license file key.</summary>
+            <returns>the license file key</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsResponse.GetProductName">
+            <summary>Gets product name.</summary>
+            <returns>the product name</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ProductLimitsResponse.GetLeftLimits">
+            <summary>Gets unmodifiable left limits map</summary>
+            <returns>the unmodifiable left limits map</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ReportFileData">
+            <summary>The class represents report file data.</summary>
+            <remarks>
+            The class represents report file data.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ReportingHandler">
+            <summary>
+            Class which do work with
+            <see cref="T:iText.Licensing.Base.Reporting.ILicenseServer"/>
+            : getting remaining events, reporting events.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandler.GetInstance">
+            <summary>
+            Get the singleton instance of
+            <see cref="T:iText.Licensing.Base.Reporting.ReportingHandler"/>.
+            </summary>
+            <returns>
+            the instance of
+            <see cref="T:iText.Licensing.Base.Reporting.ReportingHandler"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandler.UpdateReportingForProduct(System.String)">
+            <summary>
+            Loads license file reporting configuration if
+            <see cref="M:iText.Licensing.Base.LicenseFileService.GetLicenseFileForProduct(System.String)"/>
+            returns license file for passed product name.
+            </summary>
+            <remarks>
+            Loads license file reporting configuration if
+            <see cref="M:iText.Licensing.Base.LicenseFileService.GetLicenseFileForProduct(System.String)"/>
+            returns license file for passed product name. If he is returns null,
+            <see cref="M:iText.Licensing.Base.Reporting.ReportingHandler.UnloadLicenseFileForProduct(System.String)"/>
+            will be called.
+            </remarks>
+            <param name="productName">the product name</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandler.CheckEvent(iText.Licensing.Base.Actions.LicenseITextProductEventProcessor,System.String)">
+            <summary>
+            Checks that
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler"/>
+            can reports event and checks count of remaining event.
+            </summary>
+            <param name="currentProcessor">
+            
+            <inheritDoc/>
+            </param>
+            <param name="eventType">
+            
+            <inheritDoc/>
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandler.UnloadLicenseFileForProduct(System.String)">
+            <summary>Unloads configured data for specified license file.</summary>
+            <remarks>
+            Unloads configured data for specified license file. Since only single license file for specific
+            product can be loaded, this method simply unloads everything related to product specified by
+            license file.
+            </remarks>
+            <param name="productName">the product name to unload</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerHelperKeeper.SetReportingHandlerHelper(iText.Licensing.Base.Reporting.IReportingHandlerHelper)">
+            <summary>Sets reporting handler helper instance.</summary>
+            <param name="reportingHandlerHelper">the instance to be set</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerHelperKeeper.RestoreReportingHandlerHelper">
+            <summary>Restores default reporting handler helper instance.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerHelperKeeper.GetReportingHandlerHelper">
+            <summary>Gets reporting handler helper instance.</summary>
+            <returns>the reporting handler helper instance</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ReportingHandlerKeeper">
+            <summary>Helper class which allow to change used reporting handler instance.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerKeeper.SetReportingHandler(iText.Licensing.Base.Reporting.IReportingHandler)">
+            <summary>Sets reporting handler instance.</summary>
+            <param name="reportingHandler">the instance to be set</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerKeeper.RestoreDefaultReportingHandler">
+            <summary>Restores default reporting handler instance.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.ReportingHandlerKeeper.GetReportingHandler">
+            <summary>Gets reporting handler instance.</summary>
+            <returns>the reporting handler instance</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.ReportMetadata">
+            <summary>The class represents a report metadata.</summary>
+            <remarks>
+            The class represents a report metadata.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1">
+            <summary>
+            The abstract event type mapper processor class which delegate result processing
+            to necessary
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            depending on product name and event type.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.PutStrategy(System.String,System.String,`0)">
+            <summary>Add new strategy mapping or replace existing.</summary>
+            <param name="productName">the product name to which the event with associated strategy corresponds</param>
+            <param name="eventType">the event type to which the associated strategy corresponds</param>
+            <param name="strategy">the strategy to map</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.PutDefaultLimit(System.String,iText.Licensing.Base.Licensefile.Limit)">
+            <summary>Add new default limit for specified product or replace existing.</summary>
+            <param name="productName">the product name to which the default limit will be mapped</param>
+            <param name="defaultLimit">the default limit to map</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.PutAllStrategiesWithDefaultLimit(System.String,iText.Licensing.Base.Licensefile.Limit,System.Collections.Generic.IDictionary{System.String,`0})">
+            <summary>Add complete mapping of strategies and default limit for specified product or update existing mapping.
+                </summary>
+            <param name="productName">the product name for adding or updating the mapping</param>
+            <param name="defaultLimit">the default limit for product</param>
+            <param name="processors">the map containing event types with associated strategies to map</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.RemoveStrategies(System.String)">
+            <summary>Clean up the mapping for the specified product name.</summary>
+            <param name="productName">the product name for which the mapping should be cleaned up.</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.IsEmpty">
+            <summary>Checks whether event type mapper processor is empty or not.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if strategies map and default limits map are empty,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.IsProcessable(System.String,System.String)">
+            <summary>
+            Checks whether the event with specified product name and event type can be processed
+            either with specific or fallback processor.
+            </summary>
+            <param name="productName">the product name of the event to check</param>
+            <param name="eventType">the event type of the event to check</param>
+            <returns>
+            
+            <see langword="true"/>
+            if either the specific processor for the specified product name and
+            event type or default processor descriptor exist,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.GetStrategy(System.String,System.String)">
+            <summary>Gets the strategy which corresponds to the particular product and event type.</summary>
+            <remarks>
+            Gets the strategy which corresponds to the particular product and event type.
+            <para />
+            If specific strategy for product name and event type is missing, tries to
+            create a strategy from the default descriptor (if it is specified).
+            </remarks>
+            <param name="productName">the name of product</param>
+            <param name="eventType">the type of event</param>
+            <returns>
+            the strategy or
+            <see langword="null"/>
+            if there are no specific strategy and default limit
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.AbstractEventTypeMapperProcessor`1.CreateStrategyFromDefault(iText.Licensing.Base.Licensefile.Limit,System.String,System.String)">
+            <summary>Creates strategy from default limit.</summary>
+            <param name="defaultLimit">the default limit</param>
+            <returns>the strategy with corresponds to the default limit</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Resultprocessor.EventTypeMapperProcessor">
+            <summary>
+            The event type mapper processor class which delegate result processing
+            to necessary
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            depending on product name and event type.
+            </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Resultprocessor.ExceededStrategiesProcessor">
+            <summary>
+            The exceeded strategies processor class which delegate result processing
+            to necessary
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            depending on product name and event type.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.ExceededStrategiesProcessor.ExtractStrategy(System.String,System.String)">
+            <summary>Extracts the strategy which corresponds to the particular product and event type.</summary>
+            <param name="productName">the name of product</param>
+            <param name="eventType">the type of event</param>
+            <returns>the strategy or null if there is not specific strategy</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Resultprocessor.IVolumeResultProcessor">
+            <summary>Processing results interface based on processed object.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.IVolumeResultProcessor.OnSuccess(System.String,System.String)">
+            <summary>Processing the success result.</summary>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.IVolumeResultProcessor.OnFailure(System.String,System.String)">
+            <summary>Processing the failure result.</summary>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.IVolumeResultProcessor.OnEventProcessing(System.String,System.String)">
+            <summary>Do action on event processing.</summary>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Resultprocessor.TimeWrapperStrategiesProcessor">
+            <summary>
+            The time wrapper strategies processor class which delegates result processing
+            to corresponding
+            <see cref="T:iText.Licensing.Base.Strategy.TimeWrapperStrategy"/>
+            based on product name and event type.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.TimeWrapperStrategiesProcessor.GetLastMethodCallTime(System.String,System.String)">
+            <summary>
+            Invoke
+            <see cref="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.GetLastMethodCallTime"/>
+            for the corresponding strategy.
+            </summary>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+            <returns>the last method call time of strategy defined by product name and event type</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Resultprocessor.TimeWrapperStrategiesProcessor.CreateStrategyFromDefault(iText.Licensing.Base.Licensefile.Limit,System.String,System.String)">
+            <summary>Creates time wrapper strategy from default limit.</summary>
+            <param name="defaultLimit">the default limit</param>
+            <returns>the strategy defined by the specified default limit</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Serverstatus.HealthCheckHolder">
+            <summary>
+            Class-holder of the
+            <see cref="T:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus"/>
+            object.
+            </summary>
+            <remarks>
+            Class-holder of the
+            <see cref="T:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus"/>
+            object.
+            <para />
+            Only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus">
+            <summary>Represents allowed values of license server health status.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus.HEALTHY">
+            <summary>The HEALTHY status means that license server works correctly.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus.UNHEALTHY_ON_CLIENT_SIDE">
+            <summary>The UNHEALTHY_ON_CLIENT_SIDE status means that something goes wrong on client side.</summary>
+        </member>
+        <member name="F:iText.Licensing.Base.Reporting.Serverstatus.LicenseServerHealthStatus.UNHEALTHY_ON_SERVER_SIDE">
+            <summary>The UNHEALTHY_ON_SERVER_SIDE status means that something goes wrong on server side.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.ProductUsage">
+            <summary>Class represents usages of one product.</summary>
+            <remarks>
+            Class represents usages of one product. According to the implementation each object
+            of the class is immutable.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.ProductUsage.#ctor(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Nullable{System.Int64}},System.String)">
+            <summary>
+            Creates instance of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.ProductUsage"/>
+            based on info about product and reported events.
+            </summary>
+            <param name="licenseKey">the license file key</param>
+            <param name="productName">the product name</param>
+            <param name="events">the events map, where key is event name and value is count of this event</param>
+            <param name="eventTime">the time when this instance was created</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.ProductUsage.GetLicenseKey">
+            <summary>Gets license file key.</summary>
+            <returns>the license file key</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.ProductUsage.GetProductName">
+            <summary>Gets product name.</summary>
+            <returns>the product name</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.ProductUsage.GetEvents">
+            <summary>Gets unmodifiable events map.</summary>
+            <returns>the unmodifiable events map</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.ProductUsage.GetEventTime">
+            <summary>Gets event time when the instance of class was created.</summary>
+            <returns>the event time</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeData.GetSignature">
+            <summary>The signature that identifies this data.</summary>
+            <returns>data signature</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeData.GetCount">
+            <summary>Number of data instances with the same signature that where merged.</summary>
+            <returns>data count</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.VolumeDataAggregator">
+            <summary>
+            Utility class for aggregation list of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>
+            to array of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.ProductUsage"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeDataAggregator.AggregateVolumeEvents(System.Collections.Generic.IList{iText.Licensing.Base.Reporting.Volume.VolumeData})">
+            <summary>
+            Aggregates list of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>
+            to array of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.ProductUsage"/>.
+            </summary>
+            <param name="dataList">the volume data list to aggregation</param>
+            <returns>the array of products usages</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeDataAggregator.CreateHealthCheckUsage(System.String)">
+            <summary>Creates health check usage.</summary>
+            <param name="healthCheckTime">the health check time</param>
+            <returns>the list which contain health check usage</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeDataAggregator.GetCurrentTimeForSendUsage">
+            <summary>Gets current time as string in format "yyyy-MM-dd HH:mm:ss".</summary>
+            <returns>the string representation of current time</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased">
+            <summary>
+            Class responsible for caching
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>.
+            </summary>
+            <remarks>
+            Class responsible for caching
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>.
+            Merges data with the same signature by increasing its count.
+            Retrieve the smallest element based on comparator.
+            Not thread safe.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler">
+            <summary>This class is intended for some heavy concurrent event operations (like writing to database or file).
+                </summary>
+            <remarks>
+            This class is intended for some heavy concurrent event operations (like writing to database or file).
+            <para />
+            On registration of new
+            <see cref="T:iText.Commons.Actions.AbstractITextEvent"/>
+            the instance of
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>
+            is created with the
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataFactory"/>
+            . This data instance is immediately cached with
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased"/>
+            that merge data with the same signature by summing there count. If the previous processing operation is
+            finished and the wait time is passed then the next event is retrieved from cache (it may be for example
+            based on some comparator like the biggest count, if
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased"/>
+            is used or
+            any other order determined by custom cache) and the processing is started asynchronously.
+            <para />
+            For handling the event processing logic instance of
+            <see cref="T:iText.Licensing.Base.Reporting.ILicenseServer"/>
+            is used. For result processing
+            instance of
+            <see cref="T:iText.Licensing.Base.Reporting.Resultprocessor.IVolumeResultProcessor"/>
+            is used.
+            <para />
+            This class can be considered thread-safe if the cache and factory instances aren't used anywhere else in the code.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler.TryProcessRest">
+            <summary>Method that will try to immediately process all cashed data, ignoring the usual error fallback procedures.
+                </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler.CheckEvent(System.String,System.String)">
+            <summary>
+            Checks if the next event processing will throw an exception, if it is true -
+            <see cref="T:iText.Licensing.Base.Exceptions.LicenseKeyException"/>
+            will be thrown, otherwise nothing will be done.
+            </summary>
+            <remarks>
+            Checks if the next event processing will throw an exception, if it is true -
+            <see cref="T:iText.Licensing.Base.Exceptions.LicenseKeyException"/>
+            will be thrown, otherwise nothing will be done.
+            <para />
+            If exception isn't thrown in this method, on the next processing this kind of
+            event type exception will be thrown in reporting thread, and general thread
+            continue usual work. But the general thread is expected to receive an exception.
+            </remarks>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil">
+            <summary>
+            The util class with service methods for
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler"/>
+            and comparator class,
+            that can be used in
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil.RegisterProcessAllShutdownHook(iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler)">
+            <summary>
+            Registers shutdown hook for
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler"/>
+            that will try to process all the events that are left.
+            </summary>
+            <remarks>
+            Registers shutdown hook for
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler"/>
+            that will try to process all the events that are left.
+            It isn't guarantied that all events would be processed.
+            </remarks>
+            <param name="dataHandler">
+            the
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler"/>
+            for which the hook will be registered
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil.DisableShutdownHooks(iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler)">
+            <summary>
+            Unregister shutdown hook for
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil"/>
+            registered with
+            <see cref="!:RegisterProcessAllShutdownHook(VolumeEventDataHandlerUtil)"/>.
+            </summary>
+            <param name="dataHandler">
+            the
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil"/>
+            for which the hook will be unregistered
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil.RegisterTimedProcessing(iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler)">
+            <summary>
+            Creates thread that will try to trigger event processing with time interval from
+            specified
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil"/>.
+            </summary>
+            <param name="dataHandler">
+            the
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil"/>
+            for which the thread will be registered
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil.DisableTimedProcessing(iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandler)">
+            <summary>
+            Stop the timed processing thread registered with
+            <see cref="!:RegisterTimedProcessing(VolumeEventDataHandlerUtil)"/>.
+            </summary>
+            <param name="dataHandler">
+            the
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil"/>
+            for which the thread will be registered
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Reporting.Volume.VolumeEventDataHandlerUtil.BiggerCountComparator">
+            <summary>
+            Comparator class that can be used in
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased"/>.
+            </summary>
+            <remarks>
+            Comparator class that can be used in
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeDataCacheComparatorBased"/>.
+            If so, the cache will return
+            <see cref="T:iText.Licensing.Base.Reporting.Volume.VolumeData"/>
+            with bigger count first.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.IStatisticsServer">
+            <summary>This interface is used to send statistics to the server.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.IStatisticsServer.Write(System.Collections.Generic.IList{iText.Licensing.Base.Statistics.ProductStatistics})">
+            <summary>Writes the products statistics list to the server.</summary>
+            <param name="statisticsList">list of statistics to be written</param>
+            <returns><c>true</c> if writing was successful, <c>false</c> otherwise</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.LicenseKeysStatisticsAggregator">
+            <summary>Statistics aggregator which aggregates all license keys that were loaded.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicenseKeysStatisticsAggregator.Aggregate(iText.Commons.Actions.AbstractStatisticsEvent)">
+            <summary>Aggregates license key from the provided event.</summary>
+            <param name="event">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent"/>
+            instance
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicenseKeysStatisticsAggregator.RetrieveAggregation">
+            <summary>Retrieves Map in which keys are name of the products and values are Sets of keys related to the product.
+                </summary>
+            <returns>
+            aggregated
+            <see cref="!:System.Collections.IDictionary&lt;K, V&gt;"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicenseKeysStatisticsAggregator.Merge(iText.Commons.Actions.AbstractStatisticsAggregator)">
+            <summary>Merges data about products and keys from the provided aggregator into this aggregator.</summary>
+            <param name="aggregator">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.LicenseKeysStatisticsAggregator"/>
+            from which data will be taken.
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent">
+            <summary>Class which represents event which aggregates all license keys that were loaded.</summary>
+            <remarks>Class which represents event which aggregates all license keys that were loaded. Only for internal usage.
+                </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent.#ctor(iText.Commons.Actions.Data.ProductData)">
+            <seealso cref="M:iText.Commons.Actions.AbstractStatisticsEvent.#ctor(iText.Commons.Actions.Data.ProductData)"/>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent.CreateStatisticsAggregatorFromName(System.String)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent.GetStatisticsNames">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.ProductStatistics">
+            <summary>Class represents statistics for one product.</summary>
+            <remarks>
+            Class represents statistics for one product. According to the implementation each object
+            of the class is immutable.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductStatistics.#ctor(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Creates instance of
+            <see cref="T:iText.Licensing.Base.Statistics.ProductStatistics"/>
+            based on info about product and reported events.
+            </summary>
+            <param name="licenseKey">the license file key</param>
+            <param name="productName">the product name</param>
+            <param name="statistics">the statistics map, where key is statistics name and value is statistics data</param>
+            <param name="eventTime">the time when this instance was created</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductStatistics.GetLicenseKey">
+            <summary>Gets license file key.</summary>
+            <returns>the license file key</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductStatistics.GetProductName">
+            <summary>Gets product name.</summary>
+            <returns>the product name</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductStatistics.GetStatistics">
+            <summary>Gets unmodifiable statistics map.</summary>
+            <returns>the unmodifiable statistics map</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductStatistics.GetEventTime">
+            <summary>Gets event time when the instance of class was created.</summary>
+            <returns>the event time</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.ProductVersionStatisticsAggregator">
+            <summary>Statistics aggregator which aggregates versions of used addons.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsAggregator.Aggregate(iText.Commons.Actions.AbstractStatisticsEvent)">
+            <summary>Aggregates version from the provided event.</summary>
+            <param name="event">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.ProductVersionStatisticsEvent"/>
+            instance
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsAggregator.RetrieveAggregation">
+            <summary>Retrieves addon version from the last aggregated event.</summary>
+            <returns>
+            aggregated
+            <see cref="T:System.String"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsAggregator.Merge(iText.Commons.Actions.AbstractStatisticsAggregator)">
+            <summary>Merges data about versions of products from the provided aggregator into this aggregator.</summary>
+            <param name="aggregator">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.ProductVersionStatisticsAggregator"/>
+            from which data will be taken.
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.ProductVersionStatisticsEvent">
+            <summary>Class which represents event related to versions of used addons.</summary>
+            <remarks>Class which represents event related to versions of used addons. Only for internal usage.</remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsEvent.#ctor(iText.Commons.Actions.Data.ProductData)">
+            <seealso cref="M:iText.Commons.Actions.AbstractStatisticsEvent.#ctor(iText.Commons.Actions.Data.ProductData)"></seealso>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsEvent.CreateStatisticsAggregatorFromName(System.String)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.ProductVersionStatisticsEvent.GetStatisticsNames">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.StatisticsEventHandler">
+            <summary>
+            Handles
+            <see cref="T:iText.Commons.Actions.AbstractStatisticsEvent"/>
+            events.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.StatisticsEventHandler.Register">
+            <summary>
+            Registers this event handler in
+            <see cref="T:iText.Commons.Actions.EventManager"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.StatisticsEventHandler.OnEvent(iText.Commons.Actions.IEvent)">
+            <summary>
+            Aggregates data from an event to the appropriate
+            <see cref="T:iText.Commons.Actions.AbstractStatisticsAggregator"/>.
+            </summary>
+            <param name="event">
+            
+            <see cref="T:iText.Commons.Actions.AbstractStatisticsEvent"/>
+            to handle
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Statistics.SystemInfoStatisticsAggregator">
+            <summary>Statistics aggregator which aggregates system infos.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.SystemInfoStatisticsAggregator.Aggregate(iText.Commons.Actions.AbstractStatisticsEvent)">
+            <summary>Aggregates system infos.</summary>
+            <param name="event">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.LicensingUsageStatisticsEvent"/>
+            instance
+            </param>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.SystemInfoStatisticsAggregator.RetrieveAggregation">
+            <summary>Retrieves most recent system info.</summary>
+            <returns>
+            aggregated
+            <see cref="T:System.String"/>
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Statistics.SystemInfoStatisticsAggregator.Merge(iText.Commons.Actions.AbstractStatisticsAggregator)">
+            <summary>Merges data about system infos from the provided aggregator into this aggregator.</summary>
+            <param name="aggregator">
+            
+            <see cref="T:iText.Licensing.Base.Statistics.SystemInfoStatisticsAggregator"/>
+            from which data will be taken.
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Storage.DefaultLicenseFileStorageClient">
+            <summary>
+            The default implementation of
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>.
+            </summary>
+            <remarks>
+            The default implementation of
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.DefaultLicenseFileStorageClient.GetLicenseFilesFromStorage(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Gets array of license files from storage.</summary>
+            <param name="sourceLicenseFile">
+            
+            <inheritDoc/>
+            </param>
+            <returns>always returns an empty list</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient">
+            <summary>This class provides API to get license files from storage.</summary>
+            <remarks>
+            This class provides API to get license files from storage.
+            <para />
+            This interface only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.ILicenseFileStorageClient.GetLicenseFilesFromStorage(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Gets array of license files from storage.</summary>
+            <param name="sourceLicenseFile">the source license file which defines which license files will be returned
+                </param>
+            <returns>the array of license files</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Storage.LicenseFilesCache">
+            <summary>This class represents a cache of license files which tries to update the cache values every specified time.
+                </summary>
+            <remarks>
+            This class represents a cache of license files which tries to update the cache values every specified time.
+            <para />
+            For updating the cache values implementation of
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>
+            is used.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.LicenseFilesCache.#ctor(System.Int64,iText.Licensing.Base.Storage.ILicenseFileStorageClient)">
+            <summary>
+            Instantiates a new
+            <see cref="T:iText.Licensing.Base.Storage.LicenseFilesCache"/>
+            instance based on
+            update license files wait time and license file storage client.
+            </summary>
+            <param name="updateLicenseFilesWaitTime">the update license file wait time</param>
+            <param name="storageRetriever">the license file storage client</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.LicenseFilesCache.RetrieveUpToDateLicenseFile(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Retrieves up-to-date license file.</summary>
+            <remarks>
+            Retrieves up-to-date license file.
+            <para />
+            If more than update license file wait time have passed since the last update, the
+            update will be performed via
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>
+            implementation.
+            </remarks>
+            <param name="licenseFile">the license file the up-to-date version of which will be retrieved</param>
+            <returns>the up-to-date license file</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.LicenseFilesCache.PruneCache">
+            <summary>Remove out-to-date data from cache.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Storage.LicenseFilesCacheKeeper">
+            <summary>
+            Helper class which allow to change used
+            <see cref="T:iText.Licensing.Base.Storage.LicenseFilesCache"/>
+            instance.
+            </summary>
+            <remarks>
+            Helper class which allow to change used
+            <see cref="T:iText.Licensing.Base.Storage.LicenseFilesCache"/>
+            instance.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Storage.LicenseFilesCacheKeeper.GetLicenseFilesCache">
+            <summary>Gets a license file cache instance.</summary>
+            <returns>the license file cache instance</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Storage.RemoteLicenseFileStorageClient">
+            <summary>
+            The implementation of
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>
+            which sends http requests to the AWS API gateway.
+            </summary>
+            <remarks>
+            The implementation of
+            <see cref="T:iText.Licensing.Base.Storage.ILicenseFileStorageClient"/>
+            which sends http requests to the AWS API gateway.
+            <para />
+            This class only for internal usage.
+            </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.AbstractGraceStrategy">
+            <summary>
+            This abstract strategy delegates methods call to one of the two
+            strategies, depending on
+            <see cref="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.IsBeforeGraceStrategy"/>
+            method.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.#ctor(iText.Licensing.Base.Strategy.IStrategy,iText.Licensing.Base.Strategy.IStrategy)">
+            <summary>
+            Creates a grace strategy that delegates methods calls to beforeExpirationStrategy
+            if isBeforeGraceStrategy methods returns true, and to afterExpirationStrategy if false.
+            </summary>
+            <param name="beforeExpirationStrategy">the strategy that will be used if before grace period</param>
+            <param name="afterExpirationStrategy">the strategy that will be used if after grace period</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.OnSuccess">
+            <summary>
+            Calls method
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess"/>
+            for the all strategies.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.OnProcessing">
+            <summary>
+            Calls method
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnProcessing"/>
+            for the required strategy.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.OnFailure">
+            <summary>
+            Calls method
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnFailure"/>
+            for the required strategy.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.IsBeforeGraceStrategy">
+            <summary>
+            Chooses which strategy to use for
+            <see cref="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.OnProcessing"/>
+            and
+            <see cref="M:iText.Licensing.Base.Strategy.AbstractGraceStrategy.OnFailure"/>
+            methods.
+            </summary>
+            <returns>
+            true if
+            <see cref="F:iText.Licensing.Base.Strategy.AbstractGraceStrategy.beforeExpirationStrategy"/>
+            should be used, false for
+            <see cref="F:iText.Licensing.Base.Strategy.AbstractGraceStrategy.afterExpirationStrategy"/>
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.AgplStrategy">
+            <summary>
+            This strategy is used to switch the product to the AGPL version
+            on failure.
+            </summary>
+            <remarks>
+            This strategy is used to switch the product to the AGPL version
+            on failure. If it is not possible - exception will be thrown.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AgplStrategy.#ctor(System.String,System.String,System.String)">
+            <summary>Creates a strategy that tries to switched the particular product to AGPL version.</summary>
+            <param name="exceptionMessage">the exception message</param>
+            <param name="switchedMessage">the switched message</param>
+            <param name="productName">the product name</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AgplStrategy.OnFailure">
+            <summary>Set current state to fail.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AgplStrategy.OnSuccess">
+            <summary>Set current state to success.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.AgplStrategy.OnProcessing">
+            <summary>If fail state, then tries to switch to AGPL version of product.</summary>
+            <remarks>If fail state, then tries to switch to AGPL version of product. If it is not possible exception will be thrown.
+                </remarks>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.DoNothingStrategy">
+            <summary>The strategy which does no actions on any events.</summary>
+            <remarks>
+            The strategy which does no actions on any events.
+            <para />
+            Can be treated as null object pattern.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.DoNothingStrategy.OnFailure">
+            <summary>Do nothing.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.DoNothingStrategy.OnSuccess">
+            <summary>Do nothing.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.DoNothingStrategy.OnProcessing">
+            <summary>Do nothing.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.FailStrategy">
+            <summary>This strategy throws exception on failure.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.FailStrategy.#ctor(System.String)">
+            <summary>Creates a fail strategy that throws exception with message on each failure.</summary>
+            <param name="exceptionMessage">the exception message</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.FailStrategy.#ctor(System.String,System.Int64)">
+            <summary>Creates a fail strategy that throws exception with message after passing the fail limit.</summary>
+            <param name="exceptionMessage">the exception message</param>
+            <param name="failLimit">the fail limit</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.FailStrategy.OnFailure">
+            <summary>Increase failure counter.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.FailStrategy.OnSuccess">
+            <summary>Resets failure counter.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.FailStrategy.OnProcessing">
+            <summary>Throws an exception if fail limit already reached.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.GraceFromLastSuccessStrategy">
+            <summary>
+            This strategy delegates method calls to one of the other two
+            strategies, depending on grace period from last success time.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.GraceFromLastSuccessStrategy.#ctor(iText.Licensing.Base.Strategy.IStrategy,iText.Licensing.Base.Strategy.IStrategy,System.Int64)">
+            <summary>
+            Creates a grace strategy that delegates methods calls to duringGracePeriodStrategy
+            if grace period from last success has not ended, and to afterGracePeriodStrategy if period has ended.
+            </summary>
+            <param name="duringGracePeriodStrategy">the strategy that will be used during the grace period</param>
+            <param name="afterGracePeriodStrategy">the strategy that will be used after the grace period</param>
+            <param name="gracePeriod">the grace period</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.GraceFromLastSuccessStrategy.OnSuccess">
+            <summary>
+            Calls method
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess"/>
+            for the all strategies and reset grace period timer.
+            </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.IStrategy">
+            <summary>This interface defines strategies for action on abstract failure and success.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess">
+            <summary>Mark strategy with success state.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.IStrategy.OnFailure">
+            <summary>Mark strategy with fail state.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.IStrategy.OnProcessing">
+            <summary>Invokes strategy's action based on the current strategy's state.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.LogStrategy">
+            <summary>This strategy logs a message on failure.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.LogStrategy.#ctor(System.String)">
+            <summary>Creates a log strategy that logs on each failure.</summary>
+            <param name="logMessage">the log message</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.LogStrategy.#ctor(System.String,System.Int64)">
+            <summary>Creates a log strategy that logs a message on first failure and after every failLimit failure.</summary>
+            <param name="logMessage">the log message</param>
+            <param name="failLimit">the fail limit</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.LogStrategy.OnFailure">
+            <summary>Logs message if it is the first failure or failLimit's failure.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.LogStrategy.OnSuccess">
+            <summary>Resets fail counter.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.LogStrategy.OnProcessing">
+            <summary>To do nothing.</summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.StrategyFactory">
+            <summary>Helper class for strategy creation.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.StrategyFactory.CreateLimitExceededStrategy(iText.Licensing.Base.Licensefile.Limit,System.String,System.String)">
+            <summary>Creates limit exceeded strategy.</summary>
+            <param name="limit">the limit</param>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+            <returns>the exceeded strategy instance, or null if there is no exceeding strategy for limit</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.StrategyFactory.CreateLicenseFileExpirationStrategy(System.String,System.Nullable{iText.Licensing.Base.Licensefile.OnExpirationStrategy})">
+            <summary>Creates license file expiration strategy.</summary>
+            <param name="productName">the product name</param>
+            <param name="strategy">the expiration strategy enum</param>
+            <returns>the license file expiration strategy instance</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.StrategyFactory.CreateEventReportingUnavailabilityStrategy(iText.Licensing.Base.Licensefile.Limit,System.String,System.String)">
+            <summary>
+            Constructs the event reporting unavailability
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            instance based on provided limits strategy.
+            </summary>
+            <param name="limit">
+            the
+            <see cref="T:iText.Licensing.Base.Licensefile.Limit"/>
+            instance with description of required strategy
+            </param>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+            <returns>
+            the constructed
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            instance
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.StrategyFactory.CreateLimitUpdatingUnavailabilityStrategy(iText.Licensing.Base.Licensefile.Limit,System.String,System.String)">
+            <summary>
+            Constructs the limit updating unavailability
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            instance based on provided limits strategy.
+            </summary>
+            <param name="limit">
+            the
+            <see cref="T:iText.Licensing.Base.Licensefile.Limit"/>
+            instance with description of required strategy
+            </param>
+            <param name="productName">the product name</param>
+            <param name="eventType">the event type</param>
+            <returns>
+            the constructed
+            <see cref="T:iText.Licensing.Base.Strategy.IStrategy"/>
+            instance
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Strategy.TimeWrapperStrategy">
+            <summary>This strategy is a wrapper for other strategies with adding the last status change time storing.</summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.#ctor(iText.Licensing.Base.Strategy.IStrategy)">
+            <summary>Creates a time wrapper strategy based on passed strategy.</summary>
+            <param name="strategy">the strategy to wrap</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.OnFailure">
+            <summary>
+            Calls
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnFailure"/>
+            method for wrap strategy, and save the call time.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.OnSuccess">
+            <summary>
+            Calls
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess"/>
+            method for wrap strategy, and save the call time.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.OnProcessing">
+            <summary>
+            Calls
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnProcessing"/>
+            method for wrap strategy.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Strategy.TimeWrapperStrategy.GetLastMethodCallTime">
+            <summary>
+            Gets the last
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnFailure"/>
+            or
+            <see cref="M:iText.Licensing.Base.Strategy.IStrategy.OnSuccess"/>
+            methods call time.
+            </summary>
+            <returns>the last methods call time</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.ArraysUtil">
+            <summary>Utility class for work with arrays.</summary>
+            <remarks>Utility class for work with arrays. Not for public use.</remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.ArraysUtil.Equals``1(``0[],``0[])">
+            <summary>Checks if two arrays are equal.</summary>
+            <param name="array1">is the first array</param>
+            <param name="array2">is the second array</param>
+            <typeparam name="T">is a type of elements</typeparam>
+            <returns>
+            
+            <see langword="true"/>
+            if arrays have the same length and consists of the same elements in the
+            same order and
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.CertificateWorker">
+            <summary>
+            Class for verifying RSA messages signatures, needs only public key from RSA public/private key pair.
+            </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.CollectionUtil">
+            <summary>
+            Utility class for work with collections. Not for public use.
+            </summary>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.JsonUtil">
+            <summary>
+            Utility class for JSON serialization and deserialization operations. Not for public use.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.JsonUtil.SerializeToString(System.Object)">
+            <summary>
+            Serializes passed object to JSON string.
+            </summary>
+            <param name="value">the object which will be serialized</param>
+            <returns>the JSON string representation of passed object or null if it is impossible to serialize to JSON</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.JsonUtil.SerializeToMinimalString(System.Object)">
+            <summary>
+            Serializes passed object to minimal JSON string without spaces and line breaks.
+            </summary>
+            <param name="value">the object which will be serialized</param>
+            <returns>the minimal JSON string representation of passed object or null if it is impossible to serialize to JSON</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.JsonUtil.DeserializeFromString``1(System.String)">
+            <summary>
+            Deserializes passed JSON string to object with passed type.
+            </summary>
+            <param name="content">the JSON string which represent object</param>
+            <param name="objectType">the type of object which will be deserialized</param>
+            <typeparam name="T">the type of object which will be deserialized</typeparam>
+            <returns>the deserialized object or null if operation of deserialization is impossible</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.LicenseFileUtil">
+            <summary>Utils related to license file.</summary>
+            <remarks>
+            Utils related to license file.
+            <para />
+            For internal usages only.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseFileUtil.ParseGracePeriodStrToMilliseconds(System.String)">
+            <summary>Parse grace period string to milliseconds.</summary>
+            <param name="gracePeriod">the grace period string</param>
+            <returns>the millisecond representation of grace period</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseFileUtil.ParseStringToReportingType(System.String)">
+            <summary>Parse string to reporting type.</summary>
+            <param name="toParse">the string to parse</param>
+            <returns>
+            parsed
+            <see cref="!:iText.Licensing.Base.Licensefile.ReportingType?"/>
+            value
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseFileUtil.ParseStringToLicenseFiles(System.String)">
+            <summary>Parses string to list of license files.</summary>
+            <remarks>
+            Parses string to list of license files. The provided string may be either
+            the json array of json license files, or single json license file.
+            </remarks>
+            <param name="licenseFileStr">the string to parse</param>
+            <returns>
+            the parsed license files list or
+            <see langword="null"/>
+            if the string format is invalid
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseFileUtil.CompareLicensesByCreationDate(iText.Licensing.Base.Licensefile.LicenseFile,iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Compares two licenses' creation dates.</summary>
+            <remarks>
+            Compares two licenses' creation dates. This method assumes that it is invoked with
+            valid signed license files as its arguments.
+            </remarks>
+            <param name="file1">the first license to compare</param>
+            <param name="file2">the second license to compare</param>
+            <returns>
+            the value 0 if creation dates are equal; a value less than 0 if the first license's
+            creation date is before the second license's creation date; and a value greater than 0
+            if the first license's creation date is after the second license's creation date.
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.LicenseKeyIoUtil">
+            <summary>Class containing I/O related util methods.</summary>
+            <remarks>
+            Class containing I/O related util methods.
+            <para />
+            For internal usages only.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseKeyIoUtil.ConvertInputStreamToString(System.IO.Stream)">
+            <summary>Converts the provided input stream into the string with UTF-8 encoding.</summary>
+            <param name="inputStream">
+            the
+            <see cref="T:System.IO.Stream"/>
+            to convert
+            </param>
+            <returns>converted string</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LicenseKeyIoUtil.IsJsonArray(System.String)">
+            <summary>Checks whether the provided string looks more like a JSON array than JSON object.</summary>
+            <remarks>
+            Checks whether the provided string looks more like a JSON array than JSON object.
+            <para />
+            NOTE that this method does not perform the complete valid check whether the provided string
+            is a JSON array. The main goal of this method is to help in choosing
+            the deserialization strategy between deserialization into an object or an array of objects.
+            </remarks>
+            <param name="licenseFileStr">the string to check</param>
+            <returns>
+            
+            <see langword="true"/>
+            if the provided String looks more like a JSON array than JSON object,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.LimitsUtils">
+            <summary>Class with utils methods related to left volume limits logic.</summary>
+            <remarks>
+            Class with utils methods related to left volume limits logic.
+            <para />
+            For internal usages only.
+            </remarks>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LimitsUtils.PrepareLeftLimitsRequest(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>
+            Constructs the
+            <see cref="T:iText.Licensing.Base.Reporting.ProductLimitsRequest"/>
+            object with all
+            <see cref="!:iText.Licensing.Base.Licensefile.LimitType?.volume"/>
+            limits
+            specified in the provided license file.
+            </summary>
+            <param name="licenseFile">to construct request from</param>
+            <returns>
+            the constructed
+            <see cref="T:iText.Licensing.Base.Reporting.ProductLimitsRequest"/>
+            or
+            <see langword="null"/>
+            if nothing to request
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LimitsUtils.GetActualLimits(iText.Licensing.Base.Licensefile.LicenseFile,iText.Licensing.Base.Reporting.ProductLimitsResponse)">
+            <summary>Constructs the map with actual limits based on server response and initial limits from license file.
+                </summary>
+            <param name="licenseFile">the license file with initial limits data</param>
+            <param name="response">the server response with volume left limits</param>
+            <returns>the map with event names as keys and left limits as values</returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.LimitsUtils.CreateLimitsInfo(iText.Licensing.Base.Licensefile.LicenseFile,System.Collections.Generic.IDictionary{System.String,System.Nullable{System.Int64}})">
+            <summary>
+            Constructs
+            <see cref="T:iText.Licensing.Base.Info.EventsLimitInfo"/>
+            object from the initial limits data and left limits data.
+            </summary>
+            <param name="licenseFile">the license file</param>
+            <param name="leftLimits">the left limits data</param>
+            <returns>
+            the constructed
+            <see cref="T:iText.Licensing.Base.Info.EventsLimitInfo"/>
+            instance
+            </returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.ReportedEventsSet">
+            <summary>
+            Utility class for storing unique reported events which associated with
+            <see cref="T:iText.Commons.Actions.Sequence.SequenceId"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.ReportedEventsSet.PutEvent(iText.Commons.Actions.AbstractProductProcessITextEvent)">
+            <summary>Puts event to set.</summary>
+            <param name="event">the event to be set</param>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.ReportedEventsSet.ContainsEvent(iText.Commons.Actions.AbstractProductProcessITextEvent)">
+            <summary>Checks if set contains passed event.</summary>
+            <param name="event">the event to check</param>
+            <returns><c>true</c> if set contains event, otherwise <c>false</c></returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.ResourceUtil">
+            <summary>
+            Internal utility class for resolving inner resources. Not for public use.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.ResourceUtil.GetResourceStream(System.String)">
+            <summary>Tries to get a resource as stream using different strategies.</summary>
+            <param name="key">the path to the resource</param>
+            <returns>the resource as InputStream</returns>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.SigningUtil">
+            <summary>
+            Class validates a digital signature of a
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile"/>.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.SigningUtil.IsSignedLicenseFile(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>
+            Checks whether the provided
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile"/>
+            object is a well signed license.
+            </summary>
+            <param name="toCheck">
+            the
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile"/>
+            to check
+            </param>
+            <returns>
+            
+            <see langword="true"/>
+            if the provided license file is not
+            <see langword="null"/>
+            and has a valid signature,
+            <see langword="false"/>
+            otherwise.
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.SigningUtil.CheckSignature(iText.Licensing.Base.Licensefile.LicenseFile)">
+            <summary>Performs a digital signature check.</summary>
+            <param name="file">
+            is a
+            <see cref="T:iText.Licensing.Base.Licensefile.LicenseFile">license file</see>
+            to check
+            </param>
+        </member>
+        <member name="T:iText.Licensing.Base.Util.UTF8">
+            <summary>
+            Utility class that unifies UTF-8 string encoding and decoding. Not for public use.
+            </summary>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.VersionUtil.ParseModuleOrProductVersion(System.String)">
+            <summary>Parse string containing module or product version for further checking.</summary>
+            <param name="versionToParse">string containing version to parse.</param>
+            <returns>
+            
+            <see cref="!:System.Collections.IList&lt;E&gt;"/>
+            which contains major,minor and patch versions as elements.
+            </returns>
+        </member>
+        <member name="M:iText.Licensing.Base.Util.VersionUtil.IsVersionsIncompatible(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Checks if versions of products or modules are compatible.</summary>
+            <param name="expectedMajor">expected major version.</param>
+            <param name="expectedMinor">expected minor version.</param>
+            <param name="expectedPatch">expected patch version.</param>
+            <param name="actualMajor">actual major version.</param>
+            <param name="actualMinor">actual minor version.</param>
+            <param name="actualPatch">actual patch version.</param>
+            <returns>true if versions are incompatible, false otherwise.</returns>
+        </member>
+    </members>
+</doc>

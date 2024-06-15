@@ -15,8 +15,9 @@ namespace ProjetoJeffersonADM
 {
     public partial class EditarProdutos : Form
     {
-        Main main = new Main();
-        Produto produto;
+        readonly Main main = new Main();
+        readonly Produto produto;
+                 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
       int nLeftRect,
@@ -26,17 +27,20 @@ namespace ProjetoJeffersonADM
       int nWidthEllipse,
       int nHeightEllipse
       );
-        public EditarProdutos(string id,string nome,string descricao,string marca,string preco,string tipo,string tamanho)
+        public EditarProdutos(string id,string idFornecedor,string nome,string descricao,string marca,string preco,string tipo,string tamanho,string precoDeCompra)
         {
             
             InitializeComponent();
             idProd_txt.Text = id;
+            idFornecedor_txt.Text = idFornecedor;
             nomeProd_txt.Text = nome;
             descriProd_txt.Text = descricao;
             marcaProd_txt.Text = marca;
             precoProd_txt.Text = preco;
             tipoProd_txt.Text = tipo;
             tamanhoProd_txt.Text = tamanho;
+            precoCusto_txt.Text = precoDeCompra;
+            produto = new Produto(nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, double.Parse(preco), tipoProd_txt.Text, tamanhoProd_txt.Text, 0, 0, 0.0);
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
 
@@ -102,11 +106,12 @@ namespace ProjetoJeffersonADM
             double valorConvertido = double.Parse(precoProd_txt.Text);
             decimal valorConvertidoDecmal = decimal.Parse(precoProd_txt.Text);
             int idConvertido = int.Parse(idProd_txt.Text);
+            double precoDeCusto = double.Parse(precoCusto_txt.Text);
+            int idFornecedor = int.Parse(idFornecedor_txt.Text);
 
             try
             {
-                produto = new Produto(nomeProd_txt.Text,descriProd_txt.Text, marcaProd_txt.Text, valorConvertido, tipoProd_txt.Text, tamanhoProd_txt.Text,0);
-                produto.AtualizarProdutos(idConvertido, nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, valorConvertidoDecmal, tipoProd_txt.Text, tamanhoProd_txt.Text);
+                produto.AtualizarProdutos(idConvertido, idFornecedor, nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, valorConvertidoDecmal,tipoProd_txt.Text,tamanhoProd_txt.Text,precoDeCusto);
                 this.Hide();
             }
             catch (Exception ex)

@@ -22,7 +22,7 @@ namespace Usuario
                 conexaoBancoDeDados.Open();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Conexão estabelecida com sucesso!");
-                Console.ForegroundColor= ConsoleColor.Gray;
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
             catch (MySqlException ex)
             {
@@ -160,10 +160,10 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-                string comandoSql = "SELECT ID,Nome, Descricao, Marca, Preco, Tipo, Tamanho FROM Produto";
+                string comandoSql = "SELECT Produto.ID as ID,Produto.Nome as Nome, Produto.Descricao as Descricao, Produto.Marca as Marca, Produto.Preco as PrecoVenda, Produto.Tipo as Tipo, Produto.Tamanho as Tamanho, Produto.precoDeCusto as PrecoDeCusto, Fornecedor.id as IdFornecedor, Fornecedor.nome as Fornecedor from Produto_Fornecedor join Produto on Produto_Fornecedor.id_produto = Produto.id join Fornecedor on Fornecedor.id = Produto_Fornecedor.id_fornecedor;";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
-                    adaptador.Fill(tabelaProdutos);
-                
+                adaptador.Fill(tabelaProdutos);
+
             }
             catch (Exception ex)
             {
@@ -184,7 +184,7 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-               string comandoSql = "select Id,Nome, Rg, Cpf, Telefone,Estado,Cidade,Rua,Bairro,Email from cliente";
+                string comandoSql = "select Id,Nome, Rg, Cpf, Telefone,Estado,Cidade,Rua,Bairro,Email from cliente";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
                 adaptador.Fill(tabelaClientes);
 
@@ -208,7 +208,7 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-                string comandoSql = "select Estoque.ID as ID_Estoque, Produto.ID as ID_Produto, Produto.nome as Nome, Produto.Marca as Marca, Produto.tipo as Tipo, Estoque.Quantidade, estoque.data_entrada as Entrada  ,estoque.data_saida as Saida from estoque join Produto on estoque.id_produto = Produto.id;";
+                string comandoSql = "SELECT Estoque.ID AS ID_Estoque, produto.ID AS ID_Produto, produto.nome AS Nome_Produto, produto.marca AS Marca, produto.tipo AS Tipo,  Estoque.Quantidade,  Estoque.Data_Entrada AS Entrada, Fornecedor.ID AS ID_Fornecedor, Fornecedor.nome AS Nome_Fornecedor, Fornecedor.rua AS Rua_Fornecedor,  Fornecedor.bairro AS Bairro_Fornecedor, Fornecedor.cidade AS Cidade_Fornecedor,  Fornecedor.estado AS Estado_Fornecedor,  Fornecedor.email AS Email_Fornecedor, Fornecedor.cnpj AS CNPJ_Fornecedor FROM Produto_Fornecedor join Fornecedor  on Fornecedor.id = Produto_Fornecedor.id_fornecedor join Estoque  on Produto_Fornecedor.id_produto = Estoque.id_produto join produto  on Produto_Fornecedor.id_produto = produto.id";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
                 adaptador.Fill(tabelaEstoque);
 
@@ -224,7 +224,7 @@ namespace Usuario
             return tabelaEstoque;
         }
 
-       
+
         public static int PegarUltimoID()
         {
             try
@@ -250,7 +250,7 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-                string comandoSql = "select Pedido.ID as ID,Cliente.ID as ClienteID,Cliente.nome as Cliente,Produto.Id as ProdutoID,Produto.nome as Produto,Produto.preco as PrecoUnitario,Pedido.forma_pagamento,Pedido.parcelas as Parcelas,Pedido_Produto.quantidade as Quantidade,Pedido.valor_total as ValorTotal from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id join Cliente on Cliente.id = Pedido.id_cliente join Produto on Pedido_Produto.id_produto = Produto.id;";
+                string comandoSql = "select Pedido.ID as ID,Cliente.ID as ClienteID,Cliente.nome as Cliente,Produto.Id as ProdutoID,Produto.nome as Produto,Produto.preco as PrecoUnitario,Fornecedor.id as IDFabricante, Fornecedor.nome as Fabricante, Fornecedor.cnpj as Cnpj,Pedido.forma_pagamento,Pedido.parcelas as Parcelas,Pedido_Produto.quantidade as Quantidade,Pedido.valor_total as ValorTotal from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id join Cliente on Cliente.id = Pedido.id_cliente join Produto on Pedido_Produto.id_produto = Produto.id join Fornecedor on Fornecedor.id = Pedido_Produto.id_fornecedor;";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
                 adaptador.Fill(tabelaPedidos);
 
@@ -267,7 +267,7 @@ namespace Usuario
         }
 
 
-        public static double  AcharPrecoUnitario(int idProduto)
+        public static double AcharPrecoUnitario(int idProduto)
         {
             double PrecoUnitario = 0;
 
@@ -306,7 +306,7 @@ namespace Usuario
                 object resultado = comandoSql.ExecuteScalar();
                 if (resultado != null)
                 {
-                   cpf  = Convert.ToString(resultado);
+                    cpf = Convert.ToString(resultado);
                 }
             }
             catch (Exception ex)
@@ -356,7 +356,7 @@ namespace Usuario
             {
                 ConectarBancoDeDados();
 
-                DefinirComandoSql($"select rua from cliente where id = {idCliente} ");
+                DefinirComandoSql($"select cidade from cliente where id = {idCliente} ");
                 object resultado = comandoSql.ExecuteScalar();
                 if (resultado != null)
                 {
@@ -382,7 +382,6 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-
                 DefinirComandoSql($"select telefone from cliente where id = {idCliente} ");
                 object resultado = comandoSql.ExecuteScalar();
                 if (resultado != null)
@@ -401,5 +400,61 @@ namespace Usuario
 
             return tel;
         }
+
+
+        public static DataTable ObterFornecedor()
+        {
+            DataTable tabelaFornecedor = new DataTable();
+
+            try
+            {
+                ConectarBancoDeDados();
+                string comandoSql = "select Id,Nome,Rua,Bairro,Cidade,Estado,Email,Cnpj from Fornecedor";
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
+                adaptador.Fill(tabelaFornecedor);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return tabelaFornecedor;
+     
+        
+        }
+
+
+        public static int ObterIDFornecedor(string id_produto)
+        {
+            int idFornecedor = 0;
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select Produto_Fornecedor.id_fornecedor from Produto_Fornecedor where id_produto = {id_produto} and ;");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    idFornecedor = Convert.ToInt32(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Dao.FecharConexao();
+            }
+
+            return idFornecedor;
+        }
     }
+
+
 }
