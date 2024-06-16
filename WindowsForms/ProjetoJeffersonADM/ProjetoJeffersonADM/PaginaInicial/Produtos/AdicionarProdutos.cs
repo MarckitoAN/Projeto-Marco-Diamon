@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Estoque;
 using Usuario;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace ProjetoJeffersonADM
 {
@@ -105,7 +106,8 @@ namespace ProjetoJeffersonADM
                 int idFornecedor = int.Parse(idForne_txt.Text);
                 int estoque = int.Parse(estoque_txt.Text);
                 double custo = double.Parse(custo_txt.Text);
-                Produto produtos = new Produto(nomeProd_txt.Text,descriProd_txt.Text,marcaProd_txt.Text,preco,tipoProd_txt.Text,tamanhoProd_txt.Text,estoque, idFornecedor,custo);
+                byte[] imagemBytes = File.ReadAllBytes(caminhoImagem);
+                Produto produtos = new Produto(nomeProd_txt.Text,descriProd_txt.Text,marcaProd_txt.Text,preco,tipoProd_txt.Text,tamanhoProd_txt.Text,estoque, idFornecedor,custo, imagemBytes);
                 produtos.AdicionarProdutos(1);
                 this.Hide();
             }
@@ -114,7 +116,30 @@ namespace ProjetoJeffersonADM
                 MessageBox.Show(ex.Message);
             }
         }
+        private string caminhoImagem = string.Empty;
+
+        private void bunifuButton22_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            
+                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    caminhoImagem = ofd.FileName; 
+                }
+            
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void bunifuButton21_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+    }
     
 }

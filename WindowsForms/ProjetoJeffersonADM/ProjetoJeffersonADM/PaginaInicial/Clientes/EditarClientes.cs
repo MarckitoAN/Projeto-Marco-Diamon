@@ -27,7 +27,7 @@ namespace ProjetoJeffersonADM
    int nWidthEllipse,
    int nHeightEllipse
    );
-        ClientesDLL.Clientes cli;
+       readonly ClientesDLL.Clientes cli;
         public EditarClientes(string id, string nome, string rg, string cpf, string telefone, string rua, string bairro, string cidade, string estado, string email)
         {
             InitializeComponent();

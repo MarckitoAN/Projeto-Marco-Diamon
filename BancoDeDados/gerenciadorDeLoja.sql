@@ -2,6 +2,17 @@ create database GerenciadorLojasPraADM;
 
 use GerenciadorLojasPraADM;
 
+create table User
+(
+    id         integer auto_increment,
+    nome_loja  varchar(255) not null,
+    contato    varchar(16)  not null,
+    email      varchar(255) not null,
+    cnpj       varchar(14)  not null,
+    senha_hash varchar(255) not null,
+    primary key (id)
+);
+
 CREATE TABLE Cliente
 (
     id       INT AUTO_INCREMENT,
@@ -22,41 +33,23 @@ CREATE TABLE Cliente
 
 );
 
+
+
 create table Produto
 (
-    id        integer auto_increment,
-    id_user   integer,
-    nome      varchar(45)    not null,
-    descricao varchar(255),
-    marca     varchar(45)    not null,
-    preco     decimal(10, 2) not null,
-    tipo      varchar(45)    not null,
-    tamanho   varchar(50)    not null,
-    cor       varchar(25)    not null,
+    id           integer auto_increment,
+    id_user      integer,
+    nome         varchar(45)    not null,
+    descricao    varchar(255),
+    marca        varchar(45)    not null,
+    preco        decimal(10, 2) not null,
+    tipo         varchar(45)    not null,
+    tamanho      varchar(50)    not null,
+    precoDeCusto decimal(10, 2) not null,
+    imagem longblob,
     primary key (id),
     constraint id_userFK foreign key (id_user) references User (id)
 );
-
-
-
-INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, cor)
-VALUES (3, 'Smartphone', 'Smartphone Android', 'Samsung', 499.99, 'Eletrônico', 'NULL', 'Azul');
-
-
-CREATE TABLE Pedido_Produto
-(
-    id_pedido_produto INTEGER UNSIGNED AUTO_INCREMENT,
-    id_pedido         INTEGER,
-    id_user           integer,
-    id_produto        INTEGER,
-    quantidade        int,
-    PRIMARY KEY (id_pedido_produto),
-    CONSTRAINT id_produto_fk FOREIGN KEY (id_produto) REFERENCES Produto (id),
-    constraint id_pedido_fk foreign key (id_pedido) references Pedido (id),
-    constraint id_userFK3 foreign key (id_user) references User (id)
-
-);
-
 
 
 CREATE TABLE Estoque
@@ -74,7 +67,6 @@ CREATE TABLE Estoque
 
 );
 
-
 CREATE TABLE Pedido
 (
     id              INTEGER AUTO_INCREMENT,
@@ -91,15 +83,40 @@ CREATE TABLE Pedido
 
 );
 
-create table User
+
+
+CREATE TABLE Fornecedor
 (
-    id         integer auto_increment,
-    nome_loja  varchar(255) not null,
-    contato    varchar(16)  not null,
-    email      varchar(255) not null,
-    cnpj       varchar(14)  not null,
-    senha_hash varchar(255) not null,
-    primary key (id)
+    id     INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome   VARCHAR(50),
+    rua    VARCHAR(100),
+    bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    estado VARCHAR(100),
+    email  VARCHAR(100) NOT NULL,
+    cnpj   VARCHAR(20) UNIQUE
 );
 
+create table Produto_Fornecedor
+(
+    id_Produto_Fornecedor integer auto_increment primary key,
+    id_produto            integer,
+    id_fornecedor         integer,
+    constraint fk_pk_produtoFornecedor foreign key (id_produto) references Produto (id),
+    constraint fk_pk_FornecedorProduto foreign key (id_fornecedor) references Fornecedor (id)
+);
 
+CREATE TABLE Pedido_Produto
+(
+    id_pedido_produto INTEGER UNSIGNED AUTO_INCREMENT,
+    id_pedido         INTEGER,
+    id_user           integer,
+    id_produto        INTEGER,
+    id_fornecedor     integer,
+    quantidade        int,
+    PRIMARY KEY (id_pedido_produto),
+    CONSTRAINT id_produto_fk FOREIGN KEY (id_produto) REFERENCES Produto (id),
+    constraint id_pedido_fk foreign key (id_pedido) references Pedido (id),
+    constraint id_fornecedor_fk foreign key (id_fornecedor) references fornecedor (id),
+    constraint id_userFK3 foreign key (id_user) references User (id)
+);

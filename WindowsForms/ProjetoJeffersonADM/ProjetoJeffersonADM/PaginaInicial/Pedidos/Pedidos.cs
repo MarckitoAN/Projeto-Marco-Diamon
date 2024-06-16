@@ -40,6 +40,7 @@ namespace ProjetoJeffersonADM
         {
             InitializeComponent();
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            
 
         }
 
@@ -127,6 +128,46 @@ namespace ProjetoJeffersonADM
         }
 
         private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Main2 main = new Main2();
+            this.Hide();
+            main.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            TelaProdutos telaProdutos = new TelaProdutos();
+            this.Hide();
+            telaProdutos.Show();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.Show();
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            this.Hide();
+            estoque.Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            this.Hide();
+            fornecedor.Show();
+        }
+
+        private void bunifuPanel4_Click(object sender, EventArgs e)
         {
 
         }

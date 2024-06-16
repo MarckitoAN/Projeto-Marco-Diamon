@@ -84,7 +84,7 @@
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Archivo Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
-            this.bunifuLabel1.Location = new System.Drawing.Point(419, 12);
+            this.bunifuLabel1.Location = new System.Drawing.Point(409, 12);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(391, 60);
@@ -792,11 +792,11 @@
             this.dataPedido_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.dataPedido_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.dataPedido_txt.BorderRadius = 8;
-            this.dataPedido_txt.CalendarForeColor = System.Drawing.Color.White;
+            this.dataPedido_txt.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
             this.dataPedido_txt.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
-            this.dataPedido_txt.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dataPedido_txt.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dataPedido_txt.CalendarTrailingForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataPedido_txt.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.dataPedido_txt.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.dataPedido_txt.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
             this.dataPedido_txt.Color = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.dataPedido_txt.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
             this.dataPedido_txt.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;

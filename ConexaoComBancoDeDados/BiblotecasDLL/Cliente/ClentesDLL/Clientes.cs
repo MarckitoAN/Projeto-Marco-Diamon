@@ -65,6 +65,8 @@ namespace ClientesDLL
             try
             {
                 Dao.ConectarBancoDeDados();
+                Dao.DefinirComandoSql($"delete from pedido where id_cliente = {id}");
+                Dao.VerificarLinhasAfetadas();
                 Dao.DefinirComandoSql($"delete from Cliente where id = {id}");
                 Dao.VerificarLinhasAfetadas();
             }

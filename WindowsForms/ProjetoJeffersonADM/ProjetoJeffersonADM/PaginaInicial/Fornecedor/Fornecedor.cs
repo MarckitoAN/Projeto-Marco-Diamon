@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.Design;
@@ -20,10 +21,19 @@ namespace ProjetoJeffersonADM
     {
        readonly Fabricantes fabricantes = new Fabricantes("","", "", "", "", "","");
         DataTable fornecedor = new DataTable();
-
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
         public Fornecedor()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
         }
 
@@ -94,6 +104,48 @@ namespace ProjetoJeffersonADM
             {
                 MessageBox.Show("Nenhuma Coluna selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Main2 main = new Main2();
+            this.Hide();
+            main.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            TelaProdutos telaProdutos = new TelaProdutos();
+            this.Hide();
+            telaProdutos.Show();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.Show();
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            this.Hide();
+            estoque.Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            this.Hide();
+            fornecedor.Show();
+        }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            Pedidos pedidos = new Pedidos();
+            this.Hide();
+            pedidos.Show();
         }
     }
     }

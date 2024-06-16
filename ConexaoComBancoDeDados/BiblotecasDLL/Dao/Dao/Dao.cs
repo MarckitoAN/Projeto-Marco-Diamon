@@ -208,7 +208,7 @@ namespace Usuario
             try
             {
                 ConectarBancoDeDados();
-                string comandoSql = "SELECT Estoque.ID AS ID_Estoque, produto.ID AS ID_Produto, produto.nome AS Nome_Produto, produto.marca AS Marca, produto.tipo AS Tipo,  Estoque.Quantidade,  Estoque.Data_Entrada AS Entrada, Fornecedor.ID AS ID_Fornecedor, Fornecedor.nome AS Nome_Fornecedor, Fornecedor.rua AS Rua_Fornecedor,  Fornecedor.bairro AS Bairro_Fornecedor, Fornecedor.cidade AS Cidade_Fornecedor,  Fornecedor.estado AS Estado_Fornecedor,  Fornecedor.email AS Email_Fornecedor, Fornecedor.cnpj AS CNPJ_Fornecedor FROM Produto_Fornecedor join Fornecedor  on Fornecedor.id = Produto_Fornecedor.id_fornecedor join Estoque  on Produto_Fornecedor.id_produto = Estoque.id_produto join produto  on Produto_Fornecedor.id_produto = produto.id";
+                string comandoSql = "SELECT Estoque.ID AS ID_Estoque,produto.ID AS ID_Produto,produto.nome AS Nome_Produto,produto.marca AS Marca,produto.tipo AS Tipo,produto.precoDeCusto AS Preco_De_Custo,Estoque.Quantidade,Estoque.Data_Entrada AS Entrada,Fornecedor.ID AS ID_Fornecedor,Fornecedor.nome AS Nome_Fornecedor,Fornecedor.rua AS Rua_Fornecedor,Fornecedor.bairro AS Bairro_Fornecedor,Fornecedor.cidade AS Cidade_Fornecedor,Fornecedor.estado AS Estado_Fornecedor,Fornecedor.email AS Email_Fornecedor, Fornecedor.cnpj AS CNPJ_Fornecedor FROM Produto_Fornecedor join Fornecedor  on Fornecedor.id = Produto_Fornecedor.id_fornecedor join Estoque  on Produto_Fornecedor.id_produto = Estoque.id_produto join produto  on Produto_Fornecedor.id_produto = produto.id";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
                 adaptador.Fill(tabelaEstoque);
 
@@ -454,7 +454,164 @@ namespace Usuario
 
             return idFornecedor;
         }
+
+        public static double ValorTotal()
+        {
+            double valor = 0;
+
+            try
+            {
+                ConectarBancoDeDados();
+                DefinirComandoSql("select sum(Pedido.valor_total) from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id; ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    valor = Convert.ToDouble(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return valor;
+        }
+
+        public static string ProdutoMaisVendido()
+        {
+            string nomeProduto = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql("SELECT Produto.nome FROM Pedido_Produto JOIN Produto ON Pedido_Produto.id_produto = Produto.id GROUP BY Produto.nome  ORDER BY COUNT(Pedido_Produto.id_produto) DESC");
+
+                var reader = comandoSql.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        nomeProduto = reader["nome"].ToString();
+                    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return nomeProduto;
+        }
+
+        public static int NumeroPedido()
+        {
+
+            int valor = 0; 
+            try
+            {
+                ConectarBancoDeDados();
+                DefinirComandoSql("select count(Pedido_Produto.id_pedido_produto) from Pedido_Produto;");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    valor = Convert.ToInt32(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return valor;
+        }
+
+
+        public static DataTable UltimosPedidos()
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                ConectarBancoDeDados();
+                string comandoSql = "select Pedido.ID as ID,Cliente.ID as ClienteID,Cliente.nome as Cliente,Produto.Id as ProdutoID,Produto.nome as Produto,Produto.preco as PrecoUnitario,Fornecedor.id as IDFabricante, Fornecedor.nome as Fabricante, Fornecedor.cnpj as Cnpj,Pedido.forma_pagamento,Pedido.parcelas as Parcelas,Pedido_Produto.quantidade as Quantidade,Pedido.valor_total as ValorTotal from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id join Cliente on Cliente.id = Pedido.id_cliente join Produto on Pedido_Produto.id_produto = Produto.id join Fornecedor on Fornecedor.id = Pedido_Produto.id_fornecedor ORDER BY Pedido.data DESC LIMIT 5;";
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
+                adaptador.Fill(dataTable);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler os pedido: " + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return dataTable;
+        }
+
+        public static string AcharNomeLoja(int id)
+        {
+           string nomeLoja = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+                DefinirComandoSql($"select nome_loja from user where id = {id}; ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    nomeLoja = Convert.ToString(resultado);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler o nome: " + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return nomeLoja;
+        }
+
+        public static string AchaEmail(int id)
+        {
+            string email = "";
+
+            try
+            {
+                ConectarBancoDeDados();
+                DefinirComandoSql($"select email from user where id = {id}; ");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    email = Convert.ToString(resultado);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler o email: " + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return email;
+        }
     }
+
 
 
 }

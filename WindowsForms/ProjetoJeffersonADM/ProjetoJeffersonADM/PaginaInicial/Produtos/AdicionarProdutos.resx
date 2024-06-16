@@ -323,4 +323,19 @@
         6VRVdWIb3ppr8+D/4QE4bN5qaPb8r3d2hmHUJst+A48dJLbVr2QSAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bunifuButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMAAAAAnCAYAAABZnUc9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFXSURBVHhe7d2/TQMxGIZxlykZgZKSLrEbNqBmBBoGyJ2j
+        jIDEDKxAS8sIqSkQEiiKQAIkUD7zGcKfwhP4fU76FZGd7nvuTtc4/L9ytJMx2nVO9phTKUA/6kzbzZDs
+        dDfuf9fyqOzVxTHZU/vPQB98xl981lfLadnfjb/f+X34W5uBbkW79Rv/JMyTnfmP5+YmoFPDbPu2iHbB
+        3R+6ot0Ffyd6bS4CAvwJ0F4AFBAApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEA
+        pBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApBEApIUx2kdrAVDgTwBbtRaA3tUDYWoA58Ns
+        y1MAcvzt56oejzTxCO5bG4Be+fBvfo9JGlI5zNEehmTvrc1AX2ydp3b8Nfw/Vz0obxHtkgMz0Kv6waee
+        gjqP5eB76kP4BGM13uK3OiawAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuLabel11.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Archivo SemiBold'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+  </data>
 </root>

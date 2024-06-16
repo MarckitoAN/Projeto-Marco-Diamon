@@ -1,4 +1,7 @@
-﻿using ProdutoDLL;
+﻿using Bunifu.Dataviz.WinForms;
+using Bunifu.UI.WinForms;
+using Newtonsoft.Json.Linq;
+using ProdutoDLL;
 using ProjetoJeffersonADM;
 using System;
 using System.Collections.Generic;
@@ -6,6 +9,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,11 +18,36 @@ using Usuario;
 
 namespace ProjetoJeffersonADM
 {
+
+
     public partial class Main : Form
     {
-        public Main()
+        DataTable ultimosPedidos = new DataTable();
+        private BunifuDatavizBasic.Canvas canvas;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
+   
+        private void CriarGrafico()
         {
-            InitializeComponent();
+            canvas = new BunifuDatavizBasic.Canvas();
+            var dataPoint = new BunifuDatavizBasic.DataPoint(BunifuDatavizBasic._type.Bunifu_line);
+            dataPoint.addLabely("Janeiro", "15");
+            dataPoint.addLabely("Fevereiro", "35");
+            dataPoint.addLabely("Março", "66");
+            dataPoint.addLabely("Abril", "70");
+            dataPoint.addLabely("Maio", "30");
+            dataPoint.addLabely("Junho", "80");
+
+            canvas.addData(dataPoint);
+
+            bunifuDatavizBasic1.Render(canvas);
         }
 
 
@@ -25,14 +55,39 @@ namespace ProjetoJeffersonADM
         Point DragForm;
         bool Dragging;
 
+        public Main()
+        {
+            InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            CriarGrafico();
+            produto.Text = Dao.ProdutoMaisVendido();
+            pedido.Text = $"{Dao.NumeroPedido().ToString()} Pedidos";
+            preco.Text = $"R$:{Dao.ValorTotal().ToString()}";
+          
+        }
+
+
+        private void Main_Load_1(object sender, EventArgs e)
+        {
+            CriarGrafico();
+
+            ultimosPedidos = Dao.UltimosPedidos();
+
+            bunifuDataGridView1.DataSource = ultimosPedidos;
+
+            bunifuDataGridView1.ColumnHeadersVisible = false;
+
+
+        }
+
+        private void Main_Activated(object sender, EventArgs e)
+        {
+            CriarGrafico();
+        }
 
         private void Login_MouseUp(object sender, MouseEventArgs e)
         {
             Dragging = false;
-        }
-
-        private void Login_Click(object sender, EventArgs e)
-        {
         }
 
 
@@ -65,11 +120,7 @@ namespace ProjetoJeffersonADM
             }
 
         }
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             TelaProdutos produtos = new TelaProdutos();
@@ -77,7 +128,59 @@ namespace ProjetoJeffersonADM
             produtos.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            this.Hide();
+            estoque.Show();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.Show();
+        }
+
+        private void bunifuButton2_Click_1(object sender, EventArgs e)
+        {
+            TelaProdutos telaProdutos = new TelaProdutos();
+            this.Hide();
+            telaProdutos.Show();
+        }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            Pedidos pedido = new Pedidos();
+            this.Hide();
+            pedido.Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            this.Hide();
+            fornecedor.Show();
+        }
+
+        private void bunifuDatavizBasic1_Load(object sender, EventArgs e)
+        {
+            CriarGrafico();
+
+        }
+
+        private void produto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPanel4_Click(object sender, EventArgs e)
         {
 
         }

@@ -11,14 +11,15 @@ namespace ProdutoDLL
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Marca { get; set; }
-        public double Preco { get; private set; }
+        public double Preco { get;  set; }
         public string Tipo { get; set; }
         public string tamanho { get; set; }
         public int quantidadeEmEstoque { get; set; }
         public double precoDeCusto { get; set; }
         public int IdFornecedor { get; set; }
+        public byte[] Imagem { get; set; }
 
-        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, int quantidade, int idfornecedor, double precoDeCusto)
+        public Produto(string nome, string descricao, string marca, double Preco, string tipo, string tamanho, int quantidade, int idfornecedor, double precoDeCusto, byte[] imagem)
         {
             Nome = nome;
             Descricao = descricao;
@@ -35,24 +36,7 @@ namespace ProdutoDLL
             };
             this.IdFornecedor = idfornecedor;
             this.precoDeCusto = precoDeCusto;
-        }
-
-        public void SetPreco(double novoPreco)
-        {
-            if (novoPreco >= 0.0)
-            {
-                Preco = novoPreco;
-                return;
-            }
-
-            Console.WriteLine("Preco Invalido, Tente Novamente;");
-            while (novoPreco < 0.0)
-            {
-                Console.WriteLine("Valor:");
-                novoPreco = double.Parse(Console.ReadLine());
-            }
-
-            Preco = novoPreco;
+            Imagem = imagem;
         }
 
         public void AdicionarProdutos(int idUser)
@@ -60,7 +44,7 @@ namespace ProdutoDLL
             try
             {
                 Dao.ConectarBancoDeDados();
-                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, precoDeCusto) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho, @precoDeCusto)");
+                Dao.DefinirComandoSql("INSERT INTO Produto (id_user, nome, descricao, marca, preco, tipo, tamanho, precoDeCusto,imagem) VALUES (@id_user, @nome, @descricao, @marca, @preco, @tipo, @tamanho, @precoDeCusto,@imagem)");
                 Dao.AdicionarDados("@id_user", idUser);
                 Dao.AdicionarDados("@nome", Nome);
                 Dao.AdicionarDados("@descricao", Descricao);
@@ -69,6 +53,7 @@ namespace ProdutoDLL
                 Dao.AdicionarDados("@tipo", Tipo);
                 Dao.AdicionarDados("@tamanho", tamanho);
                 Dao.AdicionarDados("@precoDeCusto", precoDeCusto);
+                Dao.AdicionarDados("@imagem", Imagem);
                 Dao.VerificarLinhasAfetadas();
                 int idProduto = Dao.ProdutoID(Nome);
                 estoque.AdicionarAoEstoque(idUser, idProduto);

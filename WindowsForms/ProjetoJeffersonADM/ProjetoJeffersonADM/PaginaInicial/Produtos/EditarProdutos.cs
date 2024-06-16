@@ -40,7 +40,9 @@ namespace ProjetoJeffersonADM
             tipoProd_txt.Text = tipo;
             tamanhoProd_txt.Text = tamanho;
             precoCusto_txt.Text = precoDeCompra;
-            produto = new Produto(nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, double.Parse(preco), tipoProd_txt.Text, tamanhoProd_txt.Text, 0, 0, 0.0);
+            byte[] byte1 = { 1, 2, 3, 4, 5, 6, 7, };
+            
+            produto = new Produto(nomeProd_txt.Text, descriProd_txt.Text, marcaProd_txt.Text, double.Parse(preco), tipoProd_txt.Text, tamanhoProd_txt.Text, 0, 0, 0.0, byte1);
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
 

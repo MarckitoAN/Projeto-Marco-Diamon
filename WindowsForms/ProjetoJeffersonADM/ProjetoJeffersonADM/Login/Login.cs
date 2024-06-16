@@ -22,7 +22,7 @@ namespace ProjetoJeffersonADM.Logins
 {
     public partial class Login : Form
     {
-
+        readonly Main main = new Main();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
            int nLeftRect,
@@ -89,18 +89,9 @@ namespace ProjetoJeffersonADM.Logins
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            Fornecedor fabricante = new Fornecedor();
-            fabricante.Show();
-           Pedidos pedidos = new Pedidos();
-            pedidos.Show();
-            Clientes clientes = new Clientes();
-            clientes.Show();
-            TelaProdutos opa = new TelaProdutos();
-            opa.Show();
 
-            /*
-            Estoque estoque = new Estoque();
-            estoque.Show();
+
+           
              if(String.IsNullOrEmpty(loginEmail_txt.Text) )
             {
                 bunifuSnackbar2.Show(this, "Campo de Email vazio!", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
@@ -117,8 +108,7 @@ namespace ProjetoJeffersonADM.Logins
             if (Dao.LoginUser(loginEmail_txt.Text, loginSenha_txt.Text) == true)
             {
                 LoginID.IdUser = Dao.UserID(loginEmail_txt.Text, loginSenha_txt.Text);
-                
-                bunifuTransition1.HideSync(this);
+                this.Hide();
                 main.Show();
                 Console.WriteLine(LoginID.IdUser);
             }
@@ -129,7 +119,7 @@ namespace ProjetoJeffersonADM.Logins
             }
             
             Dao.FecharConexao();
-             */
+            
 
         }
 
@@ -147,7 +137,7 @@ namespace ProjetoJeffersonADM.Logins
 
         private void Login_Load(object sender, EventArgs e)
         {
-            loginEmail_txt.PasswordChar = '*';
+            loginSenha_txt.PasswordChar = '*';
         }
     }
 }

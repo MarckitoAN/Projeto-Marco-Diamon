@@ -87,6 +87,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -142,12 +143,6 @@
     <Compile Include="PaginaInicial\Clientes\EditarClientes.Designer.cs">
       <DependentUpon>EditarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaginaInicial\Estoque\EditarEstoque.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PaginaInicial\Estoque\EditarEstoque.Designer.cs">
-      <DependentUpon>EditarEstoque.cs</DependentUpon>
-    </Compile>
     <Compile Include="PaginaInicial\Estoque\Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +172,12 @@
     </Compile>
     <Compile Include="PaginaInicial\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Main2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Main2.Designer.cs">
+      <DependentUpon>Main2.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaInicial\Produtos\AdicionarPedido.cs">
       <SubType>Form</SubType>
@@ -234,9 +235,6 @@
     <EmbeddedResource Include="PaginaInicial\Clientes\EditarClientes.resx">
       <DependentUpon>EditarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaginaInicial\Estoque\EditarEstoque.resx">
-      <DependentUpon>EditarEstoque.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Estoque\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Main2.resx">
+      <DependentUpon>Main2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Produtos\AdicionarPedido.resx">
       <DependentUpon>AdicionarPedido.cs</DependentUpon>

@@ -146,5 +146,40 @@ namespace ProjetoJeffersonADM
         {
 
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Main2 main = new Main2();
+            this.Hide();
+            main.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            TelaProdutos telaProdutos = new TelaProdutos();
+            this.Hide();
+            telaProdutos.Show();
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            this.Hide();
+            estoque.Show();
+        }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            Pedidos pedidos = new Pedidos();
+            this.Hide();
+            pedidos.Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            this.Hide();
+            fornecedor.Show();
+        }
     }
 }

@@ -101,7 +101,7 @@ namespace ProjetoJeffersonADM
         private void button2_Click(object sender, EventArgs e)
         {
             AdicionarProdutos adicionarProdutos = new AdicionarProdutos();
-            adicionarProdutos.ShowDialog();
+            adicionarProdutos.Show();
         }
 
 
@@ -135,6 +135,15 @@ namespace ProjetoJeffersonADM
             bunifuDataGridView1.DataSource = produtos;
         }
 
+
+
+        private void button123_Click(object sender, EventArgs e)
+        {
+            Main2 main2 = new Main2();
+            this.Hide();
+            main2.Show();
+        }
+           
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -183,8 +192,9 @@ namespace ProjetoJeffersonADM
                 string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["tipo"].Value.ToString();
                 string tamanho = bunifuDataGridView1.Rows[rowIndex].Cells["tamanho"].Value.ToString();
                 string precoDeCusto = bunifuDataGridView1.Rows[rowIndex].Cells["precoDeCusto"].Value.ToString();
+                byte[] test = { 1, 2, 2, 3, 4, 5, 6, };
 
-                produto = new Produto(nome,descricao,marca,0, tipo, tamanho, 0,0,0);
+                produto = new Produto(nome,descricao,marca,0, tipo, tamanho, 0,0,0, test);
 
                 produto.RemoverProdutos(id);
                 produtos = Dao.ObterProdutos();
@@ -203,6 +213,36 @@ namespace ProjetoJeffersonADM
                 AdicionarPedido adicionarPedido = new AdicionarPedido(id, idFornecedor);
                 adicionarPedido.ShowDialog();
             }
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            this.Hide();
+            estoque.Show();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.Show();
+        }
+
+      
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            Pedidos pedido = new Pedidos();
+            this.Hide();
+            pedido.Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            this.Hide();
+            fornecedor.Show();
         }
     }
 }

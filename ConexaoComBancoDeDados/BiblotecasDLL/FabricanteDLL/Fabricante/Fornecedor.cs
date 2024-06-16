@@ -81,6 +81,8 @@ namespace Fabricante
                 Dao.ConectarBancoDeDados();
                 Dao.DefinirComandoSql($"delete from Produto_Fornecedor where id_fornecedor = {id}");
                 Dao.VerificarLinhasAfetadas();
+                Dao.DefinirComandoSql($"delete from Pedido_Produto where id_fornecedor = {id}");
+                Dao.VerificarLinhasAfetadas();
                 Dao.DefinirComandoSql($"delete from Fornecedor where id = {id}");
                 Dao.VerificarLinhasAfetadas();
             }
