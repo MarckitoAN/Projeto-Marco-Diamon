@@ -26,26 +26,23 @@
     <div class="detalhes-pedido">
       <?php
       session_start();
-      require 'conexao.php'; // Arquivo de conexão com o banco de dados
+      require 'conexao.php'; 
 
-      // Verifica se o usuário está logado
+  
       if (!isset($_SESSION['user_id'])) {
         echo "<p>Você não está logado.</p>";
         exit;
       }
 
-      // Processamento do formulário de envio do pedido
       if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_produto'])) {
-        $id_cliente = $_SESSION['user_id']; // ID do cliente logado
+        $id_cliente = $_SESSION['user_id']; 
         $id_produto = $_POST['id_produto'];
         $quantidade = $_POST['quantidade'];
         $id_fornecedor = $_POST['id_fornecedor'];
 
-        // Iniciar transação para garantir a consistência dos dados
         $conn->begin_transaction();
 
         try {
-          // Inserir o pedido na tabela Pedido
           $sql_pedido = "INSERT INTO Pedido (data, id_user, id_cliente, forma_pagamento, parcelas, valor_total)
                          VALUES (NOW(), 1, ?, 'Debito', 1, 0)";
           $stmt_pedido = $conn->prepare($sql_pedido);
@@ -58,7 +55,6 @@
 
           $pedido_id = $stmt_pedido->insert_id;
 
-          // Inserir o produto associado ao pedido na tabela Pedido_Produto
           $sql_pedido_produto = "INSERT INTO Pedido_Produto (id_pedido, id_produto, id_fornecedor, quantidade)
                                  VALUES (?, ?, ?, ?)";
           $stmt_pedido_produto = $conn->prepare($sql_pedido_produto);
@@ -69,7 +65,6 @@
             throw new Exception("Falha ao inserir produto no pedido.");
           }
 
-          // Atualizar o valor total do pedido com base no preço do produto e quantidade
           $sql_produto = "SELECT nome, preco FROM Produto WHERE id = ?";
           $stmt_produto = $conn->prepare($sql_produto);
           $stmt_produto->bind_param("i", $id_produto);
@@ -90,7 +85,6 @@
             throw new Exception("Produto não encontrado.");
           }
 
-          // Recuperar o nome do fornecedor
           $sql_fornecedor = "SELECT nome FROM fornecedor WHERE id = ?";
           $stmt_fornecedor = $conn->prepare($sql_fornecedor);
           $stmt_fornecedor->bind_param("i", $id_fornecedor);
@@ -103,7 +97,6 @@
             throw new Exception("Fornecedor não encontrado.");
           }
 
-          // Recuperar o nome do cliente
           $sql_cliente = "SELECT nome FROM cliente WHERE id = ?";
           $stmt_cliente = $conn->prepare($sql_cliente);
           $stmt_cliente->bind_param("i", $id_cliente);
@@ -116,17 +109,14 @@
             throw new Exception("Cliente não encontrado.");
           }
 
-          // Exibir os detalhes do pedido
           echo "<p>Nome do Produto: $nome_produto</p>";
           echo "<p>Nome do Fornecedor: $nome_fornecedor</p>";
           echo "<p>Valor Total: R$ " . number_format($valor_total_produto, 2, ',', '.') . "</p>";
           echo "<p>Nome do Cliente: $nome_cliente</p>";
 
-          // Commit da transação
           $conn->commit();
 
         } catch (Exception $e) {
-          // Rollback da transação em caso de erro
           $conn->rollback();
           echo "<p>Erro: " . $e->getMessage() . "</p>";
         }

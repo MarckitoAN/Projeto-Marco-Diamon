@@ -217,5 +217,10 @@ namespace ProjetoJeffersonADM
         {
 
         }
+
+        private void bunifuDatavizBasic1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

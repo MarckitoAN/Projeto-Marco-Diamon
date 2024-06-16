@@ -40,16 +40,25 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.titulo_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.preco = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.pedido = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.produto = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -64,6 +73,9 @@
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.preco = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.pedido = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.produto = new Bunifu.UI.WinForms.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
@@ -136,22 +148,6 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(219, 115);
             this.bunifuPanel1.TabIndex = 8;
             // 
-            // preco
-            // 
-            this.preco.AllowParentOverrides = false;
-            this.preco.AutoEllipsis = false;
-            this.preco.CursorType = null;
-            this.preco.Font = new System.Drawing.Font("Archivo SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preco.ForeColor = System.Drawing.Color.White;
-            this.preco.Location = new System.Drawing.Point(10, 46);
-            this.preco.Name = "preco";
-            this.preco.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.preco.Size = new System.Drawing.Size(127, 50);
-            this.preco.TabIndex = 10;
-            this.preco.Text = "R$: 0,00";
-            this.preco.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.preco.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
@@ -186,22 +182,6 @@
             this.bunifuPanel2.Size = new System.Drawing.Size(277, 115);
             this.bunifuPanel2.TabIndex = 9;
             // 
-            // pedido
-            // 
-            this.pedido.AllowParentOverrides = false;
-            this.pedido.AutoEllipsis = false;
-            this.pedido.CursorType = null;
-            this.pedido.Font = new System.Drawing.Font("Archivo SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.pedido.ForeColor = System.Drawing.Color.White;
-            this.pedido.Location = new System.Drawing.Point(58, 43);
-            this.pedido.Name = "pedido";
-            this.pedido.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pedido.Size = new System.Drawing.Size(153, 50);
-            this.pedido.TabIndex = 9;
-            this.pedido.Text = "0 Pedidos";
-            this.pedido.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.pedido.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuPanel3
             // 
             this.bunifuPanel3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -210,32 +190,14 @@
             this.bunifuPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
             this.bunifuPanel3.BorderRadius = 16;
             this.bunifuPanel3.BorderThickness = 1;
-            this.bunifuPanel3.Controls.Add(this.produto);
             this.bunifuPanel3.Controls.Add(this.bunifuLabel3);
+            this.bunifuPanel3.Controls.Add(this.produto);
             this.bunifuPanel3.Font = new System.Drawing.Font("Archivo Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuPanel3.Location = new System.Drawing.Point(276, 121);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
             this.bunifuPanel3.Size = new System.Drawing.Size(277, 115);
             this.bunifuPanel3.TabIndex = 10;
-            // 
-            // produto
-            // 
-            this.produto.AllowParentOverrides = false;
-            this.produto.AutoEllipsis = false;
-            this.produto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.produto.CursorType = System.Windows.Forms.Cursors.Default;
-            this.produto.Font = new System.Drawing.Font("Archivo SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.produto.ForeColor = System.Drawing.Color.White;
-            this.produto.Location = new System.Drawing.Point(35, 40);
-            this.produto.Name = "produto";
-            this.produto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.produto.Size = new System.Drawing.Size(229, 50);
-            this.produto.TabIndex = 8;
-            this.produto.Text = "Camisa Branca";
-            this.produto.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.produto.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.produto.Click += new System.EventHandler(this.produto_Click);
             // 
             // bunifuLabel3
             // 
@@ -1018,6 +980,237 @@
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             // 
+            // preco
+            // 
+            this.preco.AcceptsReturn = false;
+            this.preco.AcceptsTab = false;
+            this.preco.AnimationSpeed = 200;
+            this.preco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.preco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.preco.AutoSizeHeight = true;
+            this.preco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("preco.BackgroundImage")));
+            this.preco.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.BorderRadius = 16;
+            this.preco.BorderThickness = 1;
+            this.preco.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.preco.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.preco.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.preco.DefaultFont = new System.Drawing.Font("Archivo Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preco.DefaultText = "";
+            this.preco.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.preco.ForeColor = System.Drawing.Color.White;
+            this.preco.HideSelection = true;
+            this.preco.IconLeft = null;
+            this.preco.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.preco.IconPadding = 10;
+            this.preco.IconRight = null;
+            this.preco.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.preco.Lines = new string[0];
+            this.preco.Location = new System.Drawing.Point(14, 41);
+            this.preco.MaxLength = 32767;
+            this.preco.MinimumSize = new System.Drawing.Size(1, 1);
+            this.preco.Modified = false;
+            this.preco.Multiline = true;
+            this.preco.Name = "preco";
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.preco.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.preco.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.preco.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.preco.OnIdleState = stateProperties4;
+            this.preco.Padding = new System.Windows.Forms.Padding(3);
+            this.preco.PasswordChar = '\0';
+            this.preco.PlaceholderForeColor = System.Drawing.Color.White;
+            this.preco.PlaceholderText = "";
+            this.preco.ReadOnly = true;
+            this.preco.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.preco.SelectedText = "";
+            this.preco.SelectionLength = 0;
+            this.preco.SelectionStart = 0;
+            this.preco.ShortcutsEnabled = true;
+            this.preco.Size = new System.Drawing.Size(202, 51);
+            this.preco.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.preco.TabIndex = 33;
+            this.preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.preco.TextMarginBottom = 0;
+            this.preco.TextMarginLeft = 0;
+            this.preco.TextMarginTop = 0;
+            this.preco.TextPlaceholder = "";
+            this.preco.UseSystemPasswordChar = false;
+            this.preco.WordWrap = true;
+            // 
+            // pedido
+            // 
+            this.pedido.AcceptsReturn = false;
+            this.pedido.AcceptsTab = false;
+            this.pedido.AnimationSpeed = 200;
+            this.pedido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.pedido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.pedido.AutoSizeHeight = true;
+            this.pedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pedido.BackgroundImage")));
+            this.pedido.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.BorderRadius = 16;
+            this.pedido.BorderThickness = 1;
+            this.pedido.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.pedido.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.pedido.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pedido.DefaultFont = new System.Drawing.Font("Archivo Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pedido.DefaultText = "";
+            this.pedido.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pedido.ForeColor = System.Drawing.Color.White;
+            this.pedido.HideSelection = true;
+            this.pedido.IconLeft = null;
+            this.pedido.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.pedido.IconPadding = 10;
+            this.pedido.IconRight = null;
+            this.pedido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.pedido.Lines = new string[0];
+            this.pedido.Location = new System.Drawing.Point(14, 38);
+            this.pedido.MaxLength = 32767;
+            this.pedido.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pedido.Modified = false;
+            this.pedido.Multiline = true;
+            this.pedido.Name = "pedido";
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.pedido.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.pedido.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.pedido.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties8.ForeColor = System.Drawing.Color.White;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.pedido.OnIdleState = stateProperties8;
+            this.pedido.Padding = new System.Windows.Forms.Padding(3);
+            this.pedido.PasswordChar = '\0';
+            this.pedido.PlaceholderForeColor = System.Drawing.Color.White;
+            this.pedido.PlaceholderText = "";
+            this.pedido.ReadOnly = true;
+            this.pedido.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.pedido.SelectedText = "";
+            this.pedido.SelectionLength = 0;
+            this.pedido.SelectionStart = 0;
+            this.pedido.ShortcutsEnabled = true;
+            this.pedido.Size = new System.Drawing.Size(256, 42);
+            this.pedido.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.pedido.TabIndex = 32;
+            this.pedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pedido.TextMarginBottom = 0;
+            this.pedido.TextMarginLeft = 3;
+            this.pedido.TextMarginTop = 0;
+            this.pedido.TextPlaceholder = "";
+            this.pedido.UseSystemPasswordChar = false;
+            this.pedido.WordWrap = true;
+            // 
+            // produto
+            // 
+            this.produto.AcceptsReturn = false;
+            this.produto.AcceptsTab = false;
+            this.produto.AnimationSpeed = 200;
+            this.produto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.produto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.produto.AutoSizeHeight = true;
+            this.produto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("produto.BackgroundImage")));
+            this.produto.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.BorderRadius = 16;
+            this.produto.BorderThickness = 1;
+            this.produto.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.produto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.produto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.produto.DefaultFont = new System.Drawing.Font("Archivo Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.produto.DefaultText = "";
+            this.produto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.produto.ForeColor = System.Drawing.Color.White;
+            this.produto.HideSelection = true;
+            this.produto.IconLeft = null;
+            this.produto.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.produto.IconPadding = 10;
+            this.produto.IconRight = null;
+            this.produto.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.produto.Lines = new string[0];
+            this.produto.Location = new System.Drawing.Point(21, 35);
+            this.produto.MaxLength = 32767;
+            this.produto.MinimumSize = new System.Drawing.Size(1, 1);
+            this.produto.Modified = false;
+            this.produto.Multiline = true;
+            this.produto.Name = "produto";
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.produto.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.produto.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.produto.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            stateProperties12.ForeColor = System.Drawing.Color.White;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.produto.OnIdleState = stateProperties12;
+            this.produto.Padding = new System.Windows.Forms.Padding(3);
+            this.produto.PasswordChar = '\0';
+            this.produto.PlaceholderForeColor = System.Drawing.Color.White;
+            this.produto.PlaceholderText = "";
+            this.produto.ReadOnly = true;
+            this.produto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.produto.SelectedText = "";
+            this.produto.SelectionLength = 0;
+            this.produto.SelectionStart = 0;
+            this.produto.ShortcutsEnabled = true;
+            this.produto.Size = new System.Drawing.Size(253, 42);
+            this.produto.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.produto.TabIndex = 31;
+            this.produto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.produto.TextMarginBottom = 0;
+            this.produto.TextMarginLeft = 3;
+            this.produto.TextMarginTop = 0;
+            this.produto.TextPlaceholder = "";
+            this.produto.UseSystemPasswordChar = false;
+            this.produto.WordWrap = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1065,9 +1258,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel5;
-        private Bunifu.UI.WinForms.BunifuLabel pedido;
-        private Bunifu.UI.WinForms.BunifuLabel produto;
-        private Bunifu.UI.WinForms.BunifuLabel preco;
         private Bunifu.Dataviz.WinForms.BunifuDatavizAdvanced bunifuDatavizAdvanced1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         private Bunifu.Dataviz.WinForms.BunifuDatavizBasic bunifuDatavizBasic1;
@@ -1079,5 +1269,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
         private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
+        private Bunifu.UI.WinForms.BunifuTextBox preco;
+        private Bunifu.UI.WinForms.BunifuTextBox pedido;
+        private Bunifu.UI.WinForms.BunifuTextBox produto;
     }
 }

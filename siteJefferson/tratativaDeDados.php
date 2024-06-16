@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssssssss", $id_user,$nome, $rg, $cpf, $tel, $rua, $bairro,$cidade,$estado,$email,$senha);
  
     if ($stmt->execute() === TRUE) {
-      echo "<h3>Cliente Cadastrado com Sucesso</h3>";
+       header("Location: login.php");
     } else {
-      echo "Erro ao cadastrar aluno: " . $conn->error;
+      echo "Erro ao cadastrar Cliente: " . $conn->error;
     }
 }
 
