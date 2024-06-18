@@ -1253,7 +1253,7 @@
             this.idCliente_txt.PasswordChar = '\0';
             this.idCliente_txt.PlaceholderForeColor = System.Drawing.Color.White;
             this.idCliente_txt.PlaceholderText = "Id";
-            this.idCliente_txt.ReadOnly = false;
+            this.idCliente_txt.ReadOnly = true;
             this.idCliente_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idCliente_txt.SelectedText = "";
             this.idCliente_txt.SelectionLength = 0;

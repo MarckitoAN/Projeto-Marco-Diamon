@@ -101,6 +101,50 @@ namespace ProjetoJeffersonADM
         {
             try
             {
+                if(String.IsNullOrEmpty(nomeProd_txt.Text))
+                {
+                    nome.Show(this, "Nome do Produto vazio");
+                    return;
+
+                }
+                else if (String.IsNullOrEmpty(descriProd_txt.Text))
+                {
+                    nome.Show(this, "Descricao do Produto vazio");
+                    return;
+                } else if (String.IsNullOrEmpty(marcaProd_txt.Text))
+                {
+                    nome.Show(this, "Marca do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(estoque_txt.Text))
+                {
+                    nome.Show(this, "Quantidade do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(caminhoImagem))
+                {
+                    nome.Show(this, "Quantidade do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(precoProd_txt.Text))
+                {
+                    nome.Show(this, "Preco do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(tipoProd_txt.Text))
+                {
+                    nome.Show(this, "Tipo do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(tamanhoProd_txt.Text))
+                {
+                    nome.Show(this, "Tamanho do Produto vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(idForne_txt.Text))
+                {
+                    nome.Show(this, "Id do Fornecedor vazio");
+                    return;
+                }else if (String.IsNullOrEmpty(custo_txt.Text))
+                {
+                    nome.Show(this, "Preco de Custo vazio");
+                    return;
+                }
+
 
                 double preco = double.Parse(precoProd_txt.Text);
                 int idFornecedor = int.Parse(idForne_txt.Text);

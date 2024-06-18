@@ -68,9 +68,9 @@ namespace ProjetoJeffersonADM
                                 $"Estado LIKE '%{termoDePesquisa}%' OR " +
                                 $"Email LIKE '%{termoDePesquisa}%'";
 
-                DataView view = new DataView(clientes);
-                view.RowFilter = filtro;
-                bunifuDataGridView1.DataSource = view;
+                DataView filtrar = new DataView(clientes);
+                filtrar.RowFilter = filtro;
+                bunifuDataGridView1.DataSource = filtrar;
             }
             else
             {
@@ -83,20 +83,19 @@ namespace ProjetoJeffersonADM
         {
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
-                int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
 
-                int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Id"].Value);
-                string idString = bunifuDataGridView1.Rows[rowIndex].Cells["Id"].Value.ToString();
-                string nome = bunifuDataGridView1.Rows[rowIndex].Cells["Nome"].Value.ToString();
-                string rg = bunifuDataGridView1.Rows[rowIndex].Cells["Rg"].Value.ToString();
-                string cpf = bunifuDataGridView1.Rows[rowIndex].Cells["Cpf"].Value.ToString();
-                string telefone = bunifuDataGridView1.Rows[rowIndex].Cells["Telefone"].Value.ToString();
-                string rua = bunifuDataGridView1.Rows[rowIndex].Cells["Rua"].Value.ToString();
-                string bairro = bunifuDataGridView1.Rows[rowIndex].Cells["Bairro"].Value.ToString();
-                string cidade = bunifuDataGridView1.Rows[rowIndex].Cells["Cidade"].Value.ToString();
-                string estado = bunifuDataGridView1.Rows[rowIndex].Cells["Estado"].Value.ToString();
-                string email = bunifuDataGridView1.Rows[rowIndex].Cells["Email"].Value.ToString();
+                int id = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["Id"].Value);
+                string idString = bunifuDataGridView1.Rows[indexDaLinha].Cells["Id"].Value.ToString();
+                string nome = bunifuDataGridView1.Rows[indexDaLinha].Cells["Nome"].Value.ToString();
+                string rg = bunifuDataGridView1.Rows[indexDaLinha].Cells["Rg"].Value.ToString();
+                string cpf = bunifuDataGridView1.Rows[indexDaLinha].Cells["Cpf"].Value.ToString();
+                string telefone = bunifuDataGridView1.Rows[indexDaLinha].Cells["Telefone"].Value.ToString();
+                string rua = bunifuDataGridView1.Rows[indexDaLinha].Cells["Rua"].Value.ToString();
+                string bairro = bunifuDataGridView1.Rows[indexDaLinha].Cells["Bairro"].Value.ToString();
+                string cidade = bunifuDataGridView1.Rows[indexDaLinha].Cells["Cidade"].Value.ToString();
+                string estado = bunifuDataGridView1.Rows[indexDaLinha].Cells["Estado"].Value.ToString();
+                string email = bunifuDataGridView1.Rows[indexDaLinha].Cells["Email"].Value.ToString();
 
                 EditarClientes editarClientes = new EditarClientes(idString, nome, rg, cpf, telefone, rua, bairro, cidade, estado, email);
                 editarClientes.ShowDialog();
@@ -109,18 +108,18 @@ namespace ProjetoJeffersonADM
         {
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
 
-                int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Id"].Value);
-                string nome = bunifuDataGridView1.Rows[rowIndex].Cells["Nome"].Value.ToString();
-                string rg = bunifuDataGridView1.Rows[rowIndex].Cells["Rg"].Value.ToString();
-                string cpf = bunifuDataGridView1.Rows[rowIndex].Cells["Cpf"].Value.ToString();
-                string telefone = bunifuDataGridView1.Rows[rowIndex].Cells["Telefone"].Value.ToString();
-                string rua = bunifuDataGridView1.Rows[rowIndex].Cells["Rua"].Value.ToString();
-                string bairro = bunifuDataGridView1.Rows[rowIndex].Cells["Bairro"].Value.ToString();
-                string cidade = bunifuDataGridView1.Rows[rowIndex].Cells["Cidade"].Value.ToString();
-                string estado = bunifuDataGridView1.Rows[rowIndex].Cells["Estado"].Value.ToString();
-                string email = bunifuDataGridView1.Rows[rowIndex].Cells["Email"].Value.ToString();
+                int id = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["Id"].Value);
+                string nome = bunifuDataGridView1.Rows[indexDaLinha].Cells["Nome"].Value.ToString();
+                string rg = bunifuDataGridView1.Rows[indexDaLinha].Cells["Rg"].Value.ToString();
+                string cpf = bunifuDataGridView1.Rows[indexDaLinha].Cells["Cpf"].Value.ToString();
+                string telefone = bunifuDataGridView1.Rows[indexDaLinha].Cells["Telefone"].Value.ToString();
+                string rua = bunifuDataGridView1.Rows[indexDaLinha].Cells["Rua"].Value.ToString();
+                string bairro = bunifuDataGridView1.Rows[indexDaLinha].Cells["Bairro"].Value.ToString();
+                string cidade = bunifuDataGridView1.Rows[indexDaLinha].Cells["Cidade"].Value.ToString();
+                string estado = bunifuDataGridView1.Rows[indexDaLinha].Cells["Estado"].Value.ToString();
+                string email = bunifuDataGridView1.Rows[indexDaLinha].Cells["Email"].Value.ToString();
 
                 cli = new ClientesDLL.Clientes(nome,rg,cpf,telefone,rua,bairro,cidade,estado,email,"0");
 
@@ -180,6 +179,11 @@ namespace ProjetoJeffersonADM
             Fornecedor fornecedor = new Fornecedor();
             this.Hide();
             fornecedor.Show();
+        }
+
+        private void pesquisa_txt_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

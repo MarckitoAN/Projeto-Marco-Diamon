@@ -59,24 +59,24 @@ namespace ProjetoJeffersonADM
         {
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
 
 
-                int idEstoque = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ID_Estoque"].Value);
-                int idProduto = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ID_Produto"].Value);
-                int idFornecedor = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["ID_Fornecedor"].Value);
-                int quantidade = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Quantidade"].Value);
-                double precoDeCusto = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["Preco_De_Custo"].Value);
-                string nomeDoProduto = bunifuDataGridView1.Rows[rowIndex].Cells["Nome_Produto"].Value.ToString();
+                int idEstoque = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["ID_Estoque"].Value);
+                int idProduto = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["ID_Produto"].Value);
+                int idFornecedor = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["ID_Fornecedor"].Value);
+                int quantidade = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["Quantidade"].Value);
+                double precoDeCusto = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["Preco_De_Custo"].Value);
+                string nomeDoProduto = bunifuDataGridView1.Rows[indexDaLinha].Cells["Nome_Produto"].Value.ToString();
                 double totalDeCusto = precoDeCusto * quantidade;
-                string marca = bunifuDataGridView1.Rows[rowIndex].Cells["Marca"].Value.ToString();
-                string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["Tipo"].Value.ToString();
-                string nomeFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["Nome_Fornecedor"].Value.ToString();
-                string ruaFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["Rua_Fornecedor"].Value.ToString();
-                string cidadeFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["Cidade_Fornecedor"].Value.ToString();
-                string estadoFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["Estado_Fornecedor"].Value.ToString();
-                string emailFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["Email_Fornecedor"].Value.ToString();
-                string cnpjFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["CNPJ_Fornecedor"].Value.ToString();
+                string marca = bunifuDataGridView1.Rows[indexDaLinha].Cells["Marca"].Value.ToString();
+                string tipo = bunifuDataGridView1.Rows[indexDaLinha].Cells["Tipo"].Value.ToString();
+                string nomeFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["Nome_Fornecedor"].Value.ToString();
+                string ruaFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["Rua_Fornecedor"].Value.ToString();
+                string cidadeFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["Cidade_Fornecedor"].Value.ToString();
+                string estadoFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["Estado_Fornecedor"].Value.ToString();
+                string emailFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["Email_Fornecedor"].Value.ToString();
+                string cnpjFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["CNPJ_Fornecedor"].Value.ToString();
                
                 NotaFiscal notaFiscal = new NotaFiscal();
                 notaFiscal.EmitirNotaFiscalEstoque(nomeFornecedor, nomeFornecedor, cnpjFornecedor, ruaFornecedor, cidadeFornecedor, estadoFornecedor, "11-23213-5435", idProduto, nomeDoProduto, quantidade, precoDeCusto, totalDeCusto,"Credito");
@@ -122,6 +122,37 @@ namespace ProjetoJeffersonADM
             Fornecedor fornecedor = new Fornecedor();
             this.Hide();
             fornecedor.Show();
+        }
+
+        private void pesquisa_txt_TextChanged(object sender, EventArgs e)
+        {
+            string termoDePesquisa = pesquisa_txt.Text.Trim();
+
+            if (!string.IsNullOrEmpty(termoDePesquisa))
+            {
+                string filtro = $"Convert(ID_Estoque, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(ID_Produto, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(ID_Fornecedor, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(Quantidade, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(Preco_De_Custo, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Nome_Produto LIKE '%{termoDePesquisa}%' OR " +
+                                $"Marca LIKE '%{termoDePesquisa}%' OR " +
+                                $"Tipo LIKE '%{termoDePesquisa}%' OR " +
+                                $"Nome_Fornecedor LIKE '%{termoDePesquisa}%' OR " +
+                                $"Rua_Fornecedor LIKE '%{termoDePesquisa}%' OR " +
+                                $"Cidade_Fornecedor LIKE '%{termoDePesquisa}%' OR " +
+                                $"Estado_Fornecedor LIKE '%{termoDePesquisa}%' OR " +
+                                $"Email_Fornecedor LIKE '%{termoDePesquisa}%' OR " +
+                                $"CNPJ_Fornecedor LIKE '%{termoDePesquisa}%'";
+
+                DataView filtrar = new DataView(estoque);
+                filtrar.RowFilter = filtro;
+                bunifuDataGridView1.DataSource = filtrar;
+            }
+            else
+            {
+                bunifuDataGridView1.DataSource = estoque;
+            }
         }
     }
     }

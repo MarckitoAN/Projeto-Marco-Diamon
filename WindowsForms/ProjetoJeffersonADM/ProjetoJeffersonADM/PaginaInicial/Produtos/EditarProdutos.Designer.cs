@@ -958,7 +958,7 @@
             this.idProd_txt.PasswordChar = '\0';
             this.idProd_txt.PlaceholderForeColor = System.Drawing.Color.White;
             this.idProd_txt.PlaceholderText = "ID";
-            this.idProd_txt.ReadOnly = false;
+            this.idProd_txt.ReadOnly = true;
             this.idProd_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idProd_txt.SelectedText = "";
             this.idProd_txt.SelectionLength = 0;
@@ -1054,7 +1054,7 @@
             this.idFornecedor_txt.PasswordChar = '\0';
             this.idFornecedor_txt.PlaceholderForeColor = System.Drawing.Color.White;
             this.idFornecedor_txt.PlaceholderText = "ID";
-            this.idFornecedor_txt.ReadOnly = false;
+            this.idFornecedor_txt.ReadOnly = true;
             this.idFornecedor_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idFornecedor_txt.SelectedText = "";
             this.idFornecedor_txt.SelectionLength = 0;
@@ -1082,7 +1082,7 @@
             this.bunifuLabel10.Location = new System.Drawing.Point(642, 397);
             this.bunifuLabel10.Name = "bunifuLabel10";
             this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(110, 25);
+            this.bunifuLabel10.Size = new System.Drawing.Size(111, 25);
             this.bunifuLabel10.TabIndex = 43;
             this.bunifuLabel10.Text = "Preco de custo";
             this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;

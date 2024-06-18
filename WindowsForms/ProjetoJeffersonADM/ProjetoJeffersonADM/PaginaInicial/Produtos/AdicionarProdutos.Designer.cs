@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarProdutos));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -92,9 +93,8 @@
             this.custo_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuButton22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.nome = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuLabel1
@@ -1283,13 +1283,75 @@
             this.bunifuLabel11.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.bunifuLabel11.UseGdiPlusTextRendering = true;
             // 
-            // pictureBox2
+            // nome
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(372, 575);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 44;
-            this.pictureBox2.TabStop = false;
+            this.nome.AllowDragging = false;
+            this.nome.AllowMultipleViews = true;
+            this.nome.ClickToClose = true;
+            this.nome.DoubleClickToClose = true;
+            this.nome.DurationAfterIdle = 3000;
+            this.nome.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nome.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nome.ErrorOptions.ActionBorderRadius = 1;
+            this.nome.ErrorOptions.ActionFont = new System.Drawing.Font("Archivo Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome.ErrorOptions.ActionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.nome.ErrorOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nome.ErrorOptions.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nome.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.nome.ErrorOptions.Font = new System.Drawing.Font("Archivo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome.ErrorOptions.ForeColor = System.Drawing.Color.White;
+            this.nome.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.nome.ErrorOptions.IconLeftMargin = 12;
+            this.nome.FadeCloseIcon = false;
+            this.nome.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
+            this.nome.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.InformationOptions.ActionBorderRadius = 1;
+            this.nome.InformationOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.nome.InformationOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.nome.InformationOptions.BackColor = System.Drawing.Color.White;
+            this.nome.InformationOptions.BorderColor = System.Drawing.Color.White;
+            this.nome.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.nome.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.nome.InformationOptions.ForeColor = System.Drawing.Color.Black;
+            this.nome.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.nome.InformationOptions.IconLeftMargin = 12;
+            this.nome.Margin = 10;
+            this.nome.MaximumSize = new System.Drawing.Size(0, 0);
+            this.nome.MaximumViews = 7;
+            this.nome.MessageRightMargin = 15;
+            this.nome.MessageTopMargin = 0;
+            this.nome.MinimumSize = new System.Drawing.Size(0, 0);
+            this.nome.ShowBorders = false;
+            this.nome.ShowCloseIcon = false;
+            this.nome.ShowIcon = true;
+            this.nome.ShowShadows = true;
+            this.nome.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.SuccessOptions.ActionBorderRadius = 1;
+            this.nome.SuccessOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.nome.SuccessOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.nome.SuccessOptions.BackColor = System.Drawing.Color.White;
+            this.nome.SuccessOptions.BorderColor = System.Drawing.Color.White;
+            this.nome.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.nome.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.nome.SuccessOptions.ForeColor = System.Drawing.Color.Black;
+            this.nome.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.nome.SuccessOptions.IconLeftMargin = 12;
+            this.nome.ViewsMargin = 7;
+            this.nome.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nome.WarningOptions.ActionBorderRadius = 1;
+            this.nome.WarningOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.nome.WarningOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.nome.WarningOptions.BackColor = System.Drawing.Color.White;
+            this.nome.WarningOptions.BorderColor = System.Drawing.Color.White;
+            this.nome.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
+            this.nome.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.nome.WarningOptions.ForeColor = System.Drawing.Color.Black;
+            this.nome.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.nome.WarningOptions.IconLeftMargin = 12;
+            this.nome.ZoomCloseIcon = true;
             // 
             // AdicionarProdutos
             // 
@@ -1297,7 +1359,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1233, 719);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuLabel11);
             this.Controls.Add(this.bunifuButton22);
             this.Controls.Add(this.bunifuLabel10);
@@ -1330,7 +1391,6 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AdicionarProdutos_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AdicionarProdutos_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1362,6 +1422,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox custo_txt;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton22;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel11;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.UI.WinForms.BunifuSnackbar nome;
     }
 }

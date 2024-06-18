@@ -6,7 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ProdutoDLL;
+using TheArtOfDev.HtmlRenderer.Adapters.Entities;
 using Usuario;
+using static QuestPDF.Helpers.Colors;
 
 namespace ProjetoJeffersonADM
 {
@@ -115,13 +117,14 @@ namespace ProjetoJeffersonADM
                                 $"nome LIKE '%{termoDePesquisa}%' OR " +
                                 $"descricao LIKE '%{termoDePesquisa}%' OR " +
                                 $"marca LIKE '%{termoDePesquisa}%' OR " +
-                                $"Convert(preco, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(PrecoVenda, 'System.String') LIKE '%{termoDePesquisa}%' OR " +
                                 $"tipo LIKE '%{termoDePesquisa}%' OR " +
-                                $"tamanho LIKE '%{termoDePesquisa}%' OR ";
+                                $"tamanho LIKE '%{termoDePesquisa}%' OR " +
+                                $"Convert(precoDeCusto, 'System.String') LIKE '%{termoDePesquisa}%'";
 
-                DataView view = new DataView(produtos);
-                view.RowFilter = filtro;
-                bunifuDataGridView1.DataSource = view;
+                DataView filtrar = new DataView(produtos);
+                filtrar.RowFilter = filtro;
+                bunifuDataGridView1.DataSource = filtrar;
             }
             else
             {
@@ -154,21 +157,20 @@ namespace ProjetoJeffersonADM
         private void bunifuButton21_Click(object sender, EventArgs e)
         {
 
-            if (bunifuDataGridView1.SelectedCells.Count >= 0)
+            if (bunifuDataGridView1.SelectedCells.Count > 0)
             {
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
-                int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
 
-                string idString = bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value.ToString();
-                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
-                string nome = bunifuDataGridView1.Rows[rowIndex].Cells["nome"].Value.ToString();
-                string descricao = bunifuDataGridView1.Rows[rowIndex].Cells["descricao"].Value.ToString();
-                string marca = bunifuDataGridView1.Rows[rowIndex].Cells["marca"].Value.ToString();
-                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value.ToString();
-                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value);
-                string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["tipo"].Value.ToString();
-                string tamanho = bunifuDataGridView1.Rows[rowIndex].Cells["tamanho"].Value.ToString();
-                string precoDeCusto = bunifuDataGridView1.Rows[rowIndex].Cells["precoDeCusto"].Value.ToString();
+                string idString = bunifuDataGridView1.Rows[indexDaLinha].Cells["id"].Value.ToString();
+                string idFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["IdFornecedor"].Value.ToString();
+                string nome = bunifuDataGridView1.Rows[indexDaLinha].Cells["nome"].Value.ToString();
+                string descricao = bunifuDataGridView1.Rows[indexDaLinha].Cells["descricao"].Value.ToString();
+                string marca = bunifuDataGridView1.Rows[indexDaLinha].Cells["marca"].Value.ToString();
+                string preco = bunifuDataGridView1.Rows[indexDaLinha].Cells["PrecoVenda"].Value.ToString();
+                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[indexDaLinha].Cells["PrecoVenda"].Value);
+                string tipo = bunifuDataGridView1.Rows[indexDaLinha].Cells["tipo"].Value.ToString();
+                string tamanho = bunifuDataGridView1.Rows[indexDaLinha].Cells["tamanho"].Value.ToString();
+                string precoDeCusto = bunifuDataGridView1.Rows[indexDaLinha].Cells["precoDeCusto"].Value.ToString();
                 EditarProdutos editarProdutos = new EditarProdutos(idString,idFornecedor, nome, descricao, marca, preco, tipo, tamanho,precoDeCusto);
                 editarProdutos.ShowDialog();
             }
@@ -178,20 +180,19 @@ namespace ProjetoJeffersonADM
         {
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
-                int columnIndex = bunifuDataGridView1.SelectedCells[0].ColumnIndex;
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                
 
-
-                int id = Convert.ToInt32(bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value);
-                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
-                string nome = bunifuDataGridView1.Rows[rowIndex].Cells["nome"].Value.ToString();
-                string descricao = bunifuDataGridView1.Rows[rowIndex].Cells["descricao"].Value.ToString();
-                string marca = bunifuDataGridView1.Rows[rowIndex].Cells["marca"].Value.ToString();
-                string preco = bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value.ToString();
-                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[rowIndex].Cells["PrecoVenda"].Value);
-                string tipo = bunifuDataGridView1.Rows[rowIndex].Cells["tipo"].Value.ToString();
-                string tamanho = bunifuDataGridView1.Rows[rowIndex].Cells["tamanho"].Value.ToString();
-                string precoDeCusto = bunifuDataGridView1.Rows[rowIndex].Cells["precoDeCusto"].Value.ToString();
+                int id = Convert.ToInt32(bunifuDataGridView1.Rows[indexDaLinha].Cells["id"].Value);
+                string idFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["IdFornecedor"].Value.ToString();
+                string nome = bunifuDataGridView1.Rows[indexDaLinha].Cells["nome"].Value.ToString();
+                string descricao = bunifuDataGridView1.Rows[indexDaLinha].Cells["descricao"].Value.ToString();
+                string marca = bunifuDataGridView1.Rows[indexDaLinha].Cells["marca"].Value.ToString();
+                string preco = bunifuDataGridView1.Rows[indexDaLinha].Cells["PrecoVenda"].Value.ToString();
+                double precoDouble = Convert.ToDouble(bunifuDataGridView1.Rows[indexDaLinha].Cells["PrecoVenda"].Value);
+                string tipo = bunifuDataGridView1.Rows[indexDaLinha].Cells["tipo"].Value.ToString();
+                string tamanho = bunifuDataGridView1.Rows[indexDaLinha].Cells["tamanho"].Value.ToString();
+                string precoDeCusto = bunifuDataGridView1.Rows[indexDaLinha].Cells["precoDeCusto"].Value.ToString();
                 byte[] test = { 1, 2, 2, 3, 4, 5, 6, };
 
                 produto = new Produto(nome,descricao,marca,0, tipo, tamanho, 0,0,0, test);
@@ -206,9 +207,9 @@ namespace ProjetoJeffersonADM
         {
             if (bunifuDataGridView1.SelectedCells.Count >= 0)
             {
-                int rowIndex = bunifuDataGridView1.SelectedCells[0].RowIndex;
-                string id = bunifuDataGridView1.Rows[rowIndex].Cells["id"].Value.ToString();
-                string idFornecedor = bunifuDataGridView1.Rows[rowIndex].Cells["IdFornecedor"].Value.ToString();
+                int indexDaLinha = bunifuDataGridView1.SelectedCells[0].RowIndex;
+                string id = bunifuDataGridView1.Rows[indexDaLinha].Cells["id"].Value.ToString();
+                string idFornecedor = bunifuDataGridView1.Rows[indexDaLinha].Cells["IdFornecedor"].Value.ToString();
 
                 AdicionarPedido adicionarPedido = new AdicionarPedido(id, idFornecedor);
                 adicionarPedido.ShowDialog();
@@ -243,6 +244,11 @@ namespace ProjetoJeffersonADM
             Fornecedor fornecedor = new Fornecedor();
             this.Hide();
             fornecedor.Show();
+        }
+
+        private void pesquisa_txt_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

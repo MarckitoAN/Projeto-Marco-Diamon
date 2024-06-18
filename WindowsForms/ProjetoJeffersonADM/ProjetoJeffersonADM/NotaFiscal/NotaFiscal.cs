@@ -25,7 +25,12 @@ namespace ProjetoJeffersonADM
     public class NotaFiscal
     {
     public void EmitirNotaFiscal(string nomeSemEspacos,string nomeCli,string cpf,string rua,string cidade,string telefone,int idProduto,string nomeProduto, int quantidade, double precoUnitario,double valorTotal,string formaPagamento) {
-            string pastaNotaFiscal = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Pdfs";
+
+            string baseDiretorio = AppDomain.CurrentDomain.BaseDirectory;
+            string pastaRelativa = @"NotaFiscal\Pdfs";
+            string pastaNota = Path.Combine(baseDiretorio, pastaRelativa);
+            Console.WriteLine(pastaNota);
+            string pastaNotaFiscal = pastaNota;
 
             double icms = valorTotal * 0.18;
             double ipi = valorTotal * 0.10;
@@ -208,7 +213,11 @@ namespace ProjetoJeffersonADM
 
         public void EmitirNotaFiscalEstoque(string nomeSemEspacos,string nomeFornecedor , string cnpj, string rua, string cidade,string estado, string telefone, int idProduto, string nomeProduto, int quantidade, double precoUnitario, double valorTotal, string formaPagamento)
         {
-            string pastaNotaFiscal = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Pdfs";
+            string baseDiretorio = AppDomain.CurrentDomain.BaseDirectory;
+            string pastaRelativa = @"NotaFiscal\Pdfs";
+            string pastaNota = Path.Combine(baseDiretorio, pastaRelativa);
+            Console.WriteLine(pastaNota);
+            string pastaNotaFiscal = pastaNota;
 
             double icms = valorTotal * 0.18;
             double ipi = valorTotal * 0.10;

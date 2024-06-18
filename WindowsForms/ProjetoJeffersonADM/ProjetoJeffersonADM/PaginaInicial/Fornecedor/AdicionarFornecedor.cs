@@ -35,9 +35,53 @@ namespace ProjetoJeffersonADM.PaginaInicial.Fornecedor
 
         private void login_button_Click(object sender, EventArgs e)
         {
+
+
+            try
+            {
+                if (String.IsNullOrEmpty(nomeFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Nome do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }     
+               else if (String.IsNullOrEmpty(cnpjFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Cnpj do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrEmpty(ruaFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Rua do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if(String.IsNullOrEmpty(bairroFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Bairro do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrEmpty(cidadeFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Cidade do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrEmpty(estadoFornecedor_txt.Text))
+                {
+                    nome.Show(this, "Estado do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrEmpty(emailFornecedor_txt.Text))
+                {
+                    nome.Show(this, "E-mail do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
             fabricantes = new Fabricantes(nomeFornecedor_txt.Text,ruaFornecedor_txt.Text,bairroFornecedor_txt.Text,cidadeFornecedor_txt.Text,estadoFornecedor_txt.Text,emailFornecedor_txt.Text,cnpjFornecedor_txt.Text);
             fabricantes.AdicionarFabricante();
             this.Hide();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

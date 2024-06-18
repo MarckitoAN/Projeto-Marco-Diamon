@@ -608,6 +608,7 @@
             this.pesquisa_txt.UseSystemPasswordChar = false;
             this.pesquisa_txt.WordWrap = true;
             this.pesquisa_txt.TextChange += new System.EventHandler(this.pesquisa_txt_TextChanged);
+            this.pesquisa_txt.TextChanged += new System.EventHandler(this.pesquisa_txt_TextChanged_1);
             // 
             // pictureBox1
             // 
