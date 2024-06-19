@@ -28,14 +28,13 @@
       session_start();
       require 'conexao.php'; 
 
-  
       if (!isset($_SESSION['user_id'])) {
         echo "<p>Você não está logado.</p>";
         exit;
       }
 
       if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_produto'])) {
-        $id_cliente = $_SESSION['user_id']; 
+        $id_cliente = $_SESSION['user_id'];
         $id_produto = $_POST['id_produto'];
         $quantidade = $_POST['quantidade'];
         $id_fornecedor = $_POST['id_fornecedor'];
@@ -43,6 +42,23 @@
         $conn->begin_transaction();
 
         try {
+          $sql_estoque = "SELECT quantidade FROM estoque WHERE id_produto = ?";
+          $stmt_estoque = $conn->prepare($sql_estoque);
+          $stmt_estoque->bind_param("i", $id_produto);
+          $stmt_estoque->execute();
+          $result_estoque = $stmt_estoque->get_result();
+
+          if ($result_estoque->num_rows > 0) {
+            $produto_estoque = $result_estoque->fetch_assoc();
+            $quantidade_estoque = $produto_estoque['quantidade'];
+
+            if ($quantidade > $quantidade_estoque) {
+              throw new Exception("Quantidade pedida maior do que a quantidade em estoque.");
+            }
+          } else {
+            throw new Exception("Produto não encontrado.");
+          }
+
           $sql_pedido = "INSERT INTO Pedido (data, id_user, id_cliente, forma_pagamento, parcelas, valor_total)
                          VALUES (NOW(), 1, ?, 'Debito', 1, 0)";
           $stmt_pedido = $conn->prepare($sql_pedido);
@@ -81,6 +97,12 @@
             $stmt_atualiza_valor_total = $conn->prepare($sql_atualiza_valor_total);
             $stmt_atualiza_valor_total->bind_param("di", $valor_total_produto, $pedido_id);
             $stmt_atualiza_valor_total->execute();
+
+            $nova_quantidade_estoque = $quantidade_estoque - $quantidade;
+            $sql_atualiza_estoque = "UPDATE Estoque SET quantidade = ? WHERE id_produto = ?";
+            $stmt_atualiza_estoque = $conn->prepare($sql_atualiza_estoque);
+            $stmt_atualiza_estoque->bind_param("ii", $nova_quantidade_estoque, $id_produto);
+            $stmt_atualiza_estoque->execute();
           } else {
             throw new Exception("Produto não encontrado.");
           }

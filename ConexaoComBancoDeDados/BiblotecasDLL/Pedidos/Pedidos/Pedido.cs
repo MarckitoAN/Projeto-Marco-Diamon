@@ -27,7 +27,7 @@ namespace Pedidos
             this.idCliente = idCliente;
             this.idProduto = idProduto;
             this.idUser = idUser;
-            this.idFabricante = idUser;
+            this.idFabricante = idFabricante;
             this.numerosDeParcelas = numerosDeParcelas;
             this.quantidade = quantidade;
             this.valorTotal = valorTotal;

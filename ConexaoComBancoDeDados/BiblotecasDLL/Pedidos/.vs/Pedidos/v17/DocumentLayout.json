@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\",
+  "WorkspaceRootPath": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F24429FE-1DC3-4925-AFE7-FE94E8EA6AB3}|Pedidos\\Pedidos.csproj|c:\\users\\gamer\\onedrive\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\pedidos\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F24429FE-1DC3-4925-AFE7-FE94E8EA6AB3}|Pedidos\\Pedidos.csproj|e:\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\pedidos\\pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F24429FE-1DC3-4925-AFE7-FE94E8EA6AB3}|Pedidos\\Pedidos.csproj|solutionrelative:pedidos\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\Pedidos\\Pedido.cs",
+              "DocumentMoniker": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\Pedidos\\Pedido.cs",
               "RelativeDocumentMoniker": "Pedidos\\Pedido.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\Pedidos\\Pedido.cs",
+              "ToolTip": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Pedidos\\Pedidos\\Pedido.cs",
               "RelativeToolTip": "Pedidos\\Pedido.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAwDIAAAAqAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T21:44:49.06Z",
               "EditorCaption": ""

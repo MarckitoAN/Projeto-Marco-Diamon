@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\",
+  "WorkspaceRootPath": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9E8B442-7AD0-4318-89ED-C531F6311884}|Dao\\Dao.csproj|c:\\users\\gamer\\onedrive\\desktop\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\dao\\dao\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9E8B442-7AD0-4318-89ED-C531F6311884}|Dao\\Dao.csproj|e:\\projeto-marco-diamon\\conexaocombancodedados\\biblotecasdll\\dao\\dao\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E8B442-7AD0-4318-89ED-C531F6311884}|Dao\\Dao.csproj|solutionrelative:dao\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Dao.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\Dao\\Dao.cs",
+              "DocumentMoniker": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\Dao\\Dao.cs",
               "RelativeDocumentMoniker": "Dao\\Dao.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\Dao\\Dao.cs",
+              "ToolTip": "E:\\Projeto-Marco-Diamon\\ConexaoComBancoDeDados\\BiblotecasDLL\\Dao\\Dao\\Dao.cs",
               "RelativeToolTip": "Dao\\Dao.cs",
-              "ViewState": "AQIAAMYAAAAAAAAAAAAQwKIAAADuAAAA",
+              "ViewState": "AQIAAFwCAAAAAAAAAAAAAIACAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T01:36:29.19Z",
               "EditorCaption": ""

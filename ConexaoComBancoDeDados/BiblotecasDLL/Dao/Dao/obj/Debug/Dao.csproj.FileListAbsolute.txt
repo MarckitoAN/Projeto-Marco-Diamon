@@ -22,3 +22,14 @@ C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\Bibl
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.Up2Date
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.dll
 C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.pdb
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.pdb
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Memory.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Numerics.Vectors.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Buffers.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.AssemblyReference.cache
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.Up2Date
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.dll
+E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.pdb

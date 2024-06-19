@@ -610,7 +610,37 @@ namespace Usuario
             }
             return email;
         }
+
+
+        public static int AcharQuantidadeEstoque(int idProduto)
+        {
+            int quantidadeEmEstoque = 0;
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select quantidade from estoque where id_produto = '{idProduto}';");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    quantidadeEmEstoque = Convert.ToInt32(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return quantidadeEmEstoque;
+        }
+
     }
+
 
 
 
