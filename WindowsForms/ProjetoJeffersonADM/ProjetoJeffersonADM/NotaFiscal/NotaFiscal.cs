@@ -43,7 +43,7 @@ namespace ProjetoJeffersonADM
 
             DateTime data = DateTime.Today;
 
-            string logoPath = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Logo\receita_federal.png";
+            string logoPath = Path.Combine(baseDiretorio, @"NotaFiscal\Logo\receita_federal.png");
 
             Document.Create(container =>
             {
@@ -82,7 +82,7 @@ namespace ProjetoJeffersonADM
                             table.Cell().Text("ENDEREÇO:").Bold();
                             table.Cell().Text("Av. Alda 123");
                             table.Cell().Text("MUNICÍPIO / UF:").Bold();
-                            table.Cell().Text("Diadema / EX");
+                            table.Cell().Text("Diadema / SP");
                             table.Cell().Text("FONE / FAX:").Bold();
                             table.Cell().Text("11939282007");
                             table.Cell().Text("CNPJ / INSCRIÇÃO ESTADUAL:").Bold();
@@ -230,8 +230,7 @@ namespace ProjetoJeffersonADM
 
             DateTime data = DateTime.Today;
 
-            string logoPath = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Logo\receita_federal.png";
-
+            string logoPath = Path.Combine(baseDiretorio, @"NotaFiscal\Logo\receita_federal.png");
             Document.Create(container =>
             {
                 container.Page(page =>
