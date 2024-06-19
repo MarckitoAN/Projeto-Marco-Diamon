@@ -44,20 +44,24 @@
     <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.6.3.0\lib\net452\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="ClentesDLL">
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Cliente\ClentesDLL\bin\Debug\ClentesDLL.dll</HintPath>
+    </Reference>
     <Reference Include="ClientesDLL, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Cliente\ClentesDLL\bin\Debug\ClientesDLL.dll</HintPath>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Cliente\ClentesDLL\bin\Debug\ClientesDLL.dll</HintPath>
     </Reference>
     <Reference Include="Dao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
     </Reference>
     <Reference Include="Estoque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Estoque\Estoque\Estoque\bin\Debug\Estoque.dll</HintPath>
     </Reference>
-    <Reference Include="Fabricante">
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Fabricante.dll</HintPath>
+    <Reference Include="Fabricante, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\FabricanteDLL\Fabricante\bin\Debug\Fabricante.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -68,12 +72,13 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Pedidos">
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Pedidos.dll</HintPath>
+    <Reference Include="Pedidos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Pedidos\Pedidos\bin\Debug\Pedidos.dll</HintPath>
     </Reference>
     <Reference Include="ProdutoDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Produto\ProdutoDLL\ProdutoDLL\bin\Debug\ProdutoDLL.dll</HintPath>
     </Reference>
     <Reference Include="QuestPDF, Version=2024.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\QuestPDF.2024.6.0\lib\netstandard2.0\QuestPDF.dll</HintPath>
@@ -113,7 +118,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UsuarioDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll</HintPath>
+      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Usuario\UsuarioDll\bin\Debug\UsuarioDll.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +214,7 @@
     <Compile Include="PaginaInicial\Produtos\Produtos.Designer.cs">
       <DependentUpon>Produtos.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaInicial\Verificacao\Cpf.cs" />
     <Compile Include="Registro\Registro.cs">
       <SubType>Form</SubType>
     </Compile>

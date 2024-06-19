@@ -49,9 +49,9 @@ namespace ProjetoJeffersonADM.PaginaInicial.Clientes
                     nome.Show(this, "Rg do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
-                else if (String.IsNullOrWhiteSpace(cpfCli_txt.Text))
+                else if (String.IsNullOrWhiteSpace(cpfCli_txt.Text) || !Validacao.ValidaCPF.IsCpf(cpfCli_txt.Text))
                 {
-                    nome.Show(this, "Cpf do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    nome.Show(this, "Insira um Cpf valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
                 else if (String.IsNullOrWhiteSpace(telCli_txt.Text))
@@ -103,6 +103,37 @@ namespace ProjetoJeffersonADM.PaginaInicial.Clientes
 
         }
 
+        private void cpfCli_txt_TextChanged(object sender, EventArgs e)
+        {
+            string text = cpfCli_txt.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+
+            if (text.Length > 3)
+                text = text.Insert(3, ".");
+            if (text.Length > 7)
+                text = text.Insert(7, ".");
+            if (text.Length > 11)
+                text = text.Insert(11, "-");
+
+
+            cpfCli_txt.Text = text;
+            cpfCli_txt.SelectionStart = cpfCli_txt.Text.Length;
+        }
+
+        private void rgcli_txt_TextChanged(object sender, EventArgs e)
+        {
+            string text = rgcli_txt.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+
+            if (text.Length > 2)
+                text = text.Insert(2, ".");
+            if (text.Length > 6)
+                text = text.Insert(6, ".");
+            if (text.Length > 10)
+                text = text.Insert(10, "-");
+
+
+            rgcli_txt.Text = text;
+            rgcli_txt.SelectionStart = rgcli_txt.Text.Length;
+        }
     }
 }
 

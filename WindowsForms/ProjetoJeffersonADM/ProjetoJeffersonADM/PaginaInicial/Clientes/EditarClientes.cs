@@ -69,7 +69,51 @@ namespace ProjetoJeffersonADM
             int IdConvertido = int.Parse(idCliente_txt.Text);
             try
             {
-
+                if (String.IsNullOrWhiteSpace(nomeCli_txt.Text))
+                {
+                    nome.Show(this, "Nome do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(rgcli_txt.Text))
+                {
+                    nome.Show(this, "Rg do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(cpfCli_txt.Text) || Validacao.ValidaCPF.IsCpf(cpfCli_txt.Text))
+                {
+                    nome.Show(this, "Insira um Cpf valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(telCli_txt.Text))
+                {
+                    nome.Show(this, "Telefone do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(ruaCli_txt.Text))
+                {
+                    nome.Show(this, "Rua do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(bairroCli_txt.Text))
+                {
+                    nome.Show(this, "Bairro do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(cidadeCli_txt.Text))
+                {
+                    nome.Show(this, "Cidade do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(estadoCli_txt.Text))
+                {
+                    nome.Show(this, "Estado do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+                else if (String.IsNullOrWhiteSpace(emailCli_txt.Text))
+                {
+                    nome.Show(this, "Email do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
                 cli.AtualizarCliente(IdConvertido, nomeCli_txt.Text, rgcli_txt.Text, cpfCli_txt.Text, telCli_txt.Text, ruaCli_txt.Text, bairroCli_txt.Text, cidadeCli_txt.Text, estadoCli_txt.Text, emailCli_txt.Text);
                 this.Hide();
             }

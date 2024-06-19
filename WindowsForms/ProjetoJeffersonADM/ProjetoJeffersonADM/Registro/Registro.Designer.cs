@@ -722,6 +722,7 @@
             this.cnpj_field.UseSystemPasswordChar = false;
             this.cnpj_field.WordWrap = true;
             this.cnpj_field.TextChange += new System.EventHandler(this.cnpj_field_TextChanged_1);
+            this.cnpj_field.TextChanged += new System.EventHandler(this.cnpj_field_TextChanged);
             // 
             // bunifuLabel7
             // 

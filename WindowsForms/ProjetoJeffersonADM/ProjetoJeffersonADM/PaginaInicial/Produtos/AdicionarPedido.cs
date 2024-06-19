@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -46,12 +47,14 @@ namespace ProjetoJeffersonADM
 
         private void login_button_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (String.IsNullOrEmpty(idProd_txt.Text))
                 {
                     nome.Show(this, "Id do Produto vazio", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error); return;
                 }
+                
                 else if (String.IsNullOrEmpty(idFabricante_txt.Text))
                 {
                     nome.Show(this, "Id do Fabricante vazio", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error); return;
@@ -72,12 +75,21 @@ namespace ProjetoJeffersonADM
                 {
                     nome.Show(this, "Parcelas vazia", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error); return;
                 }
-                else if (String.IsNullOrEmpty(quantidade_txt.Text))
+                else if (String.IsNullOrEmpty(quantidade_txt.Text ) || quantidade_txt.Text == "0")
                 {
                     nome.Show(this, "Quantidade do Produto vazio", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error); return;
                 }
-                int parcelas = int.Parse(parcelas_txt.Text);
+            
+                int idProduto = int.Parse(idProd_txt.Text);
                 int quantidade = int.Parse(quantidade_txt.Text);
+
+                int quantidadeEmEstoque = Dao.AcharQuantidadeEstoque(idProduto);
+                 if(quantidadeEmEstoque < quantidade) {
+                    nome.Show(this, "Quantidade pedida,maior que o estoque disponivel.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    return;
+                }
+
+                int parcelas = int.Parse(parcelas_txt.Text);
                 int idProd = int.Parse(idProd_txt.Text);
                 DateTime data = DateTime.Parse(dataPedido_txt.Text);
                 int idCli = int.Parse(idCli_txt.Text);

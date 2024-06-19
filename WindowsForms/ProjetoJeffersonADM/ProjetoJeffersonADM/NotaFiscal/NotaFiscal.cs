@@ -26,20 +26,24 @@ namespace ProjetoJeffersonADM
     {
     public void EmitirNotaFiscal(string nomeSemEspacos,string nomeCli,string cpf,string rua,string cidade,string telefone,int idProduto,string nomeProduto, int quantidade, double precoUnitario,double valorTotal,string formaPagamento) {
 
-            string diretorioAtual = Directory.GetCurrentDirectory();
-            string pastaNotaFiscal = Path.Combine(diretorioAtual, @"NotaFiscal\Pdfs");
+            string baseDiretorio = AppDomain.CurrentDomain.BaseDirectory;
+            string pastaRelativa = @"NotaFiscal\Pdfs";
+            string pastaNota = Path.Combine(baseDiretorio, pastaRelativa);
+            Console.WriteLine(pastaNota);
+            string pastaNotaFiscal = pastaNota;
+
+            double icms = valorTotal * 0.18;
+            double ipi = valorTotal * 0.10;
             if (!Directory.Exists(pastaNotaFiscal))
             {
                 Directory.CreateDirectory(pastaNotaFiscal);
             }
+
             string caminhoFiscal = Path.Combine(pastaNotaFiscal, $"{nomeSemEspacos}.pdf");
-            string logoPath = Path.Combine(diretorioAtual, @"NotaFiscal\Logo\receita_federal.png");
 
-            double icms = valorTotal * 0.18;
-            double ipi = valorTotal * 0.10;
+            DateTime data = DateTime.Today;
 
-            DateTime data = DateTime.Now;
-
+            string logoPath = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Logo\receita_federal.png";
 
             Document.Create(container =>
             {
@@ -49,7 +53,7 @@ namespace ProjetoJeffersonADM
 
                     page.Header().Row(row =>
                     {
-                     row.ConstantItem(100).Height(50).Image(logoPath);
+                        row.ConstantItem(100).Height(50).Image(logoPath);
                         row.RelativeItem().Column(col =>
                         {
                             col.Item().AlignCenter().Text("NOTA FISCAL").FontSize(20).Bold().AlignCenter();
@@ -211,20 +215,22 @@ namespace ProjetoJeffersonADM
         {
             string baseDiretorio = AppDomain.CurrentDomain.BaseDirectory;
             string pastaRelativa = @"NotaFiscal\Pdfs";
-            string pastaNotaFiscal = Path.Combine(baseDiretorio, pastaRelativa);
+            string pastaNota = Path.Combine(baseDiretorio, pastaRelativa);
+            Console.WriteLine(pastaNota);
+            string pastaNotaFiscal = pastaNota;
 
+            double icms = valorTotal * 0.18;
+            double ipi = valorTotal * 0.10;
             if (!Directory.Exists(pastaNotaFiscal))
             {
                 Directory.CreateDirectory(pastaNotaFiscal);
             }
 
             string caminhoFiscal = Path.Combine(pastaNotaFiscal, $"{nomeSemEspacos}.pdf");
-            string logoPath = Path.Combine(baseDiretorio, @"NotaFiscal\Logo\receita_federal.png");
-
-            double icms = valorTotal * 0.18;
-            double ipi = valorTotal * 0.10;
 
             DateTime data = DateTime.Today;
+
+            string logoPath = @"C:\Users\gamer\OneDrive\Desktop\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\NotaFiscal\Logo\receita_federal.png";
 
             Document.Create(container =>
             {

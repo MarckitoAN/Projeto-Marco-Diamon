@@ -213,5 +213,10 @@ public void FormatarCNPJ()
         {
             password_field.PasswordChar = '*';
         }
+
+        private void cnpj_field_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

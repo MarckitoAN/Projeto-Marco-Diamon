@@ -53,6 +53,8 @@ namespace ProjetoJeffersonADM
         {
             estoque = Dao.ObterEstoque();
             bunifuDataGridView1.DataSource = estoque;
+
+            bunifuDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void pedido_btn_Click(object sender, EventArgs e)
@@ -153,6 +155,11 @@ namespace ProjetoJeffersonADM
             {
                 bunifuDataGridView1.DataSource = estoque;
             }
+        }
+
+        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

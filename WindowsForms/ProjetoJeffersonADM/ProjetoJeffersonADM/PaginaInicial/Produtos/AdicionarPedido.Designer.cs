@@ -176,7 +176,7 @@
             this.idProd_txt.PasswordChar = '\0';
             this.idProd_txt.PlaceholderForeColor = System.Drawing.Color.White;
             this.idProd_txt.PlaceholderText = "ID";
-            this.idProd_txt.ReadOnly = false;
+            this.idProd_txt.ReadOnly = true;
             this.idProd_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idProd_txt.SelectedText = "";
             this.idProd_txt.SelectionLength = 0;
@@ -899,7 +899,7 @@
             this.idFabricante_txt.PasswordChar = '\0';
             this.idFabricante_txt.PlaceholderForeColor = System.Drawing.Color.White;
             this.idFabricante_txt.PlaceholderText = "ID";
-            this.idFabricante_txt.ReadOnly = false;
+            this.idFabricante_txt.ReadOnly = true;
             this.idFabricante_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idFabricante_txt.SelectedText = "";
             this.idFabricante_txt.SelectionLength = 0;
@@ -1013,7 +1013,7 @@
             this.Controls.Add(this.bunifuLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdicionarPedido";
-            this.Text = "khjuhjk";
+            this.Text = "zh5 234";
             this.Load += new System.EventHandler(this.AdicionarPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

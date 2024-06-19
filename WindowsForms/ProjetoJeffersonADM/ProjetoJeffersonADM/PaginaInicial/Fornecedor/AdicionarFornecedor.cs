@@ -43,10 +43,10 @@ namespace ProjetoJeffersonADM.PaginaInicial.Fornecedor
                 {
                     nome.Show(this, "Nome do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
-                }     
-               else if (String.IsNullOrEmpty(cnpjFornecedor_txt.Text))
+                }
+                else if (String.IsNullOrEmpty(cnpjFornecedor_txt.Text) || !Validacao.ValidaCNPJ.IsCnpj(cnpjFornecedor_txt.Text))
                 {
-                    nome.Show(this, "Cnpj do fornecedor esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
+                    nome.Show(this, "Insira um Cnpj valido:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
                 else if (String.IsNullOrEmpty(ruaFornecedor_txt.Text))
@@ -98,5 +98,23 @@ namespace ProjetoJeffersonADM.PaginaInicial.Fornecedor
         {
 
         }
+
+        private void cnpjFornecedor_txt_TextChanged(object sender, EventArgs e)
+        {
+         
+                string text = cnpjFornecedor_txt.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+                if (text.Length > 2)
+                    text = text.Insert(2, ".");
+                if (text.Length > 6)
+                    text = text.Insert(6, ".");
+                if (text.Length > 10)
+                    text = text.Insert(10, "/");
+                if (text.Length > 15)
+                    text = text.Insert(15, "-");
+                cnpjFornecedor_txt.Text = text;
+                cnpjFornecedor_txt.SelectionStart = cnpjFornecedor_txt.Text.Length;
+            }
+
+        
     }
 }
