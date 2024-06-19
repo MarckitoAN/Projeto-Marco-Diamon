@@ -14,7 +14,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="registro.css">
 
-  <title>Fones de Ouvidos</title>
+  <title>Registro || Dribe Modas</title>
 </head>
 
 <body>

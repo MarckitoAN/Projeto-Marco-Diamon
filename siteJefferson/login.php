@@ -13,7 +13,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="login.css">
 
-  <title>Fones de Ouvidos</title>
+  <title>Login || Dribe Modas</title>
 </head>
 
 <body>
