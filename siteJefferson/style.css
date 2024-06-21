@@ -42,13 +42,13 @@ header{
   display: flex;
   align-items: center;
   color: var(--tex-color);
-  font-size: 28px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .logo i{
   color: var(--main-color);
-  font-size: 32px;
+  font-size: 1.5rem;
   margin-right: 5px;
 }
 
@@ -113,6 +113,7 @@ header{
   font-size: var(--h1-font);
   line-height: 1.2;
   margin-bottom: 2px;
+  width: 100%;
 }
 
 .home-text h5{
@@ -123,7 +124,7 @@ header{
 }
 
 .home-text h3{
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 35px;
@@ -131,8 +132,8 @@ header{
 
 
 .home-img img{
-  max-width: 100%;
-  width: 28rem;
+  max-width: 70%;
+  width: 50%;
   height: auto;
   margin-left: 25%;
   padding-top: 120px;
@@ -142,7 +143,7 @@ header{
 .btn{
   display: inline-block;
   padding: 15px 70px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   background: transparent;
   border: solid 2px var(--tex-color);

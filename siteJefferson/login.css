@@ -26,8 +26,7 @@ body{
 
 
 header{
-  position: fixed;
-  width: 100%;
+  width: 80%;
   top: 0;
   right: 0;
   z-index: 1000;
@@ -55,6 +54,8 @@ header{
 
 .navegação{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navegação a{
@@ -158,8 +159,8 @@ header{
 .login{
   width: 200px;
   position: relative;
-  left: 800px;
   top: 250px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -173,6 +174,8 @@ header{
 .inputbox {
   position: relative;
   width: 400px;
+  left: 555px;
+  bottom: 150px;
   margin-bottom: 20px;
 }
 
@@ -239,7 +242,6 @@ header{
   vertical-align: middle;
   position: relative;
   z-index: 1;
-  left: 125px;
 }
 
 .c-button--gooey {
@@ -309,8 +311,8 @@ header{
   transition: 0.5s;
   transition-property: box-shadow;
   position: relative;
-  left: 140px;
-  top: 40px;
+  left: 685px;
+  bottom: 70px;
 }
 
 .shadow__btn {
