@@ -158,3 +158,8 @@ C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeff
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\WinForms.csproj.Up2Date
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.exe
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.pdb
+C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\Despesas.dll
+C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\bin\Debug\Despesas.pdb
+C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.Financas.resources
+C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\WindowsForms\ProjetoJeffersonADM\ProjetoJeffersonADM\obj\Debug\ProjetoJeffersonADM.Entrada_saida.resources

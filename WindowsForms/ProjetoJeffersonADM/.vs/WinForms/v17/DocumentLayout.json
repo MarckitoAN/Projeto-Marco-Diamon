@@ -3,64 +3,144 @@
   "WorkspaceRootPath": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|c:\\users\\gamer\\onedrive\\documentos\\projeto-marco-diamon\\windowsforms\\projetojeffersonadm\\projetojeffersonadm\\notafiscal\\notafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\notafiscal\\notafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|c:\\users\\gamer\\onedrive\\documentos\\projeto-marco-diamon\\windowsforms\\projetojeffersonadm\\projetojeffersonadm\\paginainicial\\verificacao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\verificacao\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\editarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\editarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|c:\\users\\gamer\\onedrive\\documentos\\projeto-marco-diamon\\windowsforms\\projetojeffersonadm\\projetojeffersonadm\\paginainicial\\financas\\financas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\financas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\registro\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\financas\\financas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\financas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\editarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\editarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\editarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\editarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\adicionarfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\pedidos\\pedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\fornecedor\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\estoque\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\estoque\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\financas\\entrada_saida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\entrada_saida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\financas\\entrada_saida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\entrada_saida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\editarclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\editarclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\financas\\entrada_saida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\entrada_saida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\adicionarcliente.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\adicionarcliente.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\editarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\editarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\produtos\\adicionarpedido.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\financas\\financas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\financas\\financas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\projetojeffersonadm\\paginainicial\\clientes\\clientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C194A7-BAFD-455A-85F2-6EDC42B56DEE}|ProjetoJeffersonADM\\WinForms.csproj|solutionrelative:projetojeffersonadm\\paginainicial\\clientes\\clientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -79,175 +159,410 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NotaFiscal.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\NotaFiscal\\NotaFiscal.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\NotaFiscal\\NotaFiscal.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\NotaFiscal\\NotaFiscal.cs",
-              "RelativeToolTip": "ProjetoJeffersonADM\\NotaFiscal\\NotaFiscal.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAgwC4AAAAAAAAA",
+              "Title": "Cpf.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Verificacao\\Cpf.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Verificacao\\Cpf.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Verificacao\\Cpf.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Verificacao\\Cpf.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T14:11:25.328Z",
+              "WhenOpened": "2024-06-24T00:54:10.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditarClientes.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
-              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAAAEQAAAAMAAAA",
+              "DocumentIndex": 9,
+              "Title": "AdicionarPedido.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:32:03.837Z"
+              "WhenOpened": "2024-06-21T01:44:40.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Registro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\Registro\\Registro.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\Registro\\Registro.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "AdicionarPedido.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAnwGUAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T22:59:49.563Z"
+              "WhenOpened": "2024-06-24T00:09:08.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdicionarFornecedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:30:31.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:48:25.946Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAawC4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T02:39:47.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Financas.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T01:31:09.768Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Financas.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAuwBsAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T02:32:48.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EditarFornecedor.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAEwDEAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:30:40.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditarProdutos.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:31:16.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditarProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\EditarProdutos.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAvwGsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:31:16.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EditarFornecedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\EditarFornecedor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:30:39.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdicionarProdutos.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T01:44:42.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdicionarProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAnwGYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T01:44:43.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "AdicionarFornecedor.cs",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
               "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
               "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
               "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\AdicionarFornecedor.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAtwEoAAAAbAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAawCUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:33:22.976Z"
+              "WhenOpened": "2024-06-24T00:30:32.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Produtos.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:36:24.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdicionarProdutos.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarProdutos.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T22:59:08.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Pedidos.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
               "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs [Design]",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:34:28.291Z"
+              "WhenOpened": "2024-06-24T00:28:12.97Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "Pedidos.cs",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
               "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
               "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
               "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Pedidos\\Pedidos.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAMwEUAAABQAAAA",
+              "ViewState": "AQIAAGsAAAAAAAAAAAASwMcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:34:29.121Z"
+              "WhenOpened": "2024-06-24T00:28:36.276Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main.cs [Design]",
+              "DocumentIndex": 18,
+              "Title": "Produtos.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:40:19.104Z"
+              "WhenOpened": "2024-06-21T02:14:03.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Main2.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:44:58.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Fornecedor.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "ViewState": "AQIAAIUAAAAAAAAAAAAhwFoAAABQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:33:34.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Fornecedor.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:33:33.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Clientes.cs",
-              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
-              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
-              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAhwG4AAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:30:36.957Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "Produtos.cs",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
               "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
               "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
               "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\Produtos.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAMwKEAAABQAAAA",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAnwAABAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:36:26.356Z"
+              "WhenOpened": "2024-06-21T02:14:05.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
+              "Title": "Main2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Main2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:20:26.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Main2.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Main2.cs",
+              "ViewState": "AQIAANQAAAAAAAAAAIA9wOYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:20:27.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Estoque.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Estoque\\Estoque.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Estoque\\Estoque.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Estoque\\Estoque.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Estoque\\Estoque.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T02:31:31.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Clientes.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
               "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
-              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs [Design]",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T01:30:06.574Z"
+              "WhenOpened": "2024-06-20T01:31:02.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Fornecedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:13:42.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Fornecedor.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Fornecedor\\Fornecedor.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAnwLMAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:13:44.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Entrada_saida.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T23:56:03.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Entrada_saida.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAuwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T23:59:53.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EditarClientes.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.Designer.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAIQFAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:49:05.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Entrada_saida.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Entrada_saida.Designer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAB8AAACOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T23:56:13.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdicionarCliente.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\AdicionarCliente.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\AdicionarCliente.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\AdicionarCliente.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\AdicionarCliente.Designer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAqwBsFAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T23:56:09.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AdicionarPedido.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Produtos\\AdicionarPedido.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUEAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:45:05.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EditarClientes.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs [Design]",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\EditarClientes.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T02:31:34.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Financas.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Financas\\Financas.Designer.cs",
+              "ViewState": "AQIAALIDAAAAAAAAAAAlwMoDAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T01:31:10.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAkwAQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T02:41:39.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Clientes.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.Designer.cs",
+              "RelativeDocumentMoniker": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.Designer.cs",
+              "ToolTip": "C:\\Users\\gamer\\OneDrive\\Documentos\\Projeto-Marco-Diamon\\WindowsForms\\ProjetoJeffersonADM\\ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.Designer.cs",
+              "RelativeToolTip": "ProjetoJeffersonADM\\PaginaInicial\\Clientes\\Clientes.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIFAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T01:31:05.273Z"
             }
           ]
         }

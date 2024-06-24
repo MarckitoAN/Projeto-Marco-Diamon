@@ -99,6 +99,7 @@ namespace ProjetoJeffersonADM
 
                 Pedido pedidos = new Pedido(data, idCli, idProd, LoginID.IdUser, parcelas, quantidade, valorTotal, pagamento_txt.Text, fabricante);
                 pedidos.CriarPedido(LoginID.IdUser);
+                this.Hide();
             }
             catch (Exception ex)
             {

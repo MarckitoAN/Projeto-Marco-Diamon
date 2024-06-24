@@ -53,7 +53,10 @@
     </Reference>
     <Reference Include="Dao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Despesas">
+      <HintPath>..\..\..\ConexaoComBancoDeDados\BiblotecasDLL\Despesas\Despesas\bin\Debug\Despesas.dll</HintPath>
     </Reference>
     <Reference Include="Estoque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -154,6 +157,18 @@
     <Compile Include="PaginaInicial\Estoque\Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaInicial\Financas\Entrada_saida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Financas\Entrada_saida.Designer.cs">
+      <DependentUpon>Entrada_saida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial\Financas\Financas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial\Financas\Financas.Designer.cs">
+      <DependentUpon>Financas.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial\Fornecedor\AdicionarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Estoque\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Financas\Entrada_saida.resx">
+      <DependentUpon>Entrada_saida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial\Financas\Financas.resx">
+      <DependentUpon>Financas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial\Fornecedor\AdicionarFornecedor.resx">
       <DependentUpon>AdicionarFornecedor.cs</DependentUpon>

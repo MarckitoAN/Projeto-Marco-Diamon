@@ -174,6 +174,13 @@ namespace ProjetoJeffersonADM
 
             }
         }
+
+        private void bunifuButton8_Click(object sender, EventArgs e)
+        {
+            Financas financas= new Financas();
+            this.Hide();
+            financas.Show();
+        }
     }
     }
 

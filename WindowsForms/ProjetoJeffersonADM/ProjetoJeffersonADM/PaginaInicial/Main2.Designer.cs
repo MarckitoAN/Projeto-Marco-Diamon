@@ -34,12 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -52,6 +52,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.titulo_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -76,6 +77,7 @@
             this.produto = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
@@ -143,10 +145,10 @@
             this.bunifuPanel5.Controls.Add(this.bunifuDatavizAdvanced1);
             this.bunifuPanel5.Controls.Add(this.bunifuLabel5);
             this.bunifuPanel5.Font = new System.Drawing.Font("Archivo Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuPanel5.Location = new System.Drawing.Point(276, 523);
+            this.bunifuPanel5.Location = new System.Drawing.Point(276, 464);
             this.bunifuPanel5.Name = "bunifuPanel5";
             this.bunifuPanel5.ShowBorders = true;
-            this.bunifuPanel5.Size = new System.Drawing.Size(901, 291);
+            this.bunifuPanel5.Size = new System.Drawing.Size(901, 269);
             this.bunifuPanel5.TabIndex = 12;
             // 
             // bunifuDataGridView1
@@ -227,7 +229,7 @@
             this.bunifuDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(870, 231);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(870, 210);
             this.bunifuDataGridView1.TabIndex = 20;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -300,7 +302,7 @@
             this.bunifuDatavizBasic1.Location = new System.Drawing.Point(276, 239);
             this.bunifuDatavizBasic1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.bunifuDatavizBasic1.Name = "bunifuDatavizBasic1";
-            this.bunifuDatavizBasic1.Size = new System.Drawing.Size(901, 275);
+            this.bunifuDatavizBasic1.Size = new System.Drawing.Size(901, 216);
             this.bunifuDatavizBasic1.TabIndex = 13;
             this.bunifuDatavizBasic1.Theme = Bunifu.Dataviz.WinForms.BunifuDatavizBasic._theme.theme1;
             this.bunifuDatavizBasic1.Title = "Vendas nos ultimos meses:";
@@ -314,6 +316,7 @@
             this.bunifuPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.bunifuPanel4.BorderRadius = 3;
             this.bunifuPanel4.BorderThickness = 1;
+            this.bunifuPanel4.Controls.Add(this.bunifuButton8);
             this.bunifuPanel4.Controls.Add(this.bunifuButton6);
             this.bunifuPanel4.Controls.Add(this.bunifuButton5);
             this.bunifuPanel4.Controls.Add(this.bunifuButton4);
@@ -325,6 +328,7 @@
             this.bunifuPanel4.ShowBorders = true;
             this.bunifuPanel4.Size = new System.Drawing.Size(258, 886);
             this.bunifuPanel4.TabIndex = 14;
+            this.bunifuPanel4.Click += new System.EventHandler(this.bunifuPanel4_Click);
             // 
             // bunifuButton6
             // 
@@ -345,11 +349,11 @@
             this.bunifuButton6.ColorContrastOnClick = 45;
             this.bunifuButton6.ColorContrastOnHover = 45;
             this.bunifuButton6.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton6.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton6.CustomizableEdges = borderEdges2;
             this.bunifuButton6.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton6.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton6.DisabledFillColor = System.Drawing.Color.Empty;
@@ -375,7 +379,7 @@
             this.bunifuButton6.IdleIconLeftImage = null;
             this.bunifuButton6.IdleIconRightImage = null;
             this.bunifuButton6.IndicateFocus = true;
-            this.bunifuButton6.Location = new System.Drawing.Point(33, 567);
+            this.bunifuButton6.Location = new System.Drawing.Point(33, 529);
             this.bunifuButton6.Name = "bunifuButton6";
             this.bunifuButton6.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton6.OnDisabledState.BorderRadius = 39;
@@ -437,11 +441,11 @@
             this.bunifuButton5.ColorContrastOnClick = 45;
             this.bunifuButton5.ColorContrastOnHover = 45;
             this.bunifuButton5.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton5.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.bunifuButton5.CustomizableEdges = borderEdges3;
             this.bunifuButton5.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton5.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton5.DisabledFillColor = System.Drawing.Color.Empty;
@@ -467,7 +471,7 @@
             this.bunifuButton5.IdleIconLeftImage = null;
             this.bunifuButton5.IdleIconRightImage = null;
             this.bunifuButton5.IndicateFocus = true;
-            this.bunifuButton5.Location = new System.Drawing.Point(34, 510);
+            this.bunifuButton5.Location = new System.Drawing.Point(34, 472);
             this.bunifuButton5.Name = "bunifuButton5";
             this.bunifuButton5.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton5.OnDisabledState.BorderRadius = 39;
@@ -529,11 +533,11 @@
             this.bunifuButton4.ColorContrastOnClick = 45;
             this.bunifuButton4.ColorContrastOnHover = 45;
             this.bunifuButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuButton4.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.bunifuButton4.CustomizableEdges = borderEdges4;
             this.bunifuButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.DisabledFillColor = System.Drawing.Color.Empty;
@@ -559,7 +563,7 @@
             this.bunifuButton4.IdleIconLeftImage = null;
             this.bunifuButton4.IdleIconRightImage = null;
             this.bunifuButton4.IndicateFocus = true;
-            this.bunifuButton4.Location = new System.Drawing.Point(32, 629);
+            this.bunifuButton4.Location = new System.Drawing.Point(32, 591);
             this.bunifuButton4.Name = "bunifuButton4";
             this.bunifuButton4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.OnDisabledState.BorderRadius = 39;
@@ -621,11 +625,11 @@
             this.bunifuButton3.ColorContrastOnClick = 45;
             this.bunifuButton3.ColorContrastOnHover = 45;
             this.bunifuButton3.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.bunifuButton3.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.bunifuButton3.CustomizableEdges = borderEdges5;
             this.bunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.DisabledFillColor = System.Drawing.Color.Empty;
@@ -651,7 +655,7 @@
             this.bunifuButton3.IdleIconLeftImage = null;
             this.bunifuButton3.IdleIconRightImage = null;
             this.bunifuButton3.IndicateFocus = true;
-            this.bunifuButton3.Location = new System.Drawing.Point(32, 455);
+            this.bunifuButton3.Location = new System.Drawing.Point(32, 417);
             this.bunifuButton3.Name = "bunifuButton3";
             this.bunifuButton3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.OnDisabledState.BorderRadius = 39;
@@ -713,11 +717,11 @@
             this.bunifuButton2.ColorContrastOnClick = 45;
             this.bunifuButton2.ColorContrastOnHover = 45;
             this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.bunifuButton2.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.bunifuButton2.CustomizableEdges = borderEdges6;
             this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.DisabledFillColor = System.Drawing.Color.Empty;
@@ -743,7 +747,7 @@
             this.bunifuButton2.IdleIconLeftImage = null;
             this.bunifuButton2.IdleIconRightImage = null;
             this.bunifuButton2.IndicateFocus = true;
-            this.bunifuButton2.Location = new System.Drawing.Point(33, 402);
+            this.bunifuButton2.Location = new System.Drawing.Point(33, 364);
             this.bunifuButton2.Name = "bunifuButton2";
             this.bunifuButton2.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.OnDisabledState.BorderRadius = 39;
@@ -805,11 +809,11 @@
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges7;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
@@ -835,7 +839,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = true;
-            this.bunifuButton1.Location = new System.Drawing.Point(31, 348);
+            this.bunifuButton1.Location = new System.Drawing.Point(31, 310);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 39;
@@ -1210,12 +1214,104 @@
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // bunifuButton8
+            // 
+            this.bunifuButton8.AllowAnimations = true;
+            this.bunifuButton8.AllowMouseEffects = true;
+            this.bunifuButton8.AllowToggling = false;
+            this.bunifuButton8.AnimationSpeed = 200;
+            this.bunifuButton8.AutoGenerateColors = false;
+            this.bunifuButton8.AutoRoundBorders = false;
+            this.bunifuButton8.AutoSizeLeftIcon = true;
+            this.bunifuButton8.AutoSizeRightIcon = true;
+            this.bunifuButton8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButton8.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.bunifuButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton8.BackgroundImage")));
+            this.bunifuButton8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton8.ButtonText = "Finanças";
+            this.bunifuButton8.ButtonTextMarginLeft = 0;
+            this.bunifuButton8.ColorContrastOnClick = 45;
+            this.bunifuButton8.ColorContrastOnHover = 45;
+            this.bunifuButton8.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton8.CustomizableEdges = borderEdges1;
+            this.bunifuButton8.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuButton8.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.bunifuButton8.DisabledFillColor = System.Drawing.Color.Empty;
+            this.bunifuButton8.DisabledForecolor = System.Drawing.Color.Empty;
+            this.bunifuButton8.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.bunifuButton8.Font = new System.Drawing.Font("Archivo SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton8.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton8.IconLeft = null;
+            this.bunifuButton8.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuButton8.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuButton8.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.bunifuButton8.IconMarginLeft = 11;
+            this.bunifuButton8.IconPadding = 10;
+            this.bunifuButton8.IconRight = null;
+            this.bunifuButton8.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuButton8.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuButton8.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.bunifuButton8.IconSize = 25;
+            this.bunifuButton8.IdleBorderColor = System.Drawing.Color.Empty;
+            this.bunifuButton8.IdleBorderRadius = 0;
+            this.bunifuButton8.IdleBorderThickness = 0;
+            this.bunifuButton8.IdleFillColor = System.Drawing.Color.Empty;
+            this.bunifuButton8.IdleIconLeftImage = null;
+            this.bunifuButton8.IdleIconRightImage = null;
+            this.bunifuButton8.IndicateFocus = true;
+            this.bunifuButton8.Location = new System.Drawing.Point(31, 646);
+            this.bunifuButton8.Name = "bunifuButton8";
+            this.bunifuButton8.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.bunifuButton8.OnDisabledState.BorderRadius = 39;
+            this.bunifuButton8.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton8.OnDisabledState.BorderThickness = 1;
+            this.bunifuButton8.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuButton8.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.bunifuButton8.OnDisabledState.IconLeftImage = null;
+            this.bunifuButton8.OnDisabledState.IconRightImage = null;
+            this.bunifuButton8.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.bunifuButton8.onHoverState.BorderRadius = 39;
+            this.bunifuButton8.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton8.onHoverState.BorderThickness = 1;
+            this.bunifuButton8.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.bunifuButton8.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton8.onHoverState.IconLeftImage = null;
+            this.bunifuButton8.onHoverState.IconRightImage = null;
+            this.bunifuButton8.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.bunifuButton8.OnIdleState.BorderRadius = 39;
+            this.bunifuButton8.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton8.OnIdleState.BorderThickness = 1;
+            this.bunifuButton8.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.bunifuButton8.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton8.OnIdleState.IconLeftImage = null;
+            this.bunifuButton8.OnIdleState.IconRightImage = null;
+            this.bunifuButton8.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(255)))));
+            this.bunifuButton8.OnPressedState.BorderRadius = 39;
+            this.bunifuButton8.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton8.OnPressedState.BorderThickness = 1;
+            this.bunifuButton8.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.bunifuButton8.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton8.OnPressedState.IconLeftImage = null;
+            this.bunifuButton8.OnPressedState.IconRightImage = null;
+            this.bunifuButton8.Size = new System.Drawing.Size(222, 39);
+            this.bunifuButton8.TabIndex = 16;
+            this.bunifuButton8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuButton8.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bunifuButton8.TextMarginLeft = 0;
+            this.bunifuButton8.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuButton8.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton8.Click += new System.EventHandler(this.bunifuButton8_Click);
+            // 
             // Main2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1219, 838);
+            this.ClientSize = new System.Drawing.Size(1246, 745);
             this.Controls.Add(this.bunifuPanel3);
             this.Controls.Add(this.bunifuPanel4);
             this.Controls.Add(this.bunifuPanel2);
@@ -1270,5 +1366,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox produto;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton8;
     }
 }

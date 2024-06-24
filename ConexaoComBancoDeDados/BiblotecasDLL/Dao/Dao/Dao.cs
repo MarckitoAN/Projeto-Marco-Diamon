@@ -639,6 +639,79 @@ namespace Usuario
             return quantidadeEmEstoque;
         }
 
+
+        public static double AcharDespesasLojas()
+        {
+            double despesas = 0;
+
+            try
+            {
+                ConectarBancoDeDados();
+
+                DefinirComandoSql($"select sum(Despesas.valor) from Despesas;");
+                object resultado = comandoSql.ExecuteScalar();
+                if (resultado != null)
+                {
+                    despesas = Convert.ToDouble(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return despesas;
+        }
+
+        public static DataTable ObterSaida()
+        {
+            DataTable tabelaSaida = new DataTable();
+
+            try
+            {
+                ConectarBancoDeDados();
+                string comandoSql = "select id_despesa as ID,Descricao,Data,Valor,Tipo_despesa as Tipo from Despesas";
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
+                adaptador.Fill(tabelaSaida);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                FecharConexao();
+            }
+
+            return tabelaSaida;
+        }
+
+        public static DataTable ObterEntradas()
+        {
+            DataTable tabelaEntrada = new DataTable();
+
+            try
+            {
+                ConectarBancoDeDados();
+                string comandoSql = "select Pedido.ID as ID,Produto.nome as Produto,Produto.preco as PrecoUnitario,Fornecedor.id as IDFabricante, Pedido_Produto.quantidade as Quantidade,Pedido.valor_total as ValorTotal from Pedido_Produto join Pedido on Pedido_Produto.id_pedido = Pedido.id join Cliente on Cliente.id = Pedido.id_cliente join Produto on Pedido_Produto.id_produto = Produto.id join Fornecedor on Fornecedor.id = Pedido_Produto.id_fornecedor;";
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoSql, conexaoBancoDeDados);
+                adaptador.Fill(tabelaEntrada);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler os estoques: " + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return tabelaEntrada;
+        }
+
     }
 
 

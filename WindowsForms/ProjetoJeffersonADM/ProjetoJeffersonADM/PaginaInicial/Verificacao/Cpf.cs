@@ -5,6 +5,22 @@ namespace Validacao
     {
         public static bool IsCpf(string cpf)
         {
+
+            /*
+             Ola eu do futuro kkk,se voce esta vendo isso,provavelmente voce se ferrou pra explicar essa parte
+             entao oq eu posso te dizer e boa sorte :)
+             */
+
+
+
+
+
+
+
+
+
+
+
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             string tempCpf;

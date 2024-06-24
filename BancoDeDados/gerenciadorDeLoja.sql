@@ -120,3 +120,11 @@ CREATE TABLE Pedido_Produto
     constraint id_fornecedor_fk foreign key (id_fornecedor) references fornecedor (id),
     constraint id_userFK3 foreign key (id_user) references User (id)
 );
+
+CREATE TABLE Despesas (
+    id_despesa INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(255) NOT NULL,
+    data DATE NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    tipo_despesa VARCHAR(100) default "Saida"
+);

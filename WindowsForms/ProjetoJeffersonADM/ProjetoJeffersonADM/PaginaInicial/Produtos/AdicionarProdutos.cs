@@ -13,6 +13,7 @@ using Estoque;
 using Usuario;
 using System.Runtime.InteropServices;
 using System.IO;
+using ProjetoJeffersonADM.PaginaInicial;
 
 namespace ProjetoJeffersonADM
 {
@@ -151,8 +152,12 @@ namespace ProjetoJeffersonADM
                 int estoque = int.Parse(estoque_txt.Text);
                 double custo = double.Parse(custo_txt.Text);
                 byte[] imagemBytes = File.ReadAllBytes(caminhoImagem);
+                double valorDespesa = custo * estoque;
+
                 Produto produtos = new Produto(nomeProd_txt.Text,descriProd_txt.Text,marcaProd_txt.Text,preco,tipoProd_txt.Text,tamanhoProd_txt.Text,estoque, idFornecedor,custo, imagemBytes);
                 produtos.AdicionarProdutos(1);
+                Despesas.Despesas despesas = new Despesas.Despesas(nomeProd_txt.Text,DateTime.Now,valorDespesa, "Compra de Produto");
+                despesas.AdicionarDespesas();
                 this.Hide();
             }
             catch (Exception ex)

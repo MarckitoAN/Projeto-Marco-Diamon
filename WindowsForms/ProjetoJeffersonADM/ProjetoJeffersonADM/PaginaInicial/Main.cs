@@ -37,6 +37,7 @@ namespace ProjetoJeffersonADM
         private void CriarGrafico()
         {
             canvas = new BunifuDatavizBasic.Canvas();
+            bunifuDatavizBasic1.colorSet.Add(Color.Purple);
             var dataPoint = new BunifuDatavizBasic.DataPoint(BunifuDatavizBasic._type.Bunifu_line);
             dataPoint.addLabely("Janeiro", "15");
             dataPoint.addLabely("Fevereiro", "35");
@@ -183,6 +184,13 @@ namespace ProjetoJeffersonADM
         private void bunifuPanel4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuButton8_Click(object sender, EventArgs e)
+        {
+            Financas financas = new Financas();
+            this.Hide();
+            financas.Show();
         }
     }
     }

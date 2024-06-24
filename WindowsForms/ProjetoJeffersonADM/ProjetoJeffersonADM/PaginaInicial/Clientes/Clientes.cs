@@ -2,6 +2,7 @@
 using ClientesDLL;
 using ProdutoDLL;
 using ProjetoJeffersonADM.PaginaInicial.Clientes;
+using ProjetoJeffersonADM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -184,6 +185,13 @@ namespace ProjetoJeffersonADM
         private void pesquisa_txt_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuButton7_Click(object sender, EventArgs e)
+        {
+            Financas financas = new Financas();
+            this.Hide();
+            financas.Show();
         }
     }
 }
