@@ -463,6 +463,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Entrada_saida";
             this.Load += new System.EventHandler(this.Entrada_saida_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saida)).EndInit();
