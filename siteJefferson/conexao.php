@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $user = "root";
-$senha = "";
+$senha = "123";
 $database = "GerenciadorLojasPraADM";
 
 $conn = new mysqli($server, $user, $senha, $database);

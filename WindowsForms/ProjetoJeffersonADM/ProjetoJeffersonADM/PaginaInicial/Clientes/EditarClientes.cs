@@ -79,7 +79,7 @@ namespace ProjetoJeffersonADM
                     nome.Show(this, "Rg do cliente esta vazio:", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
-                else if (String.IsNullOrWhiteSpace(cpfCli_txt.Text) || Validacao.ValidaCPF.IsCpf(cpfCli_txt.Text))
+                else if (String.IsNullOrWhiteSpace(cpfCli_txt.Text))
                 {
                     nome.Show(this, "Insira um Cpf valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error);
                     return;
@@ -126,6 +126,11 @@ namespace ProjetoJeffersonADM
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void cpfCli_txt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Usuario
         private static MySqlConnection conexaoBancoDeDados;
         private static MySqlCommand comandoSql;
         public static MySqlDataReader comandoSqlDataReader;
-        private static string stringConexao = "server=localhost;port=3306;Database=GerenciadorLojasPraADM;uid=root;";
+        private static string stringConexao = "server=localhost;port=3306;Database=GerenciadorLojasPraADM;uid=root;pwd='123';";
 
         public static void ConectarBancoDeDados()
         {

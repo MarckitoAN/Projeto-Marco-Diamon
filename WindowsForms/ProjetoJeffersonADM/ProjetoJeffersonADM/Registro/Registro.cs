@@ -113,36 +113,24 @@ namespace ProjetoJeffersonADM
                     bunifuSnackbar1.Show(this, "O campo do nome da loja esta vazio.", BunifuSnackbar.MessageTypes.Error);
                     return;
                 }
-
-
-
                 if (password_field.Text.Length < 8 || String.IsNullOrEmpty(password_field.Text))
                 {
                     bunifuSnackbar2.Show(this, "Sua senha deve conter 8 caracteres.", BunifuSnackbar.MessageTypes.Error);
-
                     return;
                 }
-
-
                 if (String.IsNullOrEmpty(contato_field.Text) || contato_field.Text.Length > 13)
                 {
                     bunifuSnackbar3.Show(this, "Insira um telefone valido.", BunifuSnackbar.MessageTypes.Error);
                     return;
-
                 }
-
                 if (String.IsNullOrEmpty(email_field.Text))
                 {
                     bunifuSnackbar4.Show(this, "Insira um email valido.", BunifuSnackbar.MessageTypes.Error);
                     return;
-
                 }
-
                 if (!ValidaCNPJ.IsCnpj(cnpj_field.Text) || String.IsNullOrEmpty(cnpj_field.Text))
                 {
                     bunifuSnackbar5.Show(this, "Insira um cnpj valido.", BunifuSnackbar.MessageTypes.Error);
-                   
-
                     return;
                 }
 
@@ -157,6 +145,7 @@ namespace ProjetoJeffersonADM
             }
             catch (Exception ex)
             {
+                MessageBox.Show("ERRO AO LOGAR");
                 Console.WriteLine(ex.Message);
             }
             finally

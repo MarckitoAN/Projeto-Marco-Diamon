@@ -44,3 +44,14 @@ C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\ConexaoComBancoDeDados\B
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.Up2Date
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.dll
 C:\Users\gamer\OneDrive\Documentos\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\Dao.pdb
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Memory.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\bin\Debug\System.Buffers.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.AssemblyReference.cache
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.csproj.Up2Date
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.dll
+C:\Users\gamer\OneDrive\Desktop\JeffersonParteFinal\Projeto-Marco-Diamon\ConexaoComBancoDeDados\BiblotecasDLL\Dao\Dao\obj\Debug\Dao.pdb

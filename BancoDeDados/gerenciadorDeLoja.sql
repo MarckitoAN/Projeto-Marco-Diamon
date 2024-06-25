@@ -6,9 +6,9 @@ create table User
 (
     id         integer auto_increment,
     nome_loja  varchar(255) not null,
-    contato    varchar(16)  not null,
+    contato    varchar(25)  not null,
     email      varchar(255) not null,
-    cnpj       varchar(14)  not null,
+    cnpj       varchar(25)  not null,
     senha_hash varchar(255) not null,
     primary key (id)
 );
@@ -18,9 +18,9 @@ CREATE TABLE Cliente
     id       INT AUTO_INCREMENT,
     id_user  integer,
     nome     VARCHAR(100) NOT NULL,
-    rg       VARCHAR(20),
-    cpf      VARCHAR(20),
-    telefone VARCHAR(20),
+    rg       VARCHAR(50),
+    cpf      VARCHAR(50),
+    telefone VARCHAR(50),
     rua      VARCHAR(100),
     bairro   VARCHAR(100),
     cidade   VARCHAR(100),
@@ -94,7 +94,7 @@ CREATE TABLE Fornecedor
     cidade VARCHAR(100),
     estado VARCHAR(100),
     email  VARCHAR(100) NOT NULL,
-    cnpj   VARCHAR(20) UNIQUE
+    cnpj   VARCHAR(50) UNIQUE
 );
 
 create table Produto_Fornecedor

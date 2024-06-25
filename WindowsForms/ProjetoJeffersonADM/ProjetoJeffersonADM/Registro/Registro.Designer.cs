@@ -676,7 +676,7 @@
             this.cnpj_field.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.cnpj_field.Lines = new string[0];
             this.cnpj_field.Location = new System.Drawing.Point(34, 329);
-            this.cnpj_field.MaxLength = 18;
+            this.cnpj_field.MaxLength = 50;
             this.cnpj_field.MinimumSize = new System.Drawing.Size(1, 1);
             this.cnpj_field.Modified = false;
             this.cnpj_field.Multiline = true;

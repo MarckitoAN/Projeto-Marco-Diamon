@@ -925,6 +925,7 @@
             this.cpfCli_txt.TextPlaceholder = "Digite o cpf do cliente";
             this.cpfCli_txt.UseSystemPasswordChar = false;
             this.cpfCli_txt.WordWrap = true;
+            this.cpfCli_txt.TextChanged += new System.EventHandler(this.cpfCli_txt_TextChanged);
             // 
             // rgcli_txt
             // 
